@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-  <title>Store Shop Online Shopping Store</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="default.css">
-</head>
-<body>
-  <div id="header">
-    <div id="header-row1" class="row">
-      <div id="store-logo" class="col-md-4">
-        <i id="logo" class="fa fa-cog fa-spin fa-5x"></i>
-        <h1 id="store-name">STORE SHOP</h1>
+  <head>
+    <title>Store Shop Online Shopping Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="default.css">
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-row1" class="row">
+        <div id="store-logo" class="col-md-4">
+          <i id="logo" class="fa fa-cog fa-spin fa-5x"></i>
+          <h1 id="store-name">STORE SHOP</h1>
+        </div>
+        <div class="col-md-6">
+        </div>
+        <div id="cart" class="col-md-2">
+          <form action="#">
+            <button id="cart-btn"><i class="fa fa-shopping-cart fa-2x">Cart</i>
+            </button>
+          </form>
+        </div>
       </div>
-      <div class="col-md-6">
+      <div id="header-row2" class="row">
+        <div id="category" class="col-md-2">
+          <form action="#">
+            <select id="category-select" name="category">
+              <option value="all">All</option>
+              <option value="tech">Technology</option>
+              <option value="lit">Literature</option>
+              <option value="entertainment">Entertainment</option>
+            </select>
+          </form>
+        </div>
+        <div id="search-bar" class="col-md-8">
+          <form action="#">
+            <input type="text" id="search-textbox" name="search-query" maxlength="100" value="Product Name" onfocus="if(this.value=='Product Name') this.value = '';"></input>
+            <button id="search-btn"><i class="fa fa-search"></i>Search</button>
+          </form>
+        </div>
+        <div id="sort" class="col-md-2">
+          <form action="#">
+            <label for="sort">Sort: </label>
+            <select id="sort-select" name="sort">
+              <option>Highest Price</option>
+              <option>Lowest Price</option>
+              <option>Rating</option>
+            </select>
+          </form>
+        </div>
       </div>
-      <div id="cart" class="col-md-2">
-        <form action="#">
-          <button id="cart-button"><i class="fa fa-shopping-cart fa-2x">Cart</i>
-          </button>
-        </form>
-      </div>
-    </div>
-    <div id="header-row2" class="row">
-      <div id="category" class="col-md-2">
-        <form action="#">
-          <select id="category-select" name="category">
-            <option value="all">All</option>
-            <option value="tech">Technology</option>
-            <option value="lit">Literature</option>
-            <option value="entertainment">Entertainment</option>
-          </select>
-        </form>
-      </div>
-      <div id="search-bar" class="col-md-8">
-        SEARCH BAR
-      </div>
-      <div id="sort" class="col-md-2">
-        SORT
-      </div>
-    </div>
-  </div><!--End Header-->
-  <div id="search-page">
-  </div><!--End Search Page-->
-  <div id="cart">
-  </div><!--End Cart-->
-  <div id="checkout">
-  </div><!--End Checkout-->
-  <script src="app.js"></script>
-</body>
+    </div><!--End Header-->
+    <div id="search-page">
+    </div><!--End Search Page-->
+    <div id="cart">
+    </div><!--End Cart-->
+    <div id="checkout">
+    </div><!--End Checkout-->
+    <script src="app.js"></script>
+  </body>
 </html>
