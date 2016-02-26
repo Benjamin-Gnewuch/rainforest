@@ -1,2 +1,2 @@
-# Project-1-store-shop
+# online-store
 Design for an online store
