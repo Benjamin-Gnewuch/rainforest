@@ -4,7 +4,8 @@
     <title>Store Shop Online Shopping Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="side-search.css">
   </head>
   <body>
     <div id="header">
@@ -52,6 +53,41 @@
       </div>
     </div><!--End Header-->
     <div id="search-page">
+      <div id="side-search">
+        <div id="price">
+          <fieldset class="side-search-field">
+            <legend>
+              <h4>Price</h4>
+            </legend>
+            <label for="price-max">Max Price: </label>
+            <input id="price-max-text" type="text" name="price-max">
+            <br>
+            <label for="price-min">Min Price: </label>
+            <input id="price-min-text" type="text" name="price-min">
+          </fieldset>
+        </div>
+        <div id="rating">
+          <fieldset class="side-search-field">
+            <legend>
+              <h4>Rating</h4>
+            </legend>
+            <label for="5star">5-Stars </label>
+            <input type="radio" name="rating" value="5star">
+            <br>
+            <label for="4star">4-Stars+ </label>
+            <input type="radio" name="rating" value="4star">
+            <br>
+            <label for="3star">3-Stars+ </label>
+            <input type="radio" name="rating" value="3star">
+            <br>
+            <label for="2star">2-Stars+ </label>
+            <input type="radio" name="rating" value="2star">
+            <br>
+            <label for="1star">1-Stars+</label>
+            <input type="radio" name="rating" value="1star">
+          </fieldset>
+        </div>
+      </div>
     </div><!--End Search Page-->
     <div id="cart">
     </div><!--End Cart-->
