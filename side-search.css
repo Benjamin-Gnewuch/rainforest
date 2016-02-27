@@ -1,0 +1,32 @@
+#side-search {
+  position: fixed;
+  float: left;
+  border-right: solid 2px green;
+  margin-top: 200px;
+  width: 200px;
+  height: 100%;
+}
+.side-search-field {
+}
+#price {
+  margin-top: 50px;
+  padding-top: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: .5px solid grey;
+  border-top: .5px solid grey;
+}
+#price-max-text {
+  width: 75px;
+  margin-left: 10px;
+}
+#price-min-text {
+  width: 75px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+#rating {
+  text-align: center;
+  border-bottom: .5px solid grey;
+  padding-bottom: 50px;
+}
