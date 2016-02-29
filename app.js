@@ -122,18 +122,10 @@ var searchInput = document.getElementById('search-textbox');
 searchInput.addEventListener('change', updateSearch);
 function updateSearch() {
   searchState.productName = searchInput.value;
-  console.log(searchState.productName);
 }
 
 var searchButton = document.getElementById('search-btn');
 searchButton.addEventListener('click', search);
-
-var searchEnter = document.getElementById('search-textbox');
-searchEnter.addEventListener('keypress', function(e){
-  if(e === 13){
-    search();
-  }
-});
 
 //END PRODUCS
 //PRODUCT COLLECTION
@@ -142,42 +134,59 @@ var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, reve
 //When searching through products, if one fits, push to this array
 var searchResults = [];
 
-function search() {
+function search(event) {
+  event.preventDefault();
   searchResults = [];
+
   for(var i = 0; i < productList.length; i++) {
-    if(productList[i].name == searchState.productName){
+    if(productList[i].name == searchInput.value) {
       searchResults.push(productList[i]);
     }
+    else if(searchInput.value == "") {
+      for(var i = 0; i < productList.length; i++) {
+        searchResults.push(productList[i]);
+      }
+    }
   }
+  clearProduct();
   generateProduct();
 }
 
-function generateProduct() {
+function clearProduct() {
   var resultLocation = document.getElementById('search-results');
+  while(resultLocation.firstChild) {
+    resultLocation.removeChild(resultLocation.firstChild);
+  }
+}
 
-  var newResult = document.createElement('div');
-  newResult.className = "media";
+function generateProduct() {
+    for (var i = 0; i < productList.length; i++){
+    var resultLocation = document.getElementById('search-results');
+    var newResult = document.createElement('div');
+    newResult.className = "media";
 
-  var mediaLeft = document.createElement('div');
-  mediaLeft.className = "media-left";
+    var mediaLeft = document.createElement('div');
+    mediaLeft.className = "media-left";
 
-  var mediaObject = document.createElement('img');
-  mediaObject.className = "media-object";
-  mediaObject.src = searchResults[0].img;
-  mediaObject.setAttribute("height", "500px");
+    var mediaObject = document.createElement('img');
+    mediaObject.className = "media-object";
+    mediaObject.src = searchResults[i].img;
+    mediaObject.setAttribute("height", "500px");
+    mediaObject.setAttribute("max-width", "500px");
 
-  var mediaBody = document.createElement('div');
-  mediaBody.className = "media-body";
+    var mediaBody = document.createElement('div');
+    mediaBody.className = "media-body";
 
-  var mediaHeading = document.createElement('h3');
-  mediaHeading.className = "media-heading";
-  mediaHeading.textContent = searchResults[0].name;
+    var mediaHeading = document.createElement('h3');
+    mediaHeading.className = "media-heading";
+    mediaHeading.textContent = searchResults[i].name;
 
-  newResult.appendChild(mediaLeft);
-  mediaLeft.appendChild(mediaObject);
-  newResult.appendChild(mediaBody);
-  mediaBody.appendChild(mediaHeading);
-  resultLocation.appendChild(newResult);
+    newResult.appendChild(mediaLeft);
+    mediaLeft.appendChild(mediaObject);
+    newResult.appendChild(mediaBody);
+    mediaBody.appendChild(mediaHeading);
+    resultLocation.appendChild(newResult);
+  }
 }
 
 var searchState = {
