@@ -117,11 +117,11 @@ var theHungerGames = {
   quantity: 0
 }
 
-var searchInput = document.getElementById('search-textbox').value;
+var searchInput = document.getElementById('search-textbox');
 //Updates SearchState's Procuct Name member
 searchInput.addEventListener('change', updateSearch);
 function updateSearch() {
-  searchState.productName = searchInput;
+  searchState.productName = searchInput.value;
   console.log(searchState.productName);
 }
 
@@ -135,13 +135,41 @@ var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, reve
 //When searching through products, if one fits, push to this array
 var searchResults = [];
 
-search function() {
+function search() {
   searchResults = [];
   for(var i = 0; i < productList.length; i++) {
-    if(productList[i].name == searchState.productName){
+    if(toLower == searchState.productName){
       searchResults.push(productList[i]);
     }
   }
+  generateProduct();
+}
+
+function generateProduct() {
+  var resultLocation = document.getElementById('search-results');
+
+  var newResult = document.createElement('div');
+  newResult.className = "media";
+
+  var mediaLeft = document.createElement('div');
+  mediaLeft.className = "media-left";
+
+  var mediaObject = document.createElement('img');
+  mediaObject.className = "media-object";
+  mediaObject.src = searchResults[0].img;
+
+  var mediaBody = document.createElement('div');
+  mediaBody.className = "media-body";
+
+  var mediaHeading = document.createElement('h3');
+  mediaHeading.className = "media-heading";
+  mediaHeading.textContent = searchResults[0].name;
+
+  newResult.appendChild(mediaLeft);
+  mediaLeft.appendChild(mediaObject);
+  newResult.appendChild(mediaBody);
+  mediaBody.appendChild(mediaHeading);
+  resultLocation.appendChild(newResult);
 }
 
 var searchState = {
