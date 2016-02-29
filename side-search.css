@@ -6,6 +6,7 @@
   width: 18%;
   height: 100%;
   z-index: 1;
+  display: none;
 }
 .side-search-field {
 }
