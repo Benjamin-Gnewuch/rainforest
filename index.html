@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="side-search.css">
+    <link rel="stylesheet" href="search-results.css">
   </head>
   <body>
     <div id="header">
@@ -71,23 +72,28 @@
             <legend>
               <h4>Rating</h4>
             </legend>
-            <label for="5star">5-Stars </label>
-            <input type="radio" name="rating" value="5star">
-            <br>
-            <label for="4star">4-Stars+ </label>
-            <input type="radio" name="rating" value="4star">
-            <br>
-            <label for="3star">3-Stars+ </label>
-            <input type="radio" name="rating" value="3star">
-            <br>
-            <label for="2star">2-Stars+ </label>
-            <input type="radio" name="rating" value="2star">
-            <br>
-            <label for="1star">1-Stars+</label>
-            <input type="radio" name="rating" value="1star">
+            <form name="radio-rating">
+              <label for="5star">5-Stars </label>
+              <input type="radio" name="rating" value="5star">
+              <br>
+              <label for="4star">4-Stars+ </label>
+              <input type="radio" name="rating" value="4star">
+              <br>
+              <label for="3star">3-Stars+ </label>
+              <input type="radio" name="rating" value="3star">
+              <br>
+              <label for="2star">2-Stars+ </label>
+              <input type="radio" name="rating" value="2star">
+              <br>
+              <label for="1star">1-Stars+</label>
+              <input type="radio" name="rating" value="1star">
+            </form>
           </fieldset>
         </div>
-      </div>
+      </div><!--End Side Search-->
+      <div id="search-results">
+
+      </div><!--End Search Results-->
     </div><!--End Search Page-->
     <div id="cart">
     </div><!--End Cart-->
