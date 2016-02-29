@@ -1,5 +1,5 @@
 //PRODUCTS
-var iPhone = {
+var iphone = {
   name: "iphone",
   img: "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/plus/iphone6s-plus-box-gray-2015_GEO_US?wid=478&hei=595&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1453526293487",
   price: 799.99,
@@ -13,6 +13,7 @@ var android = {
   img: "http://media.gadgetsin.com/2013/04/samsung_galaxy_win_android_phone_announced_1.jpg",
   price: 699.99,
   rating: 4.5,
+  category: "tech",
   tags: ["phone", "samsung", "smartphone", "technology", "tech"],
   quantity: 0
 }
@@ -116,69 +117,38 @@ var theHungerGames = {
   quantity: 0
 }
 
-var name = {
-  name: ,
-  img: ,
-  price: ,
-  rating: ,
-  category: ,
-  tags: [],
-  quantity: 0
+var searchInput = document.getElementById('search-textbox').value;
+//Updates SearchState's Procuct Name member
+searchInput.addEventListener('change', updateSearch);
+function updateSearch() {
+  searchState.productName = searchInput;
+  console.log(searchState.productName);
 }
+
+var searchButton = document.getElementById('search-btn');
+searchButton.addEventListener('click', search);
+
 //END PRODUCS
 //PRODUCT COLLECTION
-var productList = [];
+var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
 
 //When searching through products, if one fits, push to this array
 var searchResults = [];
 
-//Other Objects
-var cart = {
-  items: []
+search function() {
+  searchResults = [];
+  for(var i = 0; i < productList.length; i++) {
+    if(productList[i].name == searchState.productName){
+      searchResults.push(productList[i]);
+    }
+  }
 }
 
 var searchState = {
-  category: ,
-  productName: ,
-  sort: ,
-  priceMax: ,
-  priceMin: ,
-  rating:
-}
-
-//SEARCH FUNCTIONS
-function search(searchState){
-  if(searchState.productName === "" && category === "all"){
-
-  }
-  else{
-    for(var i = 0; i < productList.length; i++) {
-      if(checkSearchAgainstProducts(i, searchState, productList)) {
-
-      }
-    }
-  }
-}
-
-function checkSearchAgainstProducts(num, searchState, productList) {
-  if(searchState.productName) {
-    if(searchState.category === "tech" )
-  }
-}
-
-//CART FUCNTIONS
-function removeFromCart(itemName, cart) {
-  for(var i = 0; i < cart.length; i++) {
-    if(cart[i].name === itemName){
-      cart.splice[i, 1];
-      i = cart.length;
-    }
-  }
-}
-
-function addToCart(item, quantity = 1) {
-  cart.push(item);
-  for(var i = 1; i <= quantity; i++) {
-    item.quantity++;
-  }
+  category: "all",
+  productName: "",
+  sort: "highest",
+  priceMax: 1000000,
+  priceMin: 0,
+  rating: 1
 }
