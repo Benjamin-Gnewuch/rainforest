@@ -128,6 +128,13 @@ function updateSearch() {
 var searchButton = document.getElementById('search-btn');
 searchButton.addEventListener('click', search);
 
+var searchEnter = document.getElementById('search-textbox');
+searchEnter.addEventListener('keypress', function(e){
+  if(e === 13){
+    search();
+  }
+});
+
 //END PRODUCS
 //PRODUCT COLLECTION
 var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
@@ -138,7 +145,7 @@ var searchResults = [];
 function search() {
   searchResults = [];
   for(var i = 0; i < productList.length; i++) {
-    if(toLower == searchState.productName){
+    if(productList[i].name == searchState.productName){
       searchResults.push(productList[i]);
     }
   }
@@ -157,6 +164,7 @@ function generateProduct() {
   var mediaObject = document.createElement('img');
   mediaObject.className = "media-object";
   mediaObject.src = searchResults[0].img;
+  mediaObject.setAttribute("height", "500px");
 
   var mediaBody = document.createElement('div');
   mediaBody.className = "media-body";
