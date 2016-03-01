@@ -6,7 +6,9 @@ var iphone = {
   rating: 4.6,
   category: "tech",
   tags: ["phone", "apple", "smartphone", "technology", "tech"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 0
 }
 var android = {
   name: "Android",
@@ -15,7 +17,9 @@ var android = {
   rating: 4.5,
   category: "tech",
   tags: ["phone", "samsung", "smartphone", "technology", "tech"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 1
 }
 var lenovo = {
   name: "Lenovo",
@@ -24,7 +28,9 @@ var lenovo = {
   rating: 4.2,
   category: "tech",
   tags: ["laptop", "computer", "pc", "windows", "microsoft", "lenovo"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 2
 }
 var macbook = {
   name: "Macbook",
@@ -33,7 +39,9 @@ var macbook = {
   rating: 4.3,
   category: "tech",
   tags: ["laptop", "computer", "apple", "osx", "mac"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 3
 }
 var surface = {
   name: "Surface",
@@ -42,7 +50,9 @@ var surface = {
   rating: 3.9,
   category: "tech",
   tags: ["tablet", "computer", "microsoft", "windows"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 4
 }
 var ipad = {
   name: "iPad",
@@ -51,7 +61,9 @@ var ipad = {
   rating: 4.0,
   category: "tech",
   tags: ["tablet", "apple", "computer", "mac"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 5
 }
 var madMax = {
   name: "Mad Max",
@@ -60,7 +72,9 @@ var madMax = {
   rating: 4.9,
   category: "entertainment",
   tags: ["movie", "film", "action", "sci-fi"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 6
 }
 var revenant = {
   name: "The Revenant",
@@ -69,7 +83,9 @@ var revenant = {
   rating: 4.5,
   category: "entertainment",
   tags: ["movie", "film", "action"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 7
 }
 var interstellar = {
   name: "Interstellar",
@@ -78,7 +94,9 @@ var interstellar = {
   rating: 4.0,
   category: "entertainment",
   tags: ["movie", "film", "action", "sci-fi"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 8
 }
 var vForVendetta = {
   name: "V for Vendetta",
@@ -87,7 +105,9 @@ var vForVendetta = {
   rating: 4.5,
   category: "entertainment",
   tags: ["movie", "film", "action", "comic"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 9
 }
 var battleRoyal = {
   name: "Battle Royale",
@@ -96,7 +116,9 @@ var battleRoyal = {
   rating: 4.6,
   category: "lit",
   tags: ["book", "read", "action", "foreign", "takami", "kids"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 10
 }
 var lordOfTheFlies = {
   name: "The Lord of the Flies",
@@ -105,7 +127,9 @@ var lordOfTheFlies = {
   rating: 4.0,
   category: "lit",
   tags: ["book", "read", "golding", "island", "kids"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 11
 }
 var theHungerGames = {
   name: "The Hunger Games",
@@ -114,7 +138,9 @@ var theHungerGames = {
   rating: 5.6,
   category: "lit",
   tags: ["book", "read", "kids", "dystopian"],
-  quantity: 0
+  description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
+  quantity: 0,
+  itemID: 12
 }
 
 var searchInput = document.getElementById('search-textbox');
@@ -155,7 +181,7 @@ function clearProduct() {
 }
 
 function generateProduct() {
-    for (var i = 0; i < productList.length; i++){
+    for (var i = 0; i < productList.length; i++) {
     var resultLocation = document.getElementById('search-results');
     var newResult = document.createElement('div');
     newResult.className = "media";
@@ -166,7 +192,6 @@ function generateProduct() {
     var mediaObject = document.createElement('img');
     mediaObject.className = "media-object";
     mediaObject.src = searchResults[i].img;
-    // mediaObject.setAttribute("height", "500px");
     mediaObject.setAttribute("width", "500px");
 
     var mediaBody = document.createElement('div');
@@ -183,13 +208,14 @@ function generateProduct() {
     mediaRating.textContent = "Rating: " + searchResults[i].rating;
 
     var mediaDescription = document.createElement('p');
-    mediaDescription.textContent = "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene."
+    mediaDescription.textContent = "Description: " + searchResults[i].description;
 
     var cartButtonForm = document.createElement('form');
     cartButtonForm.action = "#";
 
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
+    cartButton.className = "add-to-cart-btn";
     cartButtonForm.appendChild(cartButton);
 
     newResult.appendChild(mediaLeft);
@@ -202,4 +228,14 @@ function generateProduct() {
     mediaBody.appendChild(cartButtonForm);
     resultLocation.appendChild(newResult);
   }
+
+
+}
+
+var cart = [];
+
+
+
+function addItemToCart(id) {
+  event.preventDefault();
 }
