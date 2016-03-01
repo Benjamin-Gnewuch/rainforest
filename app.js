@@ -216,7 +216,11 @@ function generateProduct() {
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
+    cartButton.id = searchResults[i].itemID;
     cartButtonForm.appendChild(cartButton);
+
+    cartButton.addEventListener('click', function() { addItemToCart(cartButton.id);
+    });
 
     newResult.appendChild(mediaLeft);
     mediaLeft.appendChild(mediaObject);
@@ -229,13 +233,16 @@ function generateProduct() {
     resultLocation.appendChild(newResult);
   }
 
-
 }
 
 var cart = [];
 
-
-
+//Currently adding the last element of the search results. Troubleshooting error: Uncaught TypeError: Cannot read property 'img' of undefined
 function addItemToCart(id) {
-  event.preventDefault();
+  for (var i = 0; i < productList.length; i++) {
+    if(id == productList[i].itemID) {
+      cart.push(productList[i]);
+    }
+  }
+  console.log(cart);
 }
