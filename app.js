@@ -217,6 +217,7 @@ function generateProduct(items) {
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
     cartButton.id = items[i].itemID;
+    cartButton.setAttribute('type', 'button');
     cartButtonForm.appendChild(cartButton);
 
     cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
@@ -245,4 +246,53 @@ function addItemToCart(id) {
     }
   }
   console.log(cart);
+}
+
+var viewCartButton = document.getElementById('view-cart-btn');
+viewCartButton.addEventListener('click', displayCart);
+
+var searchPage = document.getElementById('search-page');
+var cartPage = document.getElementById('cart-page');
+var checkoutPage = document.getElementById('checkout-page');
+
+function displayCart() {
+    if(searchPage.className === "display"){
+      searchPage.className = "hide";
+    }
+
+    if(checkoutPage.className === "display"){
+      checkoutPage.className = "hide";
+    }
+
+    if(cartPage.className === "hide"){
+      searchPage.className = "display";
+    }
+}
+
+function displaySearch() {
+  if(searchPage.className === "hide"){
+    searchPage.className = "display";
+  }
+
+  if(checkoutPage.className === "display"){
+    checkoutPage.className = "hide";
+  }
+
+  if(cartPage.className === "display"){
+    searchPage.className = "hide";
+  }
+}
+
+function displayCheckout() {
+  if(searchPage.className === "display"){
+    searchPage.className = "hide";
+  }
+
+  if(checkoutPage.className === "hide"){
+    checkoutPage.className = "display";
+  }
+
+  if(cartPage.className === "display"){
+    searchPage.className = "hide";
+  }
 }
