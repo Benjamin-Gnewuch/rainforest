@@ -19,7 +19,7 @@
         </div>
         <div id="cart" class="col-md-2">
           <form action="#">
-            <button id="cart-btn"><i class="fa fa-shopping-cart fa-2x">Cart</i>
+            <button id="view-cart-btn"><i class="fa fa-shopping-cart fa-2x">0</i>
             </button>
           </form>
         </div>
@@ -94,9 +94,76 @@
       <div id="search-results">
       </div><!--End Search Results-->
     </div><!--End Search Page-->
-    <div id="cart">
+    <div id="cart-page">
     </div><!--End Cart-->
-    <div id="checkout">
+    <div id="checkout-page" class="form-group">
+      <form>
+        <!-- <fieldset class="form-group">
+          <legend>Checkout</legend>
+          <label for="checkout-item-count" class="col-md-2 form-control-label">Number of Items: </label>
+          <span id="checkout-item-count" class="form-control-static">0</span>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="checkout-cart-contents" class="col-md-2 form-control-label">Your Cart: </label>
+          <div id="checkout-cart-contents" class="form-group">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="checkout-subtotal" class="col-md-2 form-control-label">Subtotal: </label>
+          <p id="checkout-subtotal" class="form-control-static">0</p>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="checkout-tax" class="col-md-2 form-control-label">Sales Tax: </label>
+          <p id="checkout-tax" class="form-control-static">0</p>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="checkout-total" class="col-md-2 form-control-label">Total: </label>
+          <p id="checkout-total" class="form-control-static">0</p>
+        </fieldset> --><!--Will implement once payment functionality is complete-->
+        <fieldset class="form-group">
+          <label for="payment-name" class="col-md-3 form-control-label">Name on Card</label>
+          <input type="text" class="col-md-4 form-control" id="payment-name" placeholder="John Doe">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="payment-card-number" class="col-md-3 form-control-label">Card Number</label>
+          <input type="text" class="col-md-4 form-control" id="payment-card-number" placeholder="xxxx-xxxx-xxxx-xxxx">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="payment-card-exp" class="col-md-3 form-control-label">Expiration Date</label>
+          <select class="form-control col-md-2" name="exp-month" id="payment-card-exp-month">
+            <option>Month</option>
+            <option value="01">Jan (01)</option>
+            <option value="02">Feb (02)</option>
+            <option value="03">Mar (03)</option>
+            <option value="04">Apr (04)</option>
+            <option value="05">May (05)</option>
+            <option value="06">June (06)</option>
+            <option value="07">July (07)</option>
+            <option value="08">Aug (08)</option>
+            <option value="09">Sep (09)</option>
+            <option value="10">Oct (10)</option>
+            <option value="11">Nov (11)</option>
+            <option value="12">Dec (12)</option>
+          </select>
+          <select class="form-control col-md-2" name="exp-year" id="payment-card-exp-year">
+            <option>Year</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="payment-card-cvv" class="col-md-3 form-control-label">Security Code</label>
+          <input type="text" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx">
+        </fieldset>
+        <fielset class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+      </form>
     </div><!--End Checkout-->
     <script src="app.js"></script>
   </body>
