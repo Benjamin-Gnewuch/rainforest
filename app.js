@@ -170,7 +170,7 @@ function search(event) {
     }
   }
   clearProduct();
-  generateProduct();
+  generateProduct(searchResults);
 }
 
 function clearProduct() {
@@ -180,7 +180,7 @@ function clearProduct() {
   }
 }
 
-function generateProduct() {
+function generateProduct(items) {
     for (var i = 0; i < productList.length; i++) {
     var resultLocation = document.getElementById('search-results');
     var newResult = document.createElement('div');
@@ -191,7 +191,7 @@ function generateProduct() {
 
     var mediaObject = document.createElement('img');
     mediaObject.className = "media-object";
-    mediaObject.src = searchResults[i].img;
+    mediaObject.src = items[i].img;
     mediaObject.setAttribute("width", "500px");
 
     var mediaBody = document.createElement('div');
@@ -199,16 +199,16 @@ function generateProduct() {
 
     var mediaHeading = document.createElement('h3');
     mediaHeading.className = "media-heading";
-    mediaHeading.textContent = searchResults[i].name;
+    mediaHeading.textContent = items[i].name;
 
     var mediaPrice = document.createElement('p');
-    mediaPrice.textContent = "Price: $" + searchResults[i].price;
+    mediaPrice.textContent = "Price: $" + items[i].price;
 
     var mediaRating = document.createElement('p');
-    mediaRating.textContent = "Rating: " + searchResults[i].rating;
+    mediaRating.textContent = "Rating: " + items[i].rating;
 
     var mediaDescription = document.createElement('p');
-    mediaDescription.textContent = "Description: " + searchResults[i].description;
+    mediaDescription.textContent = "Description: " + items[i].description;
 
     var cartButtonForm = document.createElement('form');
     cartButtonForm.action = "#";
@@ -216,10 +216,10 @@ function generateProduct() {
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
-    cartButton.id = searchResults[i].itemID;
+    cartButton.id = items[i].itemID;
     cartButtonForm.appendChild(cartButton);
 
-    cartButton.addEventListener('click', function() { addItemToCart(cartButton.id);
+    cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
     });
 
     newResult.appendChild(mediaLeft);
