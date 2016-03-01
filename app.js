@@ -245,7 +245,8 @@ function addItemToCart(id) {
       cart.push(productList[i]);
     }
   }
-  console.log(cart);
+  var cartIcon = document.getElementById('view-cart-btn');
+  cartIcon.firstChild.textContent = cart.length;
 }
 
 var viewCartButton = document.getElementById('view-cart-btn');
