@@ -341,10 +341,10 @@ function cartSum() {
 }
 
 function loadValues() {
-    checkoutItemCount.textContent = cart.length;
-    checkoutSubTotal.textContent = '$' + cartSum().toFixed(2);
-    checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
-    checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
+  checkoutItemCount.textContent = cart.length;
+  checkoutSubTotal.textContent = '$' + cartSum().toFixed(2);
+  checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
+  checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
 }
 
 //User Information Variables
@@ -361,7 +361,22 @@ var paymentExpYear = document.getElementById('payment-card-exp-year');
 var paymentCVV = document.getElementById('payment-card-cvv');
 
 var payButton = document.getElementById('checkout-submit');
-payButton.addEventListener('click', showReceipt);
+payButton.addEventListener('click', validatePayment);
+
+function validatePayment() {
+  if(paymentCard.value.length == 16) {
+    if(paymentExpMonth.value.length == 2) {
+      if(paymentExpYear.value.length == 4) {
+        if(paymentCVV.value.length == 3) {
+          showReceipt();
+          return;
+        }
+      }
+    }
+  }
+  alert("Please make sure you enter all payment information!");
+  event.preventDefault();
+}
 
 function loadReceipt() {
   var receiptName = document.getElementById('receipt-name');
