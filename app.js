@@ -148,6 +148,7 @@ var searchInput = document.getElementById('search-textbox');
 var searchButton = document.getElementById('search-btn');
 searchButton.addEventListener('click', search);
 
+var categorySelected = document.getElementById('category-select');
 //END PRODUCS
 //PRODUCT COLLECTION
 var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
@@ -160,16 +161,28 @@ function search(event) {
   showSearch();
   searchResults = [];
 
-  for(var i = 0; i < productList.length; i++) {
-    if(productList[i].name.toLowerCase() == searchInput.value.toLowerCase()) {
-      searchResults.push(productList[i]);
+  if(searchInput.value == '' || searchInput.value == 'Product Name') {
+    if(categorySelected.value != 'All') {
+      for(var i = 0; i < productList.length; i++) {
+        if(productList[i].category == categorySelected.value) {
+          searchResults.push(productList[i]);
+        }
+      }
     }
-    else if(searchInput.value == '' || searchInput.value == 'Product Name') {
+    else {
       for(var i = 0; i < productList.length; i++) {
         searchResults.push(productList[i]);
       }
     }
   }
+  else {
+    for(var i = 0; i < productList.length; i++) {
+      if(productList[i].name.toLowerCase() == searchInput.value.toLowerCase()) {
+        searchResults.push(productList[i]);
+      }
+    }
+  }
+
   clearProduct();
   generateProduct(searchResults);
 }
@@ -364,16 +377,14 @@ var payButton = document.getElementById('checkout-submit');
 payButton.addEventListener('click', validatePayment);
 
 function validatePayment() {
-  if(paymentCard.value.length == 16) {
-    if(paymentExpMonth.value.length == 2) {
-      if(paymentExpYear.value.length == 4) {
-        if(paymentCVV.value.length == 3) {
-          showReceipt();
-          return;
-        }
-      }
-    }
+  if((paymentCard.value.length == 16) &&
+    (paymentExpMonth.value.length == 2) &&
+    (paymentExpYear.value.length == 4) &&
+    (paymentCVV.value.length == 3)) {
+      showReceipt();
+      return;
   }
+
   alert("Please make sure you enter all payment information!");
   event.preventDefault();
 }
