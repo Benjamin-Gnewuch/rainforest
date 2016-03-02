@@ -164,7 +164,7 @@ function search(event) {
     if(productList[i].name.toLowerCase() == searchInput.value.toLowerCase()) {
       searchResults.push(productList[i]);
     }
-    else if(searchInput.value == "") {
+    else if(searchInput.value == '' || searchInput.value == 'Product Name') {
       for(var i = 0; i < productList.length; i++) {
         searchResults.push(productList[i]);
       }
