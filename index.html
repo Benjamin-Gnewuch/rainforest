@@ -217,7 +217,49 @@
         </div>
       </form>
     </div><!--End Checkout-->
-    <!--Checkout Receipt-->
+
+
+    <div id="receipt-page" class="form-group hide">
+      <form>
+        <div class="row">
+          <div id="receipt-header" class="col-md-12" form-group>
+            <h1 style="text-align: center">Order Processed</h1>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div id="shipping-info" class="col-md-4 form-group">
+            <address>
+              <strong id="receipt-name"></strong><br>
+              <span id="receipt-address1"></span><br>
+              <span id="receipt-address2"></span>
+            </address>
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4 form-group">
+              <p class="text-right">Date: 03/02/2016</p>
+              <p class="text-right">Order Number: 00001</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div id="order-summary"class="col-md-8 form-group">
+            <h3>Order Details</h3>
+            <label>Items Purchased: </label>
+            <p id="receipt-item-count"></p>
+            <label>Total Spent: </label>
+            <p id="receipt-total"></p>
+          </div>
+        </div>
+        <div id="footer" class="well">
+          <h3 class="text-center">Have a great day!</h3>
+        </div>
+      </form>
+    </div>
+
+
     <script src="app.js"></script>
   </body>
 </html>

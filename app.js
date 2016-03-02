@@ -156,6 +156,8 @@ var searchResults = [];
 
 function search(event) {
   event.preventDefault();
+
+  showSearch();
   searchResults = [];
 
   for(var i = 0; i < productList.length; i++) {
@@ -257,9 +259,10 @@ var searchPage = document.getElementById('search-page');
 // var cartPage = document.getElementById('cart-page');
 var checkoutPage = document.getElementById('checkout-page');
 
-searchButton.addEventListener('click', hideCheckout);
-checkoutButton.addEventListener('click', hideSearch);
+searchButton.addEventListener('click', function(event) {hideCheckout();});
+checkoutButton.addEventListener('click', showCheckout);
 checkoutButton.addEventListener('click', loadValues);
+
 //Screen Display toggle functions
 function showCheckout() {
   var classes = checkoutPage.className.split(' ');
@@ -268,6 +271,8 @@ function showCheckout() {
     classes.splice(location, 1);
     checkoutPage.className = classes.join(' ');
   }
+  hideSearch();
+  hideReceipt();
 }
 
 function hideCheckout() {
@@ -276,7 +281,6 @@ function hideCheckout() {
     classes.push('hide');
     checkoutPage.className = classes.join(' ');
   }
-  showSearch();
 }
 
 function showSearch() {
@@ -286,6 +290,8 @@ function showSearch() {
     classes.splice(location, 1);
     searchPage.className = classes.join(' ');
   }
+  hideCheckout();
+  hideReceipt();
 }
 
 function hideSearch() {
@@ -294,7 +300,29 @@ function hideSearch() {
     classes.push('hide');
     searchPage.className = classes.join(' ');
   }
-  showCheckout();
+}
+
+function showReceipt() {
+  event.preventDefault();
+
+  var classes = receiptPage.className.split(' ');
+  if(classes.indexOf('hide') > -1) {
+    var location = classes.indexOf('hide');
+    classes.splice(location, 1);
+    receiptPage.className = classes.join(' ');
+  }
+  hideSearch();
+  hideCheckout();
+
+  loadReceipt();
+}
+
+function hideReceipt() {
+  var classes = receiptPage.className.split(' ');
+  if(classes.indexOf('hide') === -1) {
+    classes.push('hide');
+    receiptPage.className = classes.join(' ');
+  }
 }
 
 //Checkout Modification
@@ -320,6 +348,7 @@ function loadValues() {
 }
 
 //User Information Variables
+var receiptPage = document.getElementById('receipt-page');
 var checkoutName = document.getElementById('payment-name');
 var checkoutAddress = document.getElementById('payment-address');
 var checkoutCity = document.getElementById('payment-city');
@@ -332,3 +361,23 @@ var paymentExpYear = document.getElementById('payment-card-exp-year');
 var paymentCVV = document.getElementById('payment-card-cvv');
 
 var payButton = document.getElementById('checkout-submit');
+payButton.addEventListener('click', showReceipt);
+
+function loadReceipt() {
+  var receiptName = document.getElementById('receipt-name');
+  var receiptItemCount = document.getElementById('receipt-item-count');
+  var receiptTotal = document.getElementById('receipt-total');
+  receiptName.textContent = checkoutName.value;
+  generateAddress();
+  receiptItemCount.textContent = cart.length;
+  receiptTotal.textContent = checkoutTotal.textContent;
+
+}
+
+function generateAddress() {
+  var addressLocation1 = document.getElementById('receipt-address1');
+  var addressLocation2 = document.getElementById('receipt-address2');
+
+  addressLocation1.textContent = checkoutAddress.value;
+  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + checkoutZip.value;
+}
