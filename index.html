@@ -5,9 +5,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="side-search.css">
-    <link rel="stylesheet" href="search-results.css">
   </head>
   <body>
     <div id="header">
@@ -62,36 +59,32 @@
     </div><!--End Cart-->
     <div id="checkout-page" class="form-group hide">
       <form>
-
-
         <div class="row">
-          <div id ="checkout-cart-summary-div" class="col-md-5">
+          <div id ="checkout-cart-summary-div" class="col-md-12">
             <fieldset class="form-group">
               <legend>Checkout</legend>
-              <label for="checkout-item-count" class="col-md-2 form-control-label">Number of Items: </label>
-              <span id="checkout-item-count" class="form-control-static">0</span>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="checkout-cart-contents" class="col-md-2 form-control-label">Your Cart: </label>
-              <div id="checkout-cart-contents" class="form-group">
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="checkout-subtotal" class="col-md-2 form-control-label">Subtotal: </label>
-              <p id="checkout-subtotal" class="form-control-static">0</p>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="checkout-tax" class="col-md-2 form-control-label">Sales Tax: </label>
-              <p id="checkout-tax" class="form-control-static">0</p>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="checkout-total" class="col-md-2 form-control-label">Total: </label>
-              <p id="checkout-total" class="form-control-static">0</p>
+              <fieldset class="form-group">
+                <label for="checkout-item-count" class="col-md-5 form-control-label">Number of Items: </label>
+                <p id="checkout-item-count" class="form-control-static">0</p>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="checkout-subtotal" class="col-md-5 form-control-label">Subtotal: </label>
+                <p id="checkout-subtotal" class="form-control-static">$0.00</p>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="checkout-tax" class="col-md-5 form-control-label">Sales Tax: </label>
+                <p id="checkout-tax" class="form-control-static">$0.00</p>
+              </fieldset>
+              <hr>
+              <fieldset class="form-group">
+                <label for="checkout-total" class="col-md-5 form-control-label">Total: </label>
+                <p id="checkout-total" class="form-control-static">$0.00</p>
+              </fieldset>
+              <hr>
             </fieldset>
           </div>
         </div>
-
-
+        <legend>Shipping and Payment</legend>
         <div class="row">
           <div id="checkout-user-div" class="col-md-6">
             <fieldset class="form-group">
@@ -110,7 +103,7 @@
               <div class="col-md-6">
                 <label for="payment-state" class="col-md-12 form-control-label">State</label>
                 <div class="col-md-12">
-              		<select class="form-control" id="state-select" name="payment-state">
+              	   <select class="form-control" id="state-select" name="payment-state">
               			<option value="">N/A</option>
               			<option value="AK">Alaska</option>
               			<option value="AL">Alabama</option>
@@ -168,9 +161,9 @@
               	</div>
               </div>
               <div class="col-md-6">
-                  <label for="payment-zip" class="col-md-12 form-control-label">Zip</label>
-                  <input type="text" class="col-md-12 form-control" id="payment-zip" maxlength="5">
-                </div>
+                <label for="payment-zip" class="col-md-12 form-control-label">Zip</label>
+                <input type="text" class="col-md-12 form-control" id="payment-zip" maxlength="5">
+              </div>
             </fieldset>
           </div>
           <div id="checkout-payment-div" class="col-md-6">
@@ -216,9 +209,9 @@
                 <input type="password" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx" maxlength="3">
               </div>
             </fieldset>
-            <fielset class="form-group">
+            <fieldset class="form-group">
               <div class="col-md-9"></div>
-              <button type="submit" id="checkout-submit" class="btn btn-primary">Submit</button>
+              <button type="submit" id="checkout-submit" class="btn btn-primary">Place Order</button>
             </fieldset>
           </div>
         </div>

@@ -259,7 +259,7 @@ var checkoutPage = document.getElementById('checkout-page');
 
 searchButton.addEventListener('click', hideCheckout);
 checkoutButton.addEventListener('click', hideSearch);
-
+checkoutButton.addEventListener('click', loadValues);
 //Screen Display toggle functions
 function showCheckout() {
   var classes = checkoutPage.className.split(' ');
@@ -296,3 +296,39 @@ function hideSearch() {
   }
   showCheckout();
 }
+
+//Checkout Modification
+//Checkout Variables:
+var checkoutItemCount = document.getElementById('checkout-item-count');
+var checkoutSubTotal = document.getElementById('checkout-subtotal');
+var checkoutTax = document.getElementById('checkout-tax');
+var checkoutTotal = document.getElementById('checkout-total');
+
+function cartSum() {
+  var cartSubTotal = 0;
+  for (var i = 0; i < cart.length; i++) {
+    cartSubTotal += cart[i].price;
+  }
+  return cartSubTotal;
+}
+
+function loadValues() {
+    checkoutItemCount.textContent = cart.length;
+    checkoutSubTotal.textContent = '$' + cartSum().toFixed(2);
+    checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
+    checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
+}
+
+//User Information Variables
+var checkoutName = document.getElementById('payment-name');
+var checkoutAddress = document.getElementById('payment-address');
+var checkoutCity = document.getElementById('payment-city');
+var checkoutState = document.getElementById('state-select');
+var checkoutZip = document.getElementById('payment-zip');
+
+var paymentCard = document.getElementById('payment-card-number');
+var paymentExpMonth = document.getElementById('payment-card-exp-month');
+var paymentExpYear = document.getElementById('payment-card-exp-year');
+var paymentCVV = document.getElementById('payment-card-cvv');
+
+var payButton = document.getElementById('checkout-submit');
