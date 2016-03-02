@@ -4,6 +4,7 @@
     <title>Store Shop Online Shopping Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="side-search.css">
     <link rel="stylesheet" href="search-results.css">
@@ -128,7 +129,7 @@
           <label for="payment-card-number" class="col-md-3 form-control-label">Card Number</label>
           <input type="text" class="col-md-4 form-control" id="payment-card-number" placeholder="xxxx-xxxx-xxxx-xxxx">
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset id="card-info" class="form-group">
           <label for="payment-card-exp" class="col-md-3 form-control-label">Expiration Date</label>
           <select class="form-control col-md-2" name="exp-month" id="payment-card-exp-month">
             <option>Month</option>
@@ -161,7 +162,7 @@
           <input type="text" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx">
         </fieldset>
         <fielset class="form-group">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" id="checkout-submit" class="btn btn-primary">Submit</button>
         </fieldset>
       </form>
     </div><!--End Checkout-->
