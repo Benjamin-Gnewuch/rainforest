@@ -152,7 +152,6 @@ searchButton.addEventListener('click', search);
 //PRODUCT COLLECTION
 var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
 
-//When searching through products, if one fits, push to this array
 var searchResults = [];
 
 function search(event) {
@@ -238,7 +237,6 @@ function generateProduct(items) {
 
 var cart = [];
 
-//Currently adding the last element of the search results. Troubleshooting error: Uncaught TypeError: Cannot read property 'img' of undefined
 function addItemToCart(id) {
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
@@ -247,53 +245,54 @@ function addItemToCart(id) {
   }
   var cartIcon = document.getElementById('view-cart-btn');
   cartIcon.firstChild.textContent = cart.length;
+
+  var checkoutItemCount = document.getElementById('checkout-item-count');
+  checkoutItemCount.textContent = cart.length;
 }
 
-var viewCartButton = document.getElementById('view-cart-btn');
-viewCartButton.addEventListener('click', displayCart);
+//Temporarily using cart button to go to checkout
+var checkoutButton = document.getElementById('view-cart-btn');
 
 var searchPage = document.getElementById('search-page');
-var cartPage = document.getElementById('cart-page');
+// var cartPage = document.getElementById('cart-page');
 var checkoutPage = document.getElementById('checkout-page');
 
-function displayCart() {
-    if(searchPage.className === "display"){
-      searchPage.className = "hide";
-    }
+searchButton.addEventListener('click', hideCheckout);
+checkoutButton.addEventListener('click', hideSearch);
 
-    if(checkoutPage.className === "display"){
-      checkoutPage.className = "hide";
-    }
-
-    if(cartPage.className === "hide"){
-      searchPage.className = "display";
-    }
-}
-
-function displaySearch() {
-  if(searchPage.className === "hide"){
-    searchPage.className = "display";
-  }
-
-  if(checkoutPage.className === "display"){
-    checkoutPage.className = "hide";
-  }
-
-  if(cartPage.className === "display"){
-    searchPage.className = "hide";
+//Screen Display toggle functions
+function showCheckout() {
+  var classes = checkoutPage.className.split(' ');
+  if(classes.indexOf('hide') > -1) {
+    var location = classes.indexOf('hide');
+    classes.splice(location, 1);
+    checkoutPage.className = classes.join(' ');
   }
 }
 
-function displayCheckout() {
-  if(searchPage.className === "display"){
-    searchPage.className = "hide";
+function hideCheckout() {
+  var classes = checkoutPage.className.split(' ');
+  if(classes.indexOf('hide') === -1) {
+    classes.push('hide');
+    checkoutPage.className = classes.join(' ');
   }
+  showSearch();
+}
 
-  if(checkoutPage.className === "hide"){
-    checkoutPage.className = "display";
+function showSearch() {
+  var classes = searchPage.className.split(' ');
+  if(classes.indexOf('hide') > -1) {
+    var location = classes.indexOf('hide');
+    classes.splice(location, 1);
+    searchPage.className = classes.join(' ');
   }
+}
 
-  if(cartPage.className === "display"){
-    searchPage.className = "hide";
+function hideSearch() {
+  var classes = searchPage.className.split(' ');
+  if(classes.indexOf('hide') === -1) {
+    classes.push('hide');
+    searchPage.className = classes.join(' ');
   }
+  showCheckout();
 }
