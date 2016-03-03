@@ -8,16 +8,13 @@
   </head>
   <body>
     <div id="header">
+      <img src="logo.png" id="logo-image" alt="store shop logo">
       <div id="header-row1" class="row">
-        <div id="store-logo" class="col-md-4">
-          <i id="logo" class="fa fa-cog fa-spin fa-5x"></i>
-          <h1 id="store-name">STORE SHOP</h1>
+        <div id="store-logo" class="col-md-5">
         </div>
-        <div class="col-md-6">
-        </div>
-        <div id="cart" class="col-md-2">
+        <div id="cart" class="col-md-4">
           <form action="#">
-            <button id="view-cart-btn"><i class="fa fa-shopping-cart fa-2x">0</i>
+            <button id="view-cart-btn" class="text-align: right"><i class="fa fa-shopping-cart fa-4x">0</i>
             </button>
           </form>
         </div>
@@ -36,7 +33,7 @@
         <div id="search-bar" class="col-md-8">
           <form action="#">
             <input type="text" id="search-textbox" name="search-query" maxlength="100" value="Product Name" onfocus="if(this.value=='Product Name') this.value = '';"></input>
-            <input type="submit" id="search-btn" value="Search">
+            <input type="submit" id="search-btn" value="Search" class="hide">
           </form>
         </div>
         <!-- <div id="sort" class="col-md-2">
@@ -217,8 +214,6 @@
         </div>
       </form>
     </div><!--End Checkout-->
-
-
     <div id="receipt-page" class="form-group hide">
       <form>
         <div class="row">
@@ -258,8 +253,6 @@
         </div>
       </form>
     </div>
-
-
     <script src="app.js"></script>
   </body>
 </html>
