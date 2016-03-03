@@ -10,19 +10,19 @@
     <div id="header" class="container-fluid">
       <form>
         <div id="header-row1" class="row">
-          <div id="store-logo" class="col-md-4">
-            <img src="logo.png" id="logo-image" alt="store shop logo">
+          <div id="store-logo" class="col-md-3">
+            <img src="logo.png" id="logo-image" alt="store shop logo" height="175px">
           </div>
-          <div id="cart" class="col-md-2 col-md-offset-6 text-center">
+          <div id="cart" class="col-md-2 col-md-offset-7 text-center">
             <form action="#">
               <br>
               <button id="view-cart-btn" class="btn btn-primary btn-default"><i class="fa fa-shopping-cart fa-4x">0</i>
               </button>
             </form>
           </div>
-        </div>
-        <div id="header-row2" class="row">
-          <div id="category" class="col-md-1 col-md-offset-3">
+        <!-- </div>
+        <div id="header-row2" class="row"> -->
+          <div id="category" class="col-md-1">
             <form action="#">
               <select id="category-select" class="form-control input-lg" name="category">
                 <option value="all">All</option>
@@ -32,17 +32,18 @@
               </select>
             </form>
           </div>
-          <div id="search-bar" class="col-md-6">
+          <div id="search-bar" class="col-md-5">
             <form action="#">
               <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search" onfocus="if(this.value=='Product Name') this.value = '';">
               <input type="submit" id="search-btn" value="Search" class="hidden">
             </form>
           </div>
         </div>
+      </form>
     </div><!--End Header-->
     <hr>
     <div id="search-page">
-      <div id="search-results">
+      <div id="search-results" >
       </div><!--End Search Results-->
     </div><!--End Search Page-->
     <div id="cart-page" class="hide">
@@ -50,23 +51,23 @@
     <div id="checkout-page" class="form-group hide">
       <form>
         <div class="row">
-          <div id ="checkout-cart-summary-div" class="col-md-12">
+          <div id ="checkout-cart-summary-div" class="col-md-10 col-md-offset-1">
             <fieldset class="form-group">
-              <legend>Checkout</legend>
-              <fieldset class="form-group">
+              <legend class="text-center">Checkout</legend>
+              <fieldset class="form-group text-center">
                 <label for="checkout-item-count" class="col-md-5 form-control-label">Number of Items: </label>
                 <p id="checkout-item-count" class="form-control-static">0</p>
               </fieldset>
-              <fieldset class="form-group">
+              <fieldset class="form-group text-center">
                 <label for="checkout-subtotal" class="col-md-5 form-control-label">Subtotal: </label>
                 <p id="checkout-subtotal" class="form-control-static">$0.00</p>
               </fieldset>
-              <fieldset class="form-group">
+              <fieldset class="form-group text-center">
                 <label for="checkout-tax" class="col-md-5 form-control-label">Sales Tax: </label>
                 <p id="checkout-tax" class="form-control-static">$0.00</p>
               </fieldset>
               <hr>
-              <fieldset class="form-group">
+              <fieldset class="form-group text-center">
                 <label for="checkout-total" class="col-md-5 form-control-label">Total: </label>
                 <p id="checkout-total" class="form-control-static">$0.00</p>
               </fieldset>
@@ -74,138 +75,143 @@
             </fieldset>
           </div>
         </div>
-        <legend>Shipping and Payment</legend>
         <div class="row">
-          <div id="checkout-user-div" class="col-md-6">
-            <fieldset class="form-group">
-              <label for="payment-name" class="col-md-5 form-control-label">Name on Card</label>
-              <input type="text" class="col-md-4 form-control" id="payment-name">
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="payment-address" class="col-md-5 form-control-label">Address</label>
-              <input type="text" class="col-md-4 form-control" id="payment-address">
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="payment-city" class="col-md-5 form-control-label">City</label>
-              <input type="text" class="col-md-4 form-control" id="payment-city">
-            </fieldset>
-            <fieldset class="form-group">
-              <div class="col-md-6">
-                <label for="payment-state" class="col-md-12 form-control-label">State</label>
-                <div class="col-md-12">
-                  <select class="form-control" id="state-select" name="payment-state">
-                    <option value="">N/A</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="DE">Delaware</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="IA">Iowa</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MD">Maryland</option>
-                    <option value="ME">Maine</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MT">Montana</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NY">New York</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="PR">Puerto Rico</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VA">Virginia</option>
-                    <option value="VT">Vermont</option>
-                    <option value="WA">Washington</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WY">Wyoming</option>
-                  </select>
-              	</div>
+          <div class="col-md-10 col-md-offset-1">
+            <legend class="text-center">Shipping and Payment</legend>
+            <div class="row">
+              <div id="checkout-user-div" class="col-md-6 text-center">
+                <fieldset class="form-group">
+                  <label for="payment-name" class="col-md-12 form-control-label">Name on Card</label>
+                  <input type="text" class="col-md-4 form-control" id="payment-name">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="payment-address" class="col-md-12 form-control-label">Address</label>
+                  <input type="text" class="col-md-4 form-control" id="payment-address">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="payment-city" class="col-md-12 form-control-label">City</label>
+                  <input type="text" class="col-md-4 form-control" id="payment-city">
+                </fieldset>
+                <fieldset class="form-group">
+                  <div class="col-md-6">
+                    <label for="payment-state" class="col-md-12 form-control-label">State</label>
+                    <div class="col-md-12">
+                      <select class="form-control" id="state-select" name="payment-state">
+                        <option value="">N/A</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="IA">Iowa</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MD">Maryland</option>
+                        <option value="ME">Maine</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MT">Montana</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NY">New York</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VA">Virginia</option>
+                        <option value="VT">Vermont</option>
+                        <option value="WA">Washington</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                  	</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="payment-zip" class="col-md-12 form-control-label">Zip</label>
+                    <input type="text" class="col-md-12 form-control" id="payment-zip" maxlength="5">
+                  </div>
+                </fieldset>
               </div>
-              <div class="col-md-6">
-                <label for="payment-zip" class="col-md-12 form-control-label">Zip</label>
-                <input type="text" class="col-md-12 form-control" id="payment-zip" maxlength="5">
+              <div id="checkout-payment-div" class="col-md-6">
+                <fieldset class="form-group text-center">
+                  <label for="payment-card-number" class="col-md-12 form-control-label">Card Number</label>
+                  <input type="text" class="col-md-4 form-control" id="payment-card-number" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16">
+                </fieldset>
+                <fieldset id="card-info" class="form-group">
+                  <label for="payment-card-exp" class="col-md-12 form-control-label  text-center">Expiration Date</label>
+                  <div class="col-md-5 col-md-offset-1">
+                    <select class="form-control col-md-2" name="exp-month" id="payment-card-exp-month">
+                      <option>Month</option>
+                      <option value="01">Jan (01)</option>
+                      <option value="02">Feb (02)</option>
+                      <option value="03">Mar (03)</option>
+                      <option value="04">Apr (04)</option>
+                      <option value="05">May (05)</option>
+                      <option value="06">June (06)</option>
+                      <option value="07">July (07)</option>
+                      <option value="08">Aug (08)</option>
+                      <option value="09">Sep (09)</option>
+                      <option value="10">Oct (10)</option>
+                      <option value="11">Nov (11)</option>
+                      <option value="12">Dec (12)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5">
+                    <select class="form-control col-md-2" name="exp-year" id="payment-card-exp-year">
+                      <option>Year</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="payment-card-cvv" class="col-md-12 form-control-label text-center">Security Code</label>
+                  <div class="col-md-4 col-md-offset-4">
+                    <input type="password" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx" maxlength="3">
+                  </div>
+                </fieldset>
+                <br>
+                <fieldset class="form-group">
+                  <button type="submit" id="checkout-submit" class="btn btn-primary btn-block btn-lg">Place Order</button>
+                </fieldset>
               </div>
-            </fieldset>
-          </div>
-          <div id="checkout-payment-div" class="col-md-6">
-            <fieldset class="form-group">
-              <label for="payment-card-number" class="col-md-6 form-control-label">Card Number</label>
-              <input type="text" class="col-md-4 form-control" id="payment-card-number" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16">
-            </fieldset>
-            <fieldset id="card-info" class="form-group">
-              <label for="payment-card-exp" class="col-md-12 form-control-label">Expiration Date</label>
-              <div class="col-md-5">
-                <select class="form-control col-md-2" name="exp-month" id="payment-card-exp-month">
-                  <option>Month</option>
-                  <option value="01">Jan (01)</option>
-                  <option value="02">Feb (02)</option>
-                  <option value="03">Mar (03)</option>
-                  <option value="04">Apr (04)</option>
-                  <option value="05">May (05)</option>
-                  <option value="06">June (06)</option>
-                  <option value="07">July (07)</option>
-                  <option value="08">Aug (08)</option>
-                  <option value="09">Sep (09)</option>
-                  <option value="10">Oct (10)</option>
-                  <option value="11">Nov (11)</option>
-                  <option value="12">Dec (12)</option>
-                </select>
-              </div>
-              <div class="col-md-5">
-                <select class="form-control col-md-2" name="exp-year" id="payment-card-exp-year">
-                  <option>Year</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                </select>
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="payment-card-cvv" class="col-md-12 form-control-label">Security Code</label>
-              <div class="col-md-4">
-                <input type="password" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx" maxlength="3">
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <div class="col-md-9"></div>
-              <button type="submit" id="checkout-submit" class="btn btn-primary">Place Order</button>
-            </fieldset>
+            </div>
           </div>
         </div>
       </form>
+      <hr>
     </div><!--End Checkout-->
     <div id="receipt-page" class="form-group hide">
       <form>
@@ -232,9 +238,8 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-md-2"></div>
-          <div id="order-summary"class="col-md-8 form-group">
-            <h3>Order Details</h3>
+          <div id="order-summary"class="col-md-8 col-md-offset-2 form-group">
+            <h3 class="text-center">Order Details</h3>
             <label>Items Purchased: </label>
             <p id="receipt-item-count"></p>
             <label>Total Spent: </label>

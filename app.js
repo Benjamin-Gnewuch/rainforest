@@ -155,6 +155,8 @@ var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, reve
 
 var searchResults = [];
 
+window.onload = search;
+
 function search(event) {
   event.preventDefault();
 
@@ -195,8 +197,13 @@ function clearProduct() {
 }
 
 function generateProduct(items) {
-    for (var i = 0; i < productList.length; i++) {
+  for (var i = 0; i < productList.length; i++) {
     var resultLocation = document.getElementById('search-results');
+
+    var paddingLeft = document.createElement('div');
+    paddingLeft.className = 'col-md-9 col-md-offset-1';
+    resultLocation.appendChild(paddingLeft);
+
     var newResult = document.createElement('div');
     newResult.className = "media";
 
@@ -206,7 +213,7 @@ function generateProduct(items) {
     var mediaObject = document.createElement('img');
     mediaObject.className = "media-object";
     mediaObject.src = items[i].img;
-    mediaObject.setAttribute("width", "500px");
+    mediaObject.setAttribute("width", "300px");
 
     var mediaBody = document.createElement('div');
     mediaBody.className = "media-body";
@@ -247,8 +254,8 @@ function generateProduct(items) {
     mediaBody.appendChild(mediaRating);
     mediaBody.appendChild(mediaDescription);
     mediaBody.appendChild(cartButtonForm);
-    resultLocation.appendChild(newResult);
-    resultLocation.appendChild(horizontal);
+    paddingLeft.appendChild(newResult);
+    paddingLeft.appendChild(horizontal);
 
   }
 
@@ -267,6 +274,12 @@ function addItemToCart(id) {
 
   var checkoutItemCount = document.getElementById('checkout-item-count');
   checkoutItemCount.textContent = cart.length;
+}
+
+function clearCart() {
+  var cartIcon = document.getElementById('view-cart-btn');
+  cartIcon.firstChild.textContent = '0';
+  cart = [];
 }
 
 //Temporarily using cart button to go to checkout
@@ -383,16 +396,21 @@ var payButton = document.getElementById('checkout-submit');
 payButton.addEventListener('click', validatePayment);
 
 function validatePayment() {
-  if((paymentCard.value.length == 16) &&
-    (paymentExpMonth.value.length == 2) &&
-    (paymentExpYear.value.length == 4) &&
-    (paymentCVV.value.length == 3)) {
-      showReceipt();
+  event.preventDefault();
+
+  if(checkoutTotal.textContent == '$0.00') {
+    alert("Your cart is empty.");
+    return;
+  }
+  if((paymentCard.value.length != 16) ||
+    (paymentExpMonth.value.length != 2) ||
+    (paymentExpYear.value.length != 4) ||
+    (paymentCVV.value.length != 3)) {
+      alert("Please make sure you enter all payment information!");
       return;
   }
 
-  alert("Please make sure you enter all payment information!");
-  event.preventDefault();
+  showReceipt();
 }
 
 function loadReceipt() {
@@ -403,8 +421,7 @@ function loadReceipt() {
   generateAddress();
   receiptItemCount.textContent = cart.length;
   receiptTotal.textContent = checkoutTotal.textContent;
-
-  cart = [];
+  clearCart();
 }
 
 function generateAddress() {
@@ -414,3 +431,4 @@ function generateAddress() {
   addressLocation1.textContent = checkoutAddress.value;
   addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + checkoutZip.value;
 }
+//panel
