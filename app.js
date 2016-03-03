@@ -162,7 +162,7 @@ function search(event) {
   searchResults = [];
 
   if(searchInput.value == '' || searchInput.value == 'Product Name') {
-    if(categorySelected.value != 'All') {
+    if(categorySelected.value != 'all') {
       for(var i = 0; i < productList.length; i++) {
         if(productList[i].category == categorySelected.value) {
           searchResults.push(productList[i]);
@@ -234,6 +234,8 @@ function generateProduct(items) {
     cartButton.setAttribute('type', 'button');
     cartButtonForm.appendChild(cartButton);
 
+    var horizontal = document.createElement('hr');
+
     cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
     });
 
@@ -246,6 +248,8 @@ function generateProduct(items) {
     mediaBody.appendChild(mediaDescription);
     mediaBody.appendChild(cartButtonForm);
     resultLocation.appendChild(newResult);
+    resultLocation.appendChild(horizontal);
+
   }
 
 }
