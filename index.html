@@ -7,16 +7,16 @@
     <!-- <link rel="stylesheet" href="default.css"> -->
   </head>
   <body>
-    <div id="header" class="container-fluid">
+    <div id="header" class="container-fluid"><br>
       <form>
         <div class="row">
           <div id="store-logo" class="col-md-3">
-            <img src="logo.png" id="logo-image" alt="store shop logo" height="175px">
+            <img src="logo.png" class="img-responsive" id="logo-image" alt="store shop logo">
           </div>
           <div id="cart" class="col-md-2 col-md-offset-7 text-center">
             <form action="#">
               <br>
-              <button id="view-cart-btn" type="button" class="btn btn-primary btn-default"><i class="fa fa-shopping-cart fa-4x">0</i>
+              <button id="view-cart-btn" class="btn btn-primary btn-default"><i class="fa fa-shopping-cart fa-4x">0</i>
               </button>
             </form>
           </div>
@@ -34,7 +34,7 @@
           </div>
           <div id="search-bar" class="col-md-5">
             <form action="#">
-              <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search">
+              <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search" onfocus="if(this.value=='Product Name') this.value = '';">
               <input type="submit" id="search-btn" value="Search" class="hidden">
             </form>
           </div>
