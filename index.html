@@ -4,50 +4,43 @@
     <title>Store Shop Online Shopping Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="default.css">
+    <!-- <link rel="stylesheet" href="default.css"> -->
   </head>
   <body>
-    <div id="header">
-      <img src="logo.png" id="logo-image" alt="store shop logo">
-      <div id="header-row1" class="row">
-        <div id="store-logo" class="col-md-5">
+    <div id="header" class="container-fluid">
+      <form>
+        <div id="header-row1" class="row">
+          <div id="store-logo" class="col-md-4">
+            <img src="logo.png" id="logo-image" alt="store shop logo">
+          </div>
+          <div id="cart" class="col-md-2 col-md-offset-6 text-center">
+            <form action="#">
+              <br>
+              <button id="view-cart-btn" class="btn btn-primary btn-default"><i class="fa fa-shopping-cart fa-4x">0</i>
+              </button>
+            </form>
+          </div>
         </div>
-        <div id="cart" class="col-md-4">
-          <form action="#">
-            <button id="view-cart-btn" class="text-align: right"><i class="fa fa-shopping-cart fa-4x">0</i>
-            </button>
-          </form>
+        <div id="header-row2" class="row">
+          <div id="category" class="col-md-1 col-md-offset-3">
+            <form action="#">
+              <select id="category-select" class="form-control input-lg" name="category">
+                <option value="all">All</option>
+                <option value="tech">Technology</option>
+                <option value="lit">Literature</option>
+                <option value="entertainment">Entertainment</option>
+              </select>
+            </form>
+          </div>
+          <div id="search-bar" class="col-md-6">
+            <form action="#">
+              <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search" onfocus="if(this.value=='Product Name') this.value = '';">
+              <input type="submit" id="search-btn" value="Search" class="hidden">
+            </form>
+          </div>
         </div>
-      </div>
-      <div id="header-row2" class="row">
-        <div id="category" class="col-md-3">
-          <form action="#">
-            <select id="category-select" name="category">
-              <option value="all">All</option>
-              <option value="tech">Technology</option>
-              <option value="lit">Literature</option>
-              <option value="entertainment">Entertainment</option>
-            </select>
-          </form>
-        </div>
-        <div id="search-bar" class="col-md-8">
-          <form action="#">
-            <input type="text" id="search-textbox" name="search-query" maxlength="100" value="Product Name" onfocus="if(this.value=='Product Name') this.value = '';"></input>
-            <input type="submit" id="search-btn" value="Search" class="hide">
-          </form>
-        </div>
-        <!-- <div id="sort" class="col-md-2">
-          <form action="#">
-            <label for="sort">Sort: </label>
-            <select id="sort-select" name="sort">
-              <option>Highest Price</option>
-              <option>Lowest Price</option>
-              <option>Rating</option>
-            </select>
-          </form>
-        </div> -->
-      </div>
     </div><!--End Header-->
+    <hr>
     <div id="search-page">
       <div id="search-results">
       </div><!--End Search Results-->
