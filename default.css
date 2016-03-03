@@ -47,13 +47,16 @@ padding-left: 0px;}
   color: #f1efe6;
 }
 #category {
-  margin-left: 100px;
+  /*margin-left: 150px;*/
   padding-top: 3px;
+  /*padding-left: 50px;*/
   text-align: right;
 }
 #category-select {
   border: 1px solid grey;
   height: 50px;
+  font-size: 1.2em;
+
 }
 #search-bar {
 
@@ -61,12 +64,15 @@ padding-left: 0px;}
 }
 #search-textbox {
   margin-bottom: 25px;
+  margin-left: 50px;
   width: 50%;
   border-radius: 5px;
   border: 1px inset grey;
   padding-left: 10px;
   color: grey;
   height: 50px;
+  font-size: 1.2em;
+  margin-right: -150px;
 }
 #search-btn {
   margin-right: -10px;
