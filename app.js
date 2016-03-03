@@ -143,20 +143,46 @@ var theHungerGames = {
   itemID: 12
 }
 
-var searchInput = document.getElementById('search-textbox');
 
-var searchButton = document.getElementById('search-btn');
-searchButton.addEventListener('click', search);
-
-var categorySelected = document.getElementById('category-select');
-//END PRODUCS
 //PRODUCT COLLECTION
 var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
 
 var searchResults = [];
+var cart = [];
 
-window.onload = search;
+var searchPage = document.getElementById('search-page');
+var categorySelected = document.getElementById('category-select');
+var searchInput = document.getElementById('search-textbox');
+var searchButton = document.getElementById('search-btn');
 
+var checkoutPage = document.getElementById('checkout-page');
+var checkoutButton = document.getElementById('view-cart-btn');
+var checkoutItemCount = document.getElementById('checkout-item-count');
+var checkoutSubTotal = document.getElementById('checkout-subtotal');
+var checkoutTax = document.getElementById('checkout-tax');
+var checkoutTotal = document.getElementById('checkout-total');
+var checkoutName = document.getElementById('payment-name');
+var checkoutAddress = document.getElementById('payment-address');
+var checkoutCity = document.getElementById('payment-city');
+var checkoutState = document.getElementById('state-select');
+var checkoutZip = document.getElementById('payment-zip');
+var payButton = document.getElementById('checkout-submit');
+var paymentCard = document.getElementById('payment-card-number');
+var paymentExpMonth = document.getElementById('payment-card-exp-month');
+var paymentExpYear = document.getElementById('payment-card-exp-year');
+var paymentCVV = document.getElementById('payment-card-cvv');
+
+var receiptPage = document.getElementById('receipt-page');
+
+//EVENTLISTENERS
+searchButton.addEventListener('click', search);
+searchButton.addEventListener('click', function(event) {hideCheckout();});
+
+checkoutButton.addEventListener('click', showCheckout);
+
+payButton.addEventListener('click', validatePayment);
+
+//FUNCTIONS
 function search(event) {
   event.preventDefault();
 
@@ -238,6 +264,7 @@ function generateProduct(items) {
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
     cartButton.id = items[i].itemID;
+    cartButton.className = "btn btn-secondary btn-lg";
     cartButton.setAttribute('type', 'button');
     cartButtonForm.appendChild(cartButton);
 
@@ -261,7 +288,38 @@ function generateProduct(items) {
 
 }
 
-var cart = [];
+function cartSum() {
+  var cartSubTotal = 0;
+  for (var i = 0; i < cart.length; i++) {
+    cartSubTotal += cart[i].price;
+  }
+  return cartSubTotal;
+}
+
+function loadValues() {
+  checkoutItemCount.textContent = cart.length;
+  checkoutSubTotal.textContent = '$' + (cartSum()).toFixed(2);
+  checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
+  checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
+}
+
+function validatePayment() {
+  event.preventDefault();
+
+  if(checkoutTotal.textContent == '$0.00') {
+    alert("Your cart is empty.");
+    return;
+  }
+  if((paymentCard.value.length != 16) ||
+    (paymentExpMonth.value.length != 2) ||
+    (paymentExpYear.value.length != 4) ||
+    (paymentCVV.value.length != 3)) {
+      alert("Please make sure you enter all payment information!");
+      return;
+  }
+
+  showReceipt();
+}
 
 function addItemToCart(id) {
   for (var i = 0; i < productList.length; i++) {
@@ -282,18 +340,17 @@ function clearCart() {
   cart = [];
 }
 
-//Temporarily using cart button to go to checkout
-var checkoutButton = document.getElementById('view-cart-btn');
+function loadReceipt() {
+  var receiptName = document.getElementById('receipt-name');
+  var receiptItemCount = document.getElementById('receipt-item-count');
+  var receiptTotal = document.getElementById('receipt-total');
+  receiptName.textContent = checkoutName.value;
+  generateAddress();
+  receiptItemCount.textContent = cart.length;
+  receiptTotal.textContent = checkoutTotal.textContent;
+  clearCart();
+}
 
-var searchPage = document.getElementById('search-page');
-// var cartPage = document.getElementById('cart-page');
-var checkoutPage = document.getElementById('checkout-page');
-
-searchButton.addEventListener('click', function(event) {hideCheckout();});
-checkoutButton.addEventListener('click', showCheckout);
-// checkoutButton.addEventListener('click', loadValues);
-
-//Screen Display toggle functions
 function showCheckout() {
   var classes = checkoutPage.className.split(' ');
   if(classes.indexOf('hide') > -1) {
@@ -357,78 +414,12 @@ function hideReceipt() {
   }
 }
 
-//Checkout Modification
-//Checkout Variables:
-var checkoutItemCount = document.getElementById('checkout-item-count');
-var checkoutSubTotal = document.getElementById('checkout-subtotal');
-var checkoutTax = document.getElementById('checkout-tax');
-var checkoutTotal = document.getElementById('checkout-total');
-
-function cartSum() {
-  var cartSubTotal = 0;
-  for (var i = 0; i < cart.length; i++) {
-    cartSubTotal += cart[i].price;
-  }
-  return cartSubTotal;
-}
-
-function loadValues() {
-  checkoutItemCount.textContent = cart.length;
-  checkoutSubTotal.textContent = '$' + (cartSum()).toFixed(2);
-  checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
-  checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
-}
-
-//User Information Variables
-var receiptPage = document.getElementById('receipt-page');
-var checkoutName = document.getElementById('payment-name');
-var checkoutAddress = document.getElementById('payment-address');
-var checkoutCity = document.getElementById('payment-city');
-var checkoutState = document.getElementById('state-select');
-var checkoutZip = document.getElementById('payment-zip');
-
-var paymentCard = document.getElementById('payment-card-number');
-var paymentExpMonth = document.getElementById('payment-card-exp-month');
-var paymentExpYear = document.getElementById('payment-card-exp-year');
-var paymentCVV = document.getElementById('payment-card-cvv');
-
-var payButton = document.getElementById('checkout-submit');
-payButton.addEventListener('click', validatePayment);
-
-function validatePayment() {
-  event.preventDefault();
-
-  if(checkoutTotal.textContent == '$0.00') {
-    alert("Your cart is empty.");
-    return;
-  }
-  if((paymentCard.value.length != 16) ||
-    (paymentExpMonth.value.length != 2) ||
-    (paymentExpYear.value.length != 4) ||
-    (paymentCVV.value.length != 3)) {
-      alert("Please make sure you enter all payment information!");
-      return;
-  }
-
-  showReceipt();
-}
-
-function loadReceipt() {
-  var receiptName = document.getElementById('receipt-name');
-  var receiptItemCount = document.getElementById('receipt-item-count');
-  var receiptTotal = document.getElementById('receipt-total');
-  receiptName.textContent = checkoutName.value;
-  generateAddress();
-  receiptItemCount.textContent = cart.length;
-  receiptTotal.textContent = checkoutTotal.textContent;
-  clearCart();
-}
-
 function generateAddress() {
   var addressLocation1 = document.getElementById('receipt-address1');
   var addressLocation2 = document.getElementById('receipt-address2');
 
   addressLocation1.textContent = checkoutAddress.value;
-  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + checkoutZip.value;
+  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + ' ' + checkoutZip.value;
 }
-//panel
+
+window.onload = search;
