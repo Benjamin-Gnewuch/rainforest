@@ -155,9 +155,16 @@ var categorySelected = document.getElementById('category-select');
 var searchInput = document.getElementById('search-textbox');
 var searchButton = document.getElementById('search-btn');
 
+var cartPage = document.getElementById('cart-page');
+var cartButton = document.getElementById('cart-btn');
+var cartItemCount = document.getElementById('');
+var cartSubTotal = document.getElementById('');
+var cartTax = document.getElementById('');
+var cartTotal = document.getElementById('');
+
 var checkoutPage = document.getElementById('checkout-page');
-var checkoutButton = document.getElementById('view-cart-btn');
-var checkoutItemCount = document.getElementById('checkout-item-count');
+//var checkoutButton = document.getElementById('view-cart-btn');
+var checkoutItemCount = document.getElementById('checkout-count');
 var checkoutSubTotal = document.getElementById('checkout-subtotal');
 var checkoutTax = document.getElementById('checkout-tax');
 var checkoutTotal = document.getElementById('checkout-total');
@@ -168,17 +175,19 @@ var checkoutState = document.getElementById('state-select');
 var checkoutZip = document.getElementById('payment-zip');
 var payButton = document.getElementById('checkout-submit');
 var paymentCard = document.getElementById('payment-card-number');
-var paymentExpMonth = document.getElementById('payment-card-exp-month');
-var paymentExpYear = document.getElementById('payment-card-exp-year');
+var paymentExpMonth = document.getElementById('exp-month');
+var paymentExpYear = document.getElementById('exp-year');
 var paymentCVV = document.getElementById('payment-card-cvv');
 
 var receiptPage = document.getElementById('receipt-page');
 
 //EVENTLISTENERS
 searchButton.addEventListener('click', search);
-searchButton.addEventListener('click', function(event) {hideCheckout();});
+//searchButton.addEventListener('click', function(event) {hideCheckout();});
 
-checkoutButton.addEventListener('click', showCheckout);
+cartButton.addEventListener('click', generateCart);
+
+//checkoutButton.addEventListener('click', showCheckout);
 
 payButton.addEventListener('click', validatePayment);
 
@@ -223,7 +232,7 @@ function clearProduct() {
 }
 
 function generateProduct(items) {
-  for (var i = 0; i < productList.length; i++) {
+  for (var i = 0; i < items.length; i++) {
     var resultLocation = document.getElementById('search-results');
 
     var paddingLeft = document.createElement('div');
@@ -264,7 +273,7 @@ function generateProduct(items) {
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
     cartButton.id = items[i].itemID;
-    cartButton.className = "btn btn-secondary btn-lg";
+    cartButton.className = "btn btn-secondary btn-lg bg-info";
     cartButton.setAttribute('type', 'button');
     cartButtonForm.appendChild(cartButton);
 
@@ -288,16 +297,96 @@ function generateProduct(items) {
 
 }
 
+function generateCart() {
+  cartDuplicates();
+  var cartLocation = document.getElementById('cart-data');
+
+  for(var i = 0; i < cart.length; i++) {
+    var media = document.createElement('div');
+    media.className = 'media';
+
+    var mediaLeft = document.createElement('div');
+    mediaLeft.className = 'media-left media-bottom';
+
+    var mediaObject = document.createElement('img');
+    mediaObject.className = 'media-object';
+    mediaObject.src = cart[i].img;
+    mediaObject.setAttribute("width", "150px");
+
+    var mediaBody = document.createElement('div');
+    mediaBody.className = 'media-body';
+
+    var mediaHeading = document.createElement('h3');
+    mediaHeading.className = 'media-heading';
+    mediaHeading.textContent = cart[i].name;
+
+    var mediaPrice = document.createElement('p');
+    mediaPrice.textContent = '$' + cart[i].price;
+
+    var mediaRating = document.createElement('p');
+    mediaRating.textContent = 'Rating: ' cart[i].rating;
+
+    var mediaQuantity = document.createElement('select');
+    mediaQuantity.className = 'form-control';
+    mediaQuantity.setAttribute = ('width', '25px')
+    for(var i = 1; i < 101; i++) {
+      var option = document.createElement('option');
+      option.textContent = i;
+      mediaQuantity.appendChild(option);
+    }
+
+
+    mediaBody.appendChild(mediaHeading);
+    mediaBody.appendChild(mediaPrice);
+    mediaBody.appendChild(mediaRating);
+    mediaBody.appendChild(mediaQuantity);
+    mediaLeft.appendChild(mediaObject);
+    media.appendChild(mediaLeft);
+    media.appendChild(mediaBody);
+    cartLocation.appendChild(media)
+  }
+  showCart();
+}
+
+
+function generateAddress() {
+  var addressLocation1 = document.getElementById('receipt-address1');
+  var addressLocation2 = document.getElementById('receipt-address2');
+
+  addressLocation1.textContent = checkoutAddress.value;
+  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + ' ' + checkoutZip.value;
+}
+
+function cartDuplicates() {
+  for( var i = 0; i < cart.length; i++ ) {
+    for( var j = i+1; j < cart.length; j++ ) {
+      if( cart[i].itemID == cart[j].itemID ) {
+        cart[i].quantity++;
+        cart.splice(j,1);
+        j--;
+      }
+    }
+  }
+}
+
+function cartCount() {
+  var count = 0;
+  for(var i = 0; i < cart.length; i++) {
+    count += cart[i].quantity;
+  }
+  return count;
+}
+
 function cartSum() {
   var cartSubTotal = 0;
   for (var i = 0; i < cart.length; i++) {
-    cartSubTotal += cart[i].price;
+    cartSubTotal += (cart[i].price * cart[i].quantity);
   }
   return cartSubTotal;
 }
 
-function loadValues() {
-  checkoutItemCount.textContent = cart.length;
+function loadCheckout() {
+  checkoutItemCount.textContent = cartCount();
   checkoutSubTotal.textContent = '$' + (cartSum()).toFixed(2);
   checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
   checkoutTotal.textContent = '$' + (cartSum() * 1.08).toFixed(2);
@@ -325,13 +414,14 @@ function addItemToCart(id) {
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
       cart.push(productList[i]);
+      cart[cart.length-1].quantity=1;
     }
   }
-  var cartIcon = document.getElementById('view-cart-btn');
-  cartIcon.firstChild.textContent = cart.length;
+  var cartIcon = document.getElementById('cart-btn');
+  cartIcon.firstChild.textContent = cartCount();
 
-  var checkoutItemCount = document.getElementById('checkout-item-count');
-  checkoutItemCount.textContent = cart.length;
+  // var checkoutItemCount = document.getElementById('checkout-item-count');
+  // checkoutItemCount.textContent = cart.length;
 }
 
 function clearCart() {
@@ -346,7 +436,7 @@ function loadReceipt() {
   var receiptTotal = document.getElementById('receipt-total');
   receiptName.textContent = checkoutName.value;
   generateAddress();
-  receiptItemCount.textContent = cart.length;
+  receiptItemCount.textContent = cartCount();
   receiptTotal.textContent = checkoutTotal.textContent;
   clearCart();
 }
@@ -360,8 +450,9 @@ function showCheckout() {
   }
   hideSearch();
   hideReceipt();
+  hideCart();
 
-  loadValues();
+  loadCheckout();
 }
 
 function hideCheckout() {
@@ -369,6 +460,27 @@ function hideCheckout() {
   if(classes.indexOf('hide') === -1) {
     classes.push('hide');
     checkoutPage.className = classes.join(' ');
+  }
+}
+
+function showCart() {
+  var classes = cartPage.className.split(' ');
+  if(classes.indexOf('hide') > -1) {
+    var location = classes.indexOf('hide');
+    classes.splice(location, 1);
+    cartPage.className = classes.join(' ');
+  }
+
+  hideCheckout();
+  hideReceipt();
+  hideSearch();
+}
+
+function hideCart() {
+  var classes = cartPage.className.split(' ');
+  if(classes.indexOf('hide') === -1) {
+    classes.push('hide');
+    cartPage.className = classes.join(' ');
   }
 }
 
@@ -381,6 +493,7 @@ function showSearch() {
   }
   hideCheckout();
   hideReceipt();
+  hideCart();
 }
 
 function hideSearch() {
@@ -402,6 +515,7 @@ function showReceipt() {
   }
   hideSearch();
   hideCheckout();
+  hideCart();
 
   loadReceipt();
 }
@@ -414,12 +528,6 @@ function hideReceipt() {
   }
 }
 
-function generateAddress() {
-  var addressLocation1 = document.getElementById('receipt-address1');
-  var addressLocation2 = document.getElementById('receipt-address2');
 
-  addressLocation1.textContent = checkoutAddress.value;
-  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + ' ' + checkoutZip.value;
-}
 
 window.onload = search;
