@@ -151,6 +151,7 @@ var searchResults = [];
 var cart = [];
 
 var searchPage = document.getElementById('search-page');
+var headerLogo = document.getElementsByClassName('logo')[0];
 var categorySelected = document.getElementById('category-select');
 var searchInput = document.getElementById('search-textbox');
 var searchButton = document.getElementById('search-btn');
@@ -182,6 +183,8 @@ var paymentCVV = document.getElementById('payment-card-cvv');
 var receiptPage = document.getElementById('receipt-page');
 
 //EVENTLISTENERS
+headerLogo.addEventListener('click', showSearch);
+
 searchButton.addEventListener('click', search);
 //searchButton.addEventListener('click', function(event) {hideCheckout();});
 
@@ -298,10 +301,24 @@ function generateProduct(items) {
 }
 
 function generateCart() {
+  //clears cart data
+  var cartLocation = document.getElementById('cart');
+  while(cartLocation.firstChild) {
+      cartLocation.removeChild(cartLocation.firstChild);
+  }
+
+  console.log(cart);
   cartDuplicates();
-  var cartLocation = document.getElementById('cart-data');
+  console.log(cart);
 
   for(var i = 0; i < cart.length; i++) {
+    var newRow = document.createElement('div');
+    newRow.className = 'row';
+    var newCol = document.createElement('div');
+    newCol.className = 'col-md-8 col-md-offset-1';
+
+    newRow.appendChild(newCol);
+
     var media = document.createElement('div');
     media.className = 'media';
 
@@ -324,14 +341,15 @@ function generateCart() {
     mediaPrice.textContent = '$' + cart[i].price;
 
     var mediaRating = document.createElement('p');
-    mediaRating.textContent = 'Rating: ' cart[i].rating;
+    mediaRating.textContent = 'Rating: ' + cart[i].rating;
 
     var mediaQuantity = document.createElement('select');
     mediaQuantity.className = 'form-control';
-    mediaQuantity.setAttribute = ('width', '25px')
-    for(var i = 1; i < 101; i++) {
+    mediaQuantity.setAttribute = ('length', '25px');
+
+    for(var j = 1; j < 101; j++) {
       var option = document.createElement('option');
-      option.textContent = i;
+      option.textContent = j;
       mediaQuantity.appendChild(option);
     }
 
@@ -343,7 +361,10 @@ function generateCart() {
     mediaLeft.appendChild(mediaObject);
     media.appendChild(mediaLeft);
     media.appendChild(mediaBody);
-    cartLocation.appendChild(media)
+    newCol.appendChild(media);
+    cartLocation.appendChild(newRow);
+
+
   }
   showCart();
 }
