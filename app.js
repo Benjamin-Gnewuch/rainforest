@@ -191,13 +191,14 @@ headerLogo.addEventListener('click', showSearch);
 
 searchButton.addEventListener('click', search);
 
-cartButton.addEventListener('click', generateCart);
+cartButton.addEventListener('click', cartGenerate);
 
 checkoutButton.addEventListener('click', showCheckout);
 
 payButton.addEventListener('click', validatePayment);
 
 //FUNCTIONS
+//////////Search Page Functions
 function search(event) {
   event.preventDefault();
 
@@ -303,8 +304,39 @@ function generateProduct(items) {
 
 }
 
-function generateCart() {
-  console.log("generateCart");
+function addItemToCart(id) {
+  console.log("addItemToCart");
+
+  for (var i = 0; i < productList.length; i++) {
+    if(id == productList[i].itemID) {
+      cart.push(productList[i]);
+      cart[cart.length-1].quantity=1;
+    }
+  }
+  setCartCount();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////Cart Page Functions
+function cartGenerate() {
+  console.log("cartGenerate");
   //clears cart data
   var cartLocation = document.getElementById('cart');
   while(cartLocation.firstChild) {
@@ -312,7 +344,7 @@ function generateCart() {
   }
 
   var divider = document.createElement('hr');
-
+  var space = document.createElement('br');
   cartDuplicates();
 
   for(var i = 0; i < cart.length; i++) {
@@ -349,14 +381,19 @@ function generateCart() {
 
     var mediaQuantity = document.createElement('select');
     mediaQuantity.className = 'form-control';
-    //mediaQuantity.setAttribute = ('width', '75px');
     mediaQuantity.id = cart[i].itemID;
 
-    for(var j = 0; j < 31; j++) {
+    for(var j = 1; j < 31; j++) {
       var option = document.createElement('option');
       option.textContent = j;
       mediaQuantity.appendChild(option);
     }
+
+    var buttonRemove = document.createElement('btn');
+    buttonRemove.setAttribute = ("type", "button");
+    buttonRemove.textContent = "Remove from Cart";
+    buttonRemove.className = "btn btn-default";
+    buttonRemove.id = cart[i].itemID;
 
     mediaQuantity.value = cart[i].quantity;
 
@@ -364,26 +401,53 @@ function generateCart() {
     mediaBody.appendChild(mediaPrice);
     mediaBody.appendChild(mediaRating);
     mediaBody.appendChild(mediaQuantity);
+    mediaBody.appendChild(buttonRemove);
     mediaLeft.appendChild(mediaObject);
     media.appendChild(mediaLeft);
     media.appendChild(mediaBody);
     newCol.appendChild(media);
     cartLocation.appendChild(newRow);
-    newRow.appendChild(divider);
-
+    media.appendChild(divider);
+    media.appendChild(space);
     mediaQuantity.addEventListener('change', function(event) {
-      changeQuantity(event.target.id, mediaQuantity.value);
+      changeQuantity(event.target.id, Number(event.target.value));
+    });
+
+    buttonRemove.addEventListener('click', function(event) {
+      changeQuantity(event.target.id, 0);
     });
   }
   showCart();
 }
 
-function generateAddress() {
-  var addressLocation1 = document.getElementById('receipt-address1');
-  var addressLocation2 = document.getElementById('receipt-address2');
+function setCartCount() {
+  console.log("setCartCount");
 
-  addressLocation1.textContent = checkoutAddress.value;
-  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + ' ' + checkoutZip.value;
+  var cartIcon = document.getElementById('cart-btn');
+
+  var count = cartCount();
+
+  console.log("There are " + count + " items in the cart.");
+  cartIcon.firstChild.textContent = count;
+}
+
+function cartCount() {
+  console.log("cartCount");
+
+  var count = 0;
+  for(var i = 0; i < cart.length; i++) {
+    console.log(count);
+    count += cart[i].quantity;
+  }
+  return count;
+}
+
+function clearCart() {
+  console.log("clearCart");
+
+  var cartIcon = document.getElementById('view-cart-btn');
+  cartIcon.firstChild.textContent = '0';
+  cart = [];
 }
 
 function cartDuplicates() {
@@ -408,6 +472,62 @@ function cartSum() {
     cartSubTotal += (cart[i].price * cart[i].quantity);
   }
   return cartSubTotal;
+}
+
+function changeQuantity(id, num) {
+  console.log("changeQuantity");
+  console.log(num + 2);
+
+  for(var i = 0; i < cart.length; i++) {
+    if(cart[i].itemID == id) {
+      cart[i].quantity = num;
+      console.log("newQuantity: "+ num)
+    }
+  }
+  for(var i = 0; i < cart.length; i++) {
+    if(cart[i].quantity == 0) {
+      console.log(cart[i].name + " has 0 items.")
+      cart.splice(i,1);
+      i--;
+    }
+  }
+  setCartCount();
+  cartGenerate();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////Checkout Page Functions
+
+function generateAddress() {
+  var addressLocation1 = document.getElementById('receipt-address1');
+  var addressLocation2 = document.getElementById('receipt-address2');
+
+  addressLocation1.textContent = checkoutAddress.value;
+  addressLocation2.textContent = checkoutCity.value + ', ' + checkoutState.value + ' ' + checkoutZip.value;
 }
 
 function loadCheckout() {
@@ -435,67 +555,10 @@ function validatePayment() {
   showReceipt();
 }
 
-function addItemToCart(id) {
-  console.log("addItemToCart");
 
-  for (var i = 0; i < productList.length; i++) {
-    if(id == productList[i].itemID) {
-      cart.push(productList[i]);
-      cart[cart.length-1].quantity=1;
-    }
-  }
-  setCartCount();
-}
 
-function changeQuantity(id, quantity) {
-  console.log("changeQuantity");
 
-  for(var i = 0; i < cart.length; i++) {
-    if(cart[i].itemID == id) {
-      cart[i].quantity = quantity;
-      console.log("newQuantity: "+ quantity)
-    }
-  }
-  for(var i = 0; i < cart.length; i++) {
-    if(cart[i].quantity == 0) {
-      console.log(cart[i].name + " has 0 items.")
-      cart.splice(i,1);
-      i--;
-    }
-  }
-  setCartCount();
-  generateCart();
-}
-
-function setCartCount() {
-  console.log("setCartCount");
-
-  var cartIcon = document.getElementById('cart-btn');
-
-  var count = cartCount();
-
-  console.log("There are " + count + " items in the cart.");
-  cartIcon.firstChild.textContent = count;
-}
-
-function cartCount() {
-  console.log("cartCount");
-
-  var count = 0;
-  for(var i = 0; i < cart.length; i++) {
-    count += cart[i].quantity;
-  }
-  return count;
-}
-
-function clearCart() {
-  console.log("clearCart");
-
-  var cartIcon = document.getElementById('view-cart-btn');
-  cartIcon.firstChild.textContent = '0';
-  cart = [];
-}
-
+/////////Receupt Page Functions
 function loadReceipt() {
   var receiptName = document.getElementById('receipt-name');
   var receiptItemCount = document.getElementById('receipt-item-count');
@@ -506,6 +569,8 @@ function loadReceipt() {
   receiptTotal.textContent = checkoutTotal.textContent;
   clearCart();
 }
+
+
 
 function showCheckout() {
   var classes = checkoutPage.className.split(' ');
