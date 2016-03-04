@@ -1,5 +1,5 @@
 //PRODUCTS
-var iphone = {
+ var productList = [{
   name: "iPhone",
   img: "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/plus/iphone6s-plus-box-gray-2015_GEO_US?wid=478&hei=595&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1453526293487",
   price: 799.99,
@@ -10,7 +10,7 @@ var iphone = {
   quantity: 0,
   itemID: 0
 }
-var android = {
+,{
   name: "Android",
   img: "http://media.gadgetsin.com/2013/04/samsung_galaxy_win_android_phone_announced_1.jpg",
   price: 699.99,
@@ -21,7 +21,7 @@ var android = {
   quantity: 0,
   itemID: 1
 }
-var lenovo = {
+,{
   name: "Lenovo",
   img: "http://hothardware.com/newsimages/Item25850/Lenovo_Laptop.jpg",
   price: 599.99,
@@ -32,7 +32,7 @@ var lenovo = {
   quantity: 0,
   itemID: 2
 }
-var macbook = {
+,{
   name: "Macbook",
   img: "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/AC/MACBOOKPRO/MACBOOKPRO?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1453540968678",
   price: 1599.99,
@@ -43,7 +43,7 @@ var macbook = {
   quantity: 0,
   itemID: 3
 }
-var surface = {
+,{
   name: "Surface",
   img: "http://dri1.img.digitalrivercontent.net/Storefront/Company/msintl/images/English/en-INTL-Surface-Pro4-SU3-00001/Spin/en-INTL-Surface-Pro4-SU3-00001-SP08.jpg",
   price: 899.99,
@@ -54,7 +54,7 @@ var surface = {
   quantity: 0,
   itemID: 4
 }
-var ipad = {
+,{
   name: "iPad",
   img: "https://www.apple.com/pr/products/images/iPadminiRD_Svr_PSR_PF_PB_HERO.jpg",
   price: 999.99,
@@ -65,7 +65,7 @@ var ipad = {
   quantity: 0,
   itemID: 5
 }
-var madMax = {
+,{
   name: "Mad Max",
   img: "http://ecx.images-amazon.com/images/I/919Jfwc0i0L._SX385_.jpg",
   price: 14.99,
@@ -76,7 +76,7 @@ var madMax = {
   quantity: 0,
   itemID: 6
 }
-var revenant = {
+,{
   name: "The Revenant",
   img: "http://ecx.images-amazon.com/images/I/91CqQraAqvL._SY500_.jpg",
   price: 19.99,
@@ -87,7 +87,7 @@ var revenant = {
   quantity: 0,
   itemID: 7
 }
-var interstellar = {
+,{
   name: "Interstellar",
   img: "http://ecx.images-amazon.com/images/I/91g-WjXKe7L._SL1500_.jpg",
   price: 9.99,
@@ -98,7 +98,7 @@ var interstellar = {
   quantity: 0,
   itemID: 8
 }
-var vForVendetta = {
+,{
   name: "V for Vendetta",
   img: "http://ecx.images-amazon.com/images/I/81AaB2hTFML._SL1500_.jpg",
   price: 7.99,
@@ -109,7 +109,7 @@ var vForVendetta = {
   quantity: 0,
   itemID: 9
 }
-var battleRoyal = {
+,{
   name: "Battle Royale",
   img: "http://ecx.images-amazon.com/images/I/31ED3F1GGRL._SX327_BO1,204,203,200_.jpg",
   price: 2.99,
@@ -120,7 +120,7 @@ var battleRoyal = {
   quantity: 0,
   itemID: 10
 }
-var lordOfTheFlies = {
+,{
   name: "The Lord of the Flies",
   img: "http://ecx.images-amazon.com/images/I/61JPcCSRAXL.jpg",
   price: 8.99,
@@ -131,7 +131,7 @@ var lordOfTheFlies = {
   quantity: 0,
   itemID: 11
 }
-var theHungerGames = {
+,{
   name: "The Hunger Games",
   img: "http://ecx.images-amazon.com/images/I/41bOj-am1RL._SX331_BO1,204,203,200_.jpg",
   price: "6.99",
@@ -141,7 +141,7 @@ var theHungerGames = {
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
   itemID: 12
-}
+}];
 
 var review = {
   rating: 0,
@@ -149,7 +149,7 @@ var review = {
 }
 
 //PRODUCT COLLECTION
-var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
+// var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
 
 var searchResults = [];
 var cart = [];
@@ -343,23 +343,35 @@ function cartGenerate() {
       cartLocation.removeChild(cartLocation.firstChild);
   }
 
-  var divider = document.createElement('hr');
-  var space = document.createElement('br');
   cartDuplicates();
 
   for(var i = 0; i < cart.length; i++) {
+    var panel = document.createElement('div');
+    panel.className = 'panel panel-default';
+
+    var panelBody = document.createElement('div');
+    panelBody.className = 'panel-body';
+
+    panel.appendChild(panelBody);
+    var space = document.createElement('br');
+    var horizontal = document.createElement('hr');
+
     var newRow = document.createElement('div');
     newRow.className = 'row';
-    var newCol = document.createElement('div');
-    newCol.className = 'col-md-8 col-md-offset-1';
+    var colLeft = document.createElement('div');
+    colLeft.className = 'col-md-4 col-md-offset-1';
+    var colRight = document.createElement('div');
+    colRight.className = 'col-md-2 col-md-offset-3 text-center';
 
-    newRow.appendChild(newCol);
 
+    panelBody.appendChild(newRow);
+    newRow.appendChild(colLeft);
+    newRow.appendChild(colRight);
     var media = document.createElement('div');
     media.className = 'media';
 
     var mediaLeft = document.createElement('div');
-    mediaLeft.className = 'media-left media-bottom';
+    mediaLeft.className = 'media-left media-middle';
 
     var mediaObject = document.createElement('img');
     mediaObject.className = 'media-object';
@@ -373,11 +385,20 @@ function cartGenerate() {
     mediaHeading.className = 'media-heading';
     mediaHeading.textContent = cart[i].name;
 
-    var mediaPrice = document.createElement('p');
-    mediaPrice.textContent = '$' + cart[i].price;
+    var labelPrice = document.createElement('label');
+    labelPrice.setAttribute = ("for","price");
+    labelPrice.textContent = "Price";
 
+    var unitPrice = document.createElement('p');
+    unitPrice.name = "price";
+    unitPrice.textContent = '$' + cart[i].price;
+
+    var labelRating = document.createElement('label');
+    labelRating.setAttribute = ("for","rating");
+    labelRating.textContent = "Customer Rating";
     var mediaRating = document.createElement('p');
-    mediaRating.textContent = 'Rating: ' + cart[i].rating;
+    mediaRating.name = "rating";
+    mediaRating.textContent = cart[i].rating;
 
     var mediaQuantity = document.createElement('select');
     mediaQuantity.className = 'form-control';
@@ -389,33 +410,69 @@ function cartGenerate() {
       mediaQuantity.appendChild(option);
     }
 
+    mediaQuantity.value = cart[i].quantity;
+    mediaQuantity.addEventListener('change', function(event) {
+      changeQuantity(event.target.id, Number(event.target.value));
+    });
+
     var buttonRemove = document.createElement('btn');
     buttonRemove.setAttribute = ("type", "button");
     buttonRemove.textContent = "Remove from Cart";
     buttonRemove.className = "btn btn-default";
     buttonRemove.id = cart[i].itemID;
+    buttonRemove.addEventListener('click', function(event) {
+      changeQuantity(event.target.id, 0);
+    });
 
-    mediaQuantity.value = cart[i].quantity;
 
     mediaBody.appendChild(mediaHeading);
-    mediaBody.appendChild(mediaPrice);
+    mediaBody.appendChild(labelPrice);
+    mediaBody.appendChild(unitPrice);
+    mediaBody.appendChild(labelRating);
     mediaBody.appendChild(mediaRating);
     mediaBody.appendChild(mediaQuantity);
     mediaBody.appendChild(buttonRemove);
     mediaLeft.appendChild(mediaObject);
     media.appendChild(mediaLeft);
     media.appendChild(mediaBody);
-    newCol.appendChild(media);
-    cartLocation.appendChild(newRow);
-    media.appendChild(divider);
-    media.appendChild(space);
-    mediaQuantity.addEventListener('change', function(event) {
-      changeQuantity(event.target.id, Number(event.target.value));
-    });
+    colLeft.appendChild(media);
+    cartLocation.appendChild(panel);
 
-    buttonRemove.addEventListener('click', function(event) {
-      changeQuantity(event.target.id, 0);
-    });
+
+
+    var labelSubtotal = document.createElement('label');
+    labelSubtotal.setAttribute = ("for","subtotal");
+    labelSubtotal.textContent = "Subtotal";
+
+    var unitSubtotal = document.createElement('p');
+    unitPrice.subtotal = "subtotal";
+    unitSubtotal.textContent = '$' + (cart[i].price * cart[i].quantity).toFixed(2);
+
+    var labelTax = document.createElement('label');
+    labelTax.setAttribute = ("for","tax");
+    labelTax.textContent = "Sales Tax";
+
+    var unitTax = document.createElement('p');
+    unitTax.name = "tax";
+    unitTax.textContent = '$' + (cart[i].price * cart[i].quantity * 0.08).toFixed(2);
+
+    var labelTotal = document.createElement('label');
+    labelTotal.setAttribute = ("for","total");
+    labelTotal.textContent = "Total";
+
+    var unitTotal = document.createElement('p');
+    unitTotal.name = "total";
+    unitTotal.textContent = '$' + (cart[i].price * cart[i].quantity * 1.08).toFixed(2);
+
+    colRight.appendChild(space);
+    colRight.appendChild(labelSubtotal);
+    colRight.appendChild(unitSubtotal);
+    colRight.appendChild(labelTax);
+    colRight.appendChild(unitTax);
+    colRight.appendChild(horizontal);
+    colRight.appendChild(labelTotal);
+    colRight.appendChild(unitTotal);
+
   }
   showCart();
 }
@@ -558,7 +615,7 @@ function validatePayment() {
 
 
 
-/////////Receupt Page Functions
+/////////Receipt Page Functions
 function loadReceipt() {
   var receiptName = document.getElementById('receipt-name');
   var receiptItemCount = document.getElementById('receipt-item-count');
