@@ -316,24 +316,6 @@ function addItemToCart(id) {
   setCartCount();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////Cart Page Functions
 function cartGenerate() {
   console.log("cartGenerate");
@@ -362,7 +344,6 @@ function cartGenerate() {
     colLeft.className = 'col-md-4 col-md-offset-1';
     var colRight = document.createElement('div');
     colRight.className = 'col-md-2 col-md-offset-3 text-center';
-
 
     panelBody.appendChild(newRow);
     newRow.appendChild(colLeft);
@@ -400,8 +381,19 @@ function cartGenerate() {
     mediaRating.name = "rating";
     mediaRating.textContent = cart[i].rating;
 
+    var formHorizontal = document.createElement('form');
+    formHorizontal.className = 'form-horizontal';
+
+    var formGroup = document.createElement('form');
+    formGroup.className = 'form-group';
+    formHorizontal.appendChild(formGroup);
+
+    var quantityLocation = document.createElement('div');
+    quantityLocation.className = 'col-md-7';
+    formGroup.appendChild(quantityLocation);
+
     var mediaQuantity = document.createElement('select');
-    mediaQuantity.className = 'form-control';
+    mediaQuantity.className = 'form-control form-group';
     mediaQuantity.id = cart[i].itemID;
 
     for(var j = 1; j < 31; j++) {
@@ -409,6 +401,8 @@ function cartGenerate() {
       option.textContent = j;
       mediaQuantity.appendChild(option);
     }
+
+    quantityLocation.appendChild(mediaQuantity);
 
     mediaQuantity.value = cart[i].quantity;
     mediaQuantity.addEventListener('change', function(event) {
@@ -430,7 +424,7 @@ function cartGenerate() {
     mediaBody.appendChild(unitPrice);
     mediaBody.appendChild(labelRating);
     mediaBody.appendChild(mediaRating);
-    mediaBody.appendChild(mediaQuantity);
+    mediaBody.appendChild(formGroup);
     mediaBody.appendChild(buttonRemove);
     mediaLeft.appendChild(mediaObject);
     media.appendChild(mediaLeft);
@@ -474,6 +468,7 @@ function cartGenerate() {
     colRight.appendChild(unitTotal);
 
   }
+
   showCart();
 }
 
@@ -552,31 +547,6 @@ function changeQuantity(id, num) {
   cartGenerate();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////Checkout Page Functions
 
 function generateAddress() {
@@ -612,9 +582,6 @@ function validatePayment() {
   showReceipt();
 }
 
-
-
-
 /////////Receipt Page Functions
 function loadReceipt() {
   var receiptName = document.getElementById('receipt-name');
@@ -626,8 +593,6 @@ function loadReceipt() {
   receiptTotal.textContent = checkoutTotal.textContent;
   clearCart();
 }
-
-
 
 function showCheckout() {
   var classes = checkoutPage.className.split(' ');
