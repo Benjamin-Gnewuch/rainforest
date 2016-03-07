@@ -45,7 +45,7 @@
 }
 ,{
   name: "Surface",
-  img: "http://dri1.img.digitalrivercontent.net/Storefront/Company/msintl/images/English/en-INTL-Surface-Pro4-SU3-00001/Spin/en-INTL-Surface-Pro4-SU3-00001-SP08.jpg",
+  img: "http://www.bhphotovideo.com/images/images1000x1000/microsoft_pu2_00017_12_512gb_surface_pro_1175090.jpg",
   price: 899.99,
   rating: 3.9,
   category: "tech",
@@ -149,7 +149,6 @@ var review = {
 }
 
 //PRODUCT COLLECTION
-// var productList = [iphone, android, lenovo, macbook, surface, ipad, madMax, revenant, interstellar, vForVendetta, battleRoyal, lordOfTheFlies, theHungerGames];
 
 var searchResults = [];
 var cart = [];
@@ -199,7 +198,6 @@ checkoutButton.addEventListener('click', showCheckout);
 payButton.addEventListener('click', validatePayment);
 
 //FUNCTIONS
-//////////Search Page Functions
 function search(event) {
   event.preventDefault();
 
@@ -229,7 +227,7 @@ function search(event) {
   }
 
   clearProduct();
-  generateProduct(searchResults);
+  generateSearchResults(searchResults);
 }
 
 function clearProduct() {
@@ -239,7 +237,7 @@ function clearProduct() {
   }
 }
 
-function generateProduct(items) {
+function generateSearchResults(items) {
   for (var i = 0; i < items.length; i++) {
     var resultLocation = document.getElementById('search-results');
 
@@ -251,7 +249,7 @@ function generateProduct(items) {
     newResult.className = "media";
 
     var mediaLeft = document.createElement('div');
-    mediaLeft.className = "media-left";
+    mediaLeft.className = "media-left media-middle";
 
     var mediaObject = document.createElement('img');
     mediaObject.className = "media-object";
@@ -274,20 +272,32 @@ function generateProduct(items) {
     var mediaDescription = document.createElement('p');
     mediaDescription.textContent = "Description: " + items[i].description;
 
-    var cartButtonForm = document.createElement('form');
-    cartButtonForm.action = "#";
+    var buttonForm = document.createElement('form');
+    buttonForm.action = "#";
 
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
     cartButton.className = "add-to-cart-btn";
     cartButton.id = items[i].itemID;
-    cartButton.className = "btn btn-secondary btn-lg bg-info";
+    cartButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-sm-3";
     cartButton.setAttribute('type', 'button');
-    cartButtonForm.appendChild(cartButton);
+    buttonForm.appendChild(cartButton);
+
+    var viewButton = document.createElement('button');
+    viewButton.textContent = "View Item";
+    viewButton.id = items[i].itemID;
+    viewButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1";
+    viewButton.setAttribute('type', 'button');
+    buttonForm.appendChild(viewButton);
+
+
 
     var horizontal = document.createElement('hr');
 
     cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
+    });
+
+    viewButton.addEventListener('click', function(event) { viewProduct(event.target.id);
     });
 
     newResult.appendChild(mediaLeft);
@@ -297,7 +307,7 @@ function generateProduct(items) {
     mediaBody.appendChild(mediaPrice);
     mediaBody.appendChild(mediaRating);
     mediaBody.appendChild(mediaDescription);
-    mediaBody.appendChild(cartButtonForm);
+    mediaBody.appendChild(buttonForm);
     paddingLeft.appendChild(newResult);
     paddingLeft.appendChild(horizontal);
 
@@ -315,10 +325,22 @@ function addItemToCart(id) {
   setCartCount();
 }
 
+function viewItem(id) {
+  for (var i = 0; i < productList.length; i++) {
+    if(id == productList[i].itemID) {
+      generateProductPage(productList[i]);
+    }
+  }
+}
+
+function generateProduct() {
+
+}
+
 //////////Cart Page Functions
 function cartGenerate() {
-  //clears cart data
   var cartLocation = document.getElementById('cart');
+
   while(cartLocation.firstChild) {
       cartLocation.removeChild(cartLocation.firstChild);
   }
@@ -531,8 +553,6 @@ function changeQuantity(id, num) {
   cartGenerate();
 }
 
-//////////Checkout Page Functions
-
 function generateAddress() {
   var addressLocation1 = document.getElementById('receipt-address1');
   var addressLocation2 = document.getElementById('receipt-address2');
@@ -663,6 +683,14 @@ function hideReceipt() {
     classes.push('hide');
     receiptPage.className = classes.join(' ');
   }
+}
+
+function newElement(type, parent) {
+  var temp = document.createElement(type);
+  if (parent != '') {
+    parent.appendChild(temp);
+  }
+  return temp;
 }
 
 window.onload = search;
