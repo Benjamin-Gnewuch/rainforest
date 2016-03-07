@@ -153,6 +153,7 @@ var review = {
 
 var searchResults = [];
 var cart = [];
+var pastOrders = [];
 
 var searchPage = document.getElementById('search-page');
 var headerLogo = document.getElementsByClassName('logo')[0];
@@ -305,8 +306,6 @@ function generateProduct(items) {
 }
 
 function addItemToCart(id) {
-  console.log("addItemToCart");
-
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
       cart.push(productList[i]);
@@ -318,7 +317,6 @@ function addItemToCart(id) {
 
 //////////Cart Page Functions
 function cartGenerate() {
-  console.log("cartGenerate");
   //clears cart data
   var cartLocation = document.getElementById('cart');
   while(cartLocation.firstChild) {
@@ -473,37 +471,30 @@ function cartGenerate() {
 }
 
 function setCartCount() {
-  console.log("setCartCount");
-
   var cartIcon = document.getElementById('cart-btn');
 
   var count = cartCount();
 
-  console.log("There are " + count + " items in the cart.");
   cartIcon.firstChild.textContent = count;
 }
 
 function cartCount() {
-  console.log("cartCount");
-
   var count = 0;
   for(var i = 0; i < cart.length; i++) {
-    console.log(count);
     count += cart[i].quantity;
   }
   return count;
 }
 
 function clearCart() {
-  console.log("clearCart");
-
-  var cartIcon = document.getElementById('view-cart-btn');
+  pastOrders.push(cart);
+  console.log(pastOrders);
+  var cartIcon = document.getElementById('cart-btn');
   cartIcon.firstChild.textContent = '0';
   cart = [];
 }
 
 function cartDuplicates() {
-  console.log("cartDuplicates");
 
   for( var i = 0; i < cart.length; i++ ) {
     for( var j = i+1; j < cart.length; j++ ) {
@@ -517,8 +508,6 @@ function cartDuplicates() {
 }
 
 function cartSum() {
-  console.log("cartSum");
-
   var cartSubTotal = 0;
   for (var i = 0; i < cart.length; i++) {
     cartSubTotal += (cart[i].price * cart[i].quantity);
@@ -527,18 +516,13 @@ function cartSum() {
 }
 
 function changeQuantity(id, num) {
-  console.log("changeQuantity");
-  console.log(num + 2);
-
   for(var i = 0; i < cart.length; i++) {
     if(cart[i].itemID == id) {
       cart[i].quantity = num;
-      console.log("newQuantity: "+ num)
     }
   }
   for(var i = 0; i < cart.length; i++) {
     if(cart[i].quantity == 0) {
-      console.log(cart[i].name + " has 0 items.")
       cart.splice(i,1);
       i--;
     }
