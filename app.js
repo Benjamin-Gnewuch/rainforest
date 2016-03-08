@@ -8,18 +8,20 @@
   tags: ["phone", "apple", "smartphone", "technology", "tech"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 0
+  itemID: 0,
+  itemReviews: []
 }
 ,{
   name: "Android",
-  img: "http://media.gadgetsin.com/2013/04/samsung_galaxy_win_android_phone_announced_1.jpg",
+  img: "android.png",
   price: 699.99,
   rating: 4.5,
   category: "tech",
   tags: ["phone", "samsung", "smartphone", "technology", "tech"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 1
+  itemID: 1,
+  itemReviews: []
 }
 ,{
   name: "Lenovo",
@@ -30,7 +32,8 @@
   tags: ["laptop", "computer", "pc", "windows", "microsoft", "lenovo"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 2
+  itemID: 2,
+  itemReviews: []
 }
 ,{
   name: "Macbook",
@@ -41,7 +44,8 @@
   tags: ["laptop", "computer", "apple", "osx", "mac"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 3
+  itemID: 3,
+  itemReviews: []
 }
 ,{
   name: "Surface",
@@ -52,7 +56,8 @@
   tags: ["tablet", "computer", "microsoft", "windows"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 4
+  itemID: 4,
+  itemReviews: []
 }
 ,{
   name: "iPad",
@@ -63,7 +68,8 @@
   tags: ["tablet", "apple", "computer", "mac"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 5
+  itemID: 5,
+  itemReviews: []
 }
 ,{
   name: "Mad Max",
@@ -74,7 +80,8 @@
   tags: ["movie", "film", "action", "sci-fi"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 6
+  itemID: 6,
+  itemReviews: []
 }
 ,{
   name: "The Revenant",
@@ -85,7 +92,8 @@
   tags: ["movie", "film", "action"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 7
+  itemID: 7,
+  itemReviews: []
 }
 ,{
   name: "Interstellar",
@@ -96,7 +104,8 @@
   tags: ["movie", "film", "action", "sci-fi"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 8
+  itemID: 8,
+  itemReviews: []
 }
 ,{
   name: "V for Vendetta",
@@ -107,7 +116,8 @@
   tags: ["movie", "film", "action", "comic"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 9
+  itemID: 9,
+  itemReviews: []
 }
 ,{
   name: "Battle Royale",
@@ -118,7 +128,8 @@
   tags: ["book", "read", "action", "foreign", "takami", "kids"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 10
+  itemID: 10,
+  itemReviews: []
 }
 ,{
   name: "The Lord of the Flies",
@@ -129,7 +140,9 @@
   tags: ["book", "read", "golding", "island", "kids"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 11
+  itemID: 11,
+  itemReviews: []
+
 }
 ,{
   name: "The Hunger Games",
@@ -140,10 +153,12 @@
   tags: ["book", "read", "kids", "dystopian"],
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
-  itemID: 12
+  itemID: 12,
+  itemReviews: []
 }];
 
 var review = {
+  name: "",
   rating: 0,
   text: ""
 }
@@ -159,6 +174,8 @@ var headerLogo = document.getElementsByClassName('logo')[0];
 var categorySelected = document.getElementById('category-select');
 var searchInput = document.getElementById('search-textbox');
 var searchButton = document.getElementById('search-btn');
+
+var productPage = document.getElementById('product-page');
 
 var cartPage = document.getElementById('cart-page');
 var cartButton = document.getElementById('cart-btn');
@@ -257,7 +274,7 @@ function generateSearchResults(items) {
     mediaObject.setAttribute("width", "300px");
 
     var mediaBody = document.createElement('div');
-    mediaBody.className = "media-body";
+    mediaBody.className = "media-body media-middle";
 
     var mediaHeading = document.createElement('h3');
     mediaHeading.className = "media-heading";
@@ -277,7 +294,6 @@ function generateSearchResults(items) {
 
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
-    cartButton.className = "add-to-cart-btn";
     cartButton.id = items[i].itemID;
     cartButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-sm-3";
     cartButton.setAttribute('type', 'button');
@@ -297,7 +313,7 @@ function generateSearchResults(items) {
     cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
     });
 
-    viewButton.addEventListener('click', function(event) { viewProduct(event.target.id);
+    viewButton.addEventListener('click', function(event) { generateProduct(event.target.id);
     });
 
     newResult.appendChild(mediaLeft);
@@ -325,17 +341,51 @@ function addItemToCart(id) {
   setCartCount();
 }
 
-function viewItem(id) {
+
+
+
+
+
+function generateProduct(id) {
+  showProduct();
+  var product;
+
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
-      generateProductPage(productList[i]);
+      product = productList[i];
     }
   }
+
+  var title = document.querySelector('div.panel-heading > h2');
+  title.textContent = product.name;
+  title.style.fontSize = "2em";
+
+  var image = document.getElementById('product-img');
+  image.src = product.img;
+  image.style.width = '400px';
+
+  var info = document.getElementById('product-info');
+  info.textContent = product.description;
+  info.style.fontSize = "1.2em";
+
+  var price = document.getElementById('product-price');
+  price.textContent = product.price;
+
+  var rating = document.getElementById('product-rating');
+  rating.textContent = product.rating;
+
+  var reviewCount = document.getElementById('product-reviews');
+  reviewCount.textContent = "  " + product.itemReviews.length;
+
+  var cartButton = document.getElementById('product-cart-btn');
+  cartButton.id = product.itemID;
 }
 
-function generateProduct() {
 
-}
+
+
+
+
 
 //////////Cart Page Functions
 function cartGenerate() {
@@ -510,7 +560,6 @@ function cartCount() {
 
 function clearCart() {
   pastOrders.push(cart);
-  console.log(pastOrders);
   var cartIcon = document.getElementById('cart-btn');
   cartIcon.firstChild.textContent = '0';
   cart = [];
@@ -620,6 +669,29 @@ function hideCheckout() {
   }
 }
 
+function showProduct() {
+  var classes = productPage.className.split(' ');
+  if(classes.indexOf('hide') > -1) {
+    var location = classes.indexOf('hide');
+    classes.splice(location, 1);
+    productPage.className = classes.join(' ');
+  }
+
+  hideCart();
+  hideCheckout();
+  hideReceipt();
+  hideSearch();
+}
+
+function hideProduct() {
+  var classes = productPage.className.split(' ');
+  if(classes.indexOf('hide') === -1) {
+    classes.push('hide');
+    productPage.className = classes.join(' ');
+  }
+}
+
+
 function showCart() {
   var classes = cartPage.className.split(' ');
   if(classes.indexOf('hide') > -1) {
@@ -628,6 +700,7 @@ function showCart() {
     cartPage.className = classes.join(' ');
   }
 
+  hideProduct();
   hideCheckout();
   hideReceipt();
   hideSearch();
@@ -648,6 +721,8 @@ function showSearch() {
     classes.splice(location, 1);
     searchPage.className = classes.join(' ');
   }
+
+  hideProduct();
   hideCheckout();
   hideReceipt();
   hideCart();
@@ -670,6 +745,8 @@ function showReceipt() {
     classes.splice(location, 1);
     receiptPage.className = classes.join(' ');
   }
+
+  hideProduct();
   hideSearch();
   hideCheckout();
   hideCart();
