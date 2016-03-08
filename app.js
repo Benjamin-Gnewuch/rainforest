@@ -10,7 +10,7 @@
   quantity: 0,
   itemID: 0,
   itemReviews: [
-    {name: "John", rating: 5, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
+    {name: "John", rating: 3.8, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
     {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
     {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
 }
@@ -344,11 +344,6 @@ function addItemToCart(id) {
   setCartCount();
 }
 
-
-
-
-
-
 function generateProduct(id) {
   showProduct();
   var product;
@@ -383,38 +378,45 @@ function generateProduct(id) {
   var cartButton = document.getElementById('product-cart-btn');
   cartButton.id = product.itemID;
 
-  generateReviews(product.id);
+  generateReviews(product.itemID);
 }
 
 function generateReviews(id) {
 
-  //It's not seeing this statement
   var reviews = productList[id].itemReviews;
   var location = document.getElementById('reviews');
+
   for(var i = 0; i < reviews.length; i++) {
+
     var newReview  = newElement('div', location);
-    newReview.className = 'panel panel-warning';
-
     var reviewHeading = newElement('div', newReview);
-    reviewHeading.className = 'panel-heading';
-
     var reviewTitle = newElement('h3', reviewHeading);
-    reviewTitle.className = 'panel-title';
-    reviewTitle.textContent = reviews[i].name;
-
+    var reviewFooter = newElement('h5', newReview);
     var reviewBody = newElement('div', newReview);
+
+
+    if (reviews[i].rating <= 2) {
+      newReview.className = 'panel panel-danger';
+    }
+    else if (reviews[i].rating >= 4) {
+      newReview.className = 'panel panel-success';
+    }
+    else {
+      newReview.className = 'panel panel-warning';
+    }
+
+    reviewHeading.className = 'panel-heading';
+    reviewTitle.className = 'panel-title';
     reviewBody.className = 'panel-body';
+    reviewFooter.className = 'panel-footer h5';
+
+    reviewTitle.textContent = reviews[i].name;
     reviewBody.textContent = reviews[i].review;
+    reviewFooter.textContent = "Rating: " + reviews[i].rating + "/5";
 
   }
 }
 
-
-
-
-
-
-//////////Cart Page Functions
 function cartGenerate() {
   var cartLocation = document.getElementById('cart');
 
