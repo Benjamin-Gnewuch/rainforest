@@ -179,6 +179,8 @@ var searchInput = document.getElementById('search-textbox');
 var searchButton = document.getElementById('search-btn');
 
 var productPage = document.getElementById('product-page');
+var buttonLocation = document.getElementById('cart-button');
+var cartBtn = buttonLocation.children[0];
 
 var cartPage = document.getElementById('cart-page');
 var cartButton = document.getElementById('cart-btn');
@@ -217,6 +219,10 @@ checkoutButton.addEventListener('click', showCheckout);
 
 payButton.addEventListener('click', validatePayment);
 
+cartBtn.addEventListener('click', function(event) {
+  addItemToCart(event.target.id);
+});
+
 //FUNCTIONS
 function search(event) {
   event.preventDefault();
@@ -246,11 +252,11 @@ function search(event) {
     }
   }
 
-  clearProduct();
+  clearResults();
   generateSearchResults(searchResults);
 }
 
-function clearProduct() {
+function clearResults() {
   var resultLocation = document.getElementById('search-results');
   while(resultLocation.firstChild) {
     resultLocation.removeChild(resultLocation.firstChild);
@@ -309,11 +315,10 @@ function generateSearchResults(items) {
     viewButton.setAttribute('type', 'button');
     buttonForm.appendChild(viewButton);
 
-
-
     var horizontal = document.createElement('hr');
 
-    cartButton.addEventListener('click', function(event) { addItemToCart(event.target.id);
+    cartButton.addEventListener('click', function(event) {
+      addItemToCart(event.target.id);
     });
 
     viewButton.addEventListener('click', function(event) { generateProduct(event.target.id);
@@ -335,10 +340,12 @@ function generateSearchResults(items) {
 }
 
 function addItemToCart(id) {
+  console.log(id);
+
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
       cart.push(productList[i]);
-      cart[cart.length-1].quantity=1;
+      cart[cart.length-1].quantity = 1;
     }
   }
   setCartCount();
@@ -375,8 +382,20 @@ function generateProduct(id) {
   var reviewCount = document.getElementById('product-reviews');
   reviewCount.textContent = "  " + product.itemReviews.length;
 
-  var cartButton = document.getElementById('product-cart-btn');
-  cartButton.id = product.itemID;
+  // var formLocation = document.getElementById('product-form');
+  // var form = newElement('form', formLocation);
+  //
+  // var cartButton = newElement('button',form);
+  //
+  // cartButton.className = 'btn btn-secondary btn-lg bg-info col-md-4 col-sm-4';
+  // cartButton.setAttribute = ('type','button');
+  // cartButton.textContent = 'Add to Cart';
+  // cartButton.id = product.itemID;
+
+
+
+  cartBtn.id = product.itemID;
+
 
   generateReviews(product.itemID);
 }
@@ -664,7 +683,6 @@ function validatePayment() {
   showReceipt();
 }
 
-/////////Receipt Page Functions
 function loadReceipt() {
   var receiptName = document.getElementById('receipt-name');
   var receiptItemCount = document.getElementById('receipt-item-count');
@@ -719,7 +737,6 @@ function hideProduct() {
     productPage.className = classes.join(' ');
   }
 }
-
 
 function showCart() {
   var classes = cartPage.className.split(' ');

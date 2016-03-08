@@ -58,7 +58,7 @@
                 <img class="media-object" id="product-img" src="" alt="Product Image">
               </div>
               <div class="media-body media-middle">
-                <div class="form-group">
+                <div id="product-form" class="form-group">
                   <div>
                     <p id="product-info" class="text-info col-md-12">                    </p>
                     <label class="label label-info col-md-1 col-md-offset-1"> Price: </label>
@@ -67,11 +67,11 @@
                     <p id="product-rating" class="col-md-3"></p>
                     <label class="label label-info col-md-1">Reviews: </label>
                     <p id="product-reviews" class="col-md-2"></p>
+                    <form id="cart-button">
+                      <button id="1" type="button" class="btn btn-secondary btn-lg bg-info col-md-4 col-sm-4">Add to Cart
+                      </button>
+                    </form>
                   </div>
-                  <form id="cart-button">
-                    <button id="product-cart-btn" type="button" class="btn btn-secondary btn-lg bg-info col-md-4 col-sm-4">Add to Cart
-                    </button>
-                  </form>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@
           SPECS
         </div><!--END SPECS-->
         <hr>
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <h2 class="panel-title text-center">Reviews</h2>
           </div>
