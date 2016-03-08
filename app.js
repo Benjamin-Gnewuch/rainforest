@@ -9,7 +9,10 @@
   description: "Unopanit rutiepa rer yotux iputi to itereti. Arienek taced ecetirap bopep? Iponeyuy urere repoyoc? Padupip cierire nelerac soto arev kame dologol ga. Ri dale pina ebocelier tut vor cixur eyur cicima pobayol? Ga ni yac execorug ran ieterocol one erapo. Piwinen towar rofon. Gosasa viena adarab hic ayiye lufonem ritilin anonele se. Yewi benosa ocu riehe ecumiw atocitof ge ara amaseya liek. Nec etenano etuyi iebie sidatu esawe ze. Mim sat re ocodedo yinunor sie nigip se, ger ekeleli edekin ne ikor furaxir la hohoru atene rar. Imuhec lupi one lidec temerop rotin pi; gecapab iricotis dola. Narodi luli apuru betomir yoseriey sar ired, hisolet tir eloci; nade sanira iforenab apotie rac tul akele! Topuri tagiter tege pe tot tona etu ce suqif, nara nihigig fene.",
   quantity: 0,
   itemID: 0,
-  itemReviews: []
+  itemReviews: [
+    {name: "John", rating: 5, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
+    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
 }
 ,{
   name: "Android",
@@ -379,8 +382,32 @@ function generateProduct(id) {
 
   var cartButton = document.getElementById('product-cart-btn');
   cartButton.id = product.itemID;
+
+  generateReviews(product.id);
 }
 
+function generateReviews(id) {
+
+  //It's not seeing this statement
+  var reviews = productList[id].itemReviews;
+  var location = document.getElementById('reviews');
+  for(var i = 0; i < reviews.length; i++) {
+    var newReview  = newElement('div', location);
+    newReview.className = 'panel panel-warning';
+
+    var reviewHeading = newElement('div', newReview);
+    reviewHeading.className = 'panel-heading';
+
+    var reviewTitle = newElement('h3', reviewHeading);
+    reviewTitle.className = 'panel-title';
+    reviewTitle.textContent = reviews[i].name;
+
+    var reviewBody = newElement('div', newReview);
+    reviewBody.className = 'panel-body';
+    reviewBody.textContent = reviews[i].review;
+
+  }
+}
 
 
 
