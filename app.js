@@ -270,6 +270,7 @@ function generateSearchResults(items) {
     var paddingLeft = document.createElement('div');
     paddingLeft.className = 'col-md-9 col-md-offset-1';
     resultLocation.appendChild(paddingLeft);
+    paddingLeft.id = 'search-result-' + items[i].itemID;
 
     var newResult = document.createElement('div');
     newResult.className = "media";
@@ -315,13 +316,30 @@ function generateSearchResults(items) {
     viewButton.setAttribute('type', 'button');
     buttonForm.appendChild(viewButton);
 
+    var reviewButton = document.createElement('button');
+    reviewButton.textContent = "Write a Review";
+    reviewButton.id = items[i].itemID;
+    reviewButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1";
+    reviewButton.setAttribute('type', 'button');
+    buttonForm.appendChild(reviewButton);
+
     var horizontal = document.createElement('hr');
 
     cartButton.addEventListener('click', function(event) {
       addItemToCart(event.target.id);
     });
 
-    viewButton.addEventListener('click', function(event) { generateProduct(event.target.id);
+    viewButton.addEventListener('click', function(event) {
+      generateProduct(event.target.id);
+    });
+
+    // var newReview;
+    // // = document.createElement('div');
+    // // newReview.id = "user-review-for-" + items[i].itemID;
+
+    reviewButton.addEventListener('click', function(event) {
+      writeReview(event.target.id);
+      // paddingLeft.appendChild(newReview);
     });
 
     newResult.appendChild(mediaLeft);
@@ -333,7 +351,8 @@ function generateSearchResults(items) {
     mediaBody.appendChild(mediaDescription);
     mediaBody.appendChild(buttonForm);
     paddingLeft.appendChild(newResult);
-    paddingLeft.appendChild(horizontal);
+    //resultLocation.appendChild(horizontal);
+
 
   }
 
@@ -429,6 +448,66 @@ function generateReviews(id) {
     reviewFooter.textContent = "Rating: " + reviews[i].rating + "/5";
 
   }
+}
+
+function writeReview(id) {
+  var location = document.getElementById('search-result-'+id);
+  var container = newElement('div',location);
+  var reviewPanel = newElement('div',container);
+  var reviewHeader = newElement('div', reviewPanel);
+
+  ratingButtons(reviewHeader);
+  //rating buttons
+
+
+  var reviewBody = newElement('textarea', reviewPanel);
+
+  container.className = 'container-fluid col-md-offset-4 col-md-8';
+  reviewPanel.className = 'panel panel-default';
+  reviewHeader.className = 'panel-heading text-center';
+  reviewBody.className = 'form-control';
+
+  reviewBody.rows = 5;
+  reviewBody.placeholder = 'Write your comments here...';
+
+//  location.appendChild(reviewPanel);
+}
+
+function ratingButtons(location) {
+  var buttonGroup = newElement('div', location);
+  var reviewRating1 = newElement('button',buttonGroup);
+  var reviewRating2 = newElement('button',buttonGroup);
+  var reviewRating3 = newElement('button',buttonGroup);
+  var reviewRating4 = newElement('button',buttonGroup);
+  var reviewRating5 = newElement('button',buttonGroup);
+
+  buttonGroup.className = 'btn-group btn-group-lg';
+  buttonGroup.setAttribute = ('role','group');
+  buttonGroup.setAttribute = ('aria-label','Rating');
+
+  reviewRating5.className = 'btn btn-success';
+  reviewRating4.className = 'btn btn-primary';
+  reviewRating3.className = 'btn btn-info';
+  reviewRating2.className = 'btn btn-warning';
+  reviewRating1.className = 'btn btn-danger';
+
+  reviewRating5.id = 'rating-love';
+  reviewRating4.id = 'rating-like';
+  reviewRating3.id = 'rating-neutral';
+  reviewRating2.id = 'rating-dislke';
+  reviewRating1.id = 'rating-hate';
+
+  reviewRating5.type = 'button';
+  reviewRating4.type = 'button';
+  reviewRating3.type = 'button';
+  reviewRating2.type = 'button';
+  reviewRating1.type = 'button';
+
+  reviewRating5.textContent = 'Love it!';
+  reviewRating4.textContent = 'Like it';
+  reviewRating3.textContent = 'Neutral';
+  reviewRating2.textContent = 'Dislike it';
+  reviewRating1.textContent = 'Hate it!';
 }
 
 function cartGenerate() {
