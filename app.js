@@ -166,11 +166,16 @@ var review = {
   text: ""
 }
 
+var user = {
+  name: 'Hector',
+  reviews: [],
+  pastOrders: [],
+  recommended: []
+}
 //PRODUCT COLLECTION
 
 var searchResults = [];
 var cart = [];
-var pastOrders = [];
 
 var searchPage = document.getElementById('search-page');
 var headerLogo = document.getElementsByClassName('logo')[0];
@@ -333,13 +338,8 @@ function generateSearchResults(items) {
       generateProduct(event.target.id);
     });
 
-    // var newReview;
-    // // = document.createElement('div');
-    // // newReview.id = "user-review-for-" + items[i].itemID;
-
     reviewButton.addEventListener('click', function(event) {
       writeReview(event.target.id);
-      // paddingLeft.appendChild(newReview);
     });
 
     newResult.appendChild(mediaLeft);
@@ -351,7 +351,7 @@ function generateSearchResults(items) {
     mediaBody.appendChild(mediaDescription);
     mediaBody.appendChild(buttonForm);
     paddingLeft.appendChild(newResult);
-    //resultLocation.appendChild(horizontal);
+    paddingLeft.appendChild(horizontal);
 
 
   }
@@ -451,29 +451,30 @@ function generateReviews(id) {
 }
 
 function writeReview(id) {
+  var reviewObject = {
+    item: -1,
+    rating: 0,
+    comments: ""
+  }
   var location = document.getElementById('search-result-'+id);
   var container = newElement('div',location);
   var reviewPanel = newElement('div',container);
   var reviewHeader = newElement('div', reviewPanel);
 
-  ratingButtons(reviewHeader);
-  //rating buttons
-
+  var rating = ratingButtons(reviewHeader, id);
 
   var reviewBody = newElement('textarea', reviewPanel);
 
-  container.className = 'container-fluid col-md-offset-4 col-md-8';
+  container.className = 'container-fluid col-md-offset-4 col-md-8 col-sm-offset-4 col-sm-8';
   reviewPanel.className = 'panel panel-default';
   reviewHeader.className = 'panel-heading text-center';
   reviewBody.className = 'form-control';
 
   reviewBody.rows = 5;
   reviewBody.placeholder = 'Write your comments here...';
-
-//  location.appendChild(reviewPanel);
 }
 
-function ratingButtons(location) {
+function ratingButtons(location, itemID) {
   var buttonGroup = newElement('div', location);
   var reviewRating1 = newElement('button',buttonGroup);
   var reviewRating2 = newElement('button',buttonGroup);
@@ -508,6 +509,20 @@ function ratingButtons(location) {
   reviewRating3.textContent = 'Neutral';
   reviewRating2.textContent = 'Dislike it';
   reviewRating1.textContent = 'Hate it!';
+
+
+  reviewRating5.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+  reviewRating4.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+  reviewRating3.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+  reviewRating2.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+  reviewRating1.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+
+}
+
+function returnRating(id, itemID) {
+  if(id == 'Love it!') {
+    user.reviews.push
+  }
 }
 
 function cartGenerate() {
@@ -681,7 +696,7 @@ function cartCount() {
 }
 
 function clearCart() {
-  pastOrders.push(cart);
+  user.pastOrders.push(cart);
   var cartIcon = document.getElementById('cart-btn');
   cartIcon.firstChild.textContent = '0';
   cart = [];
