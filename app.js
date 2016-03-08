@@ -352,6 +352,7 @@ function addItemToCart(id) {
 }
 
 function generateProduct(id) {
+  clearReviews();
   showProduct();
   var product;
 
@@ -382,22 +383,16 @@ function generateProduct(id) {
   var reviewCount = document.getElementById('product-reviews');
   reviewCount.textContent = "  " + product.itemReviews.length;
 
-  // var formLocation = document.getElementById('product-form');
-  // var form = newElement('form', formLocation);
-  //
-  // var cartButton = newElement('button',form);
-  //
-  // cartButton.className = 'btn btn-secondary btn-lg bg-info col-md-4 col-sm-4';
-  // cartButton.setAttribute = ('type','button');
-  // cartButton.textContent = 'Add to Cart';
-  // cartButton.id = product.itemID;
-
-
-
   cartBtn.id = product.itemID;
 
-
   generateReviews(product.itemID);
+}
+
+function clearReviews() {
+  var reviewsLocation = document.getElementById('reviews');
+  while(reviewsLocation.firstChild) {
+    reviewsLocation.removeChild(reviewsLocation.firstChild);
+  }
 }
 
 function generateReviews(id) {
