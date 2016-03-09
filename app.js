@@ -363,14 +363,14 @@ function generateSearchResults(items) {
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
     cartButton.id = items[i].itemID;
-    cartButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-sm-3";
+    cartButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-sm-3 vspace5";
     cartButton.setAttribute('type', 'button');
     buttonForm.appendChild(cartButton);
 
     var viewButton = document.createElement('button');
     viewButton.textContent = "View Item";
     viewButton.id = items[i].itemID;
-    viewButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1";
+    viewButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5";
     viewButton.setAttribute('type', 'button');
     buttonForm.appendChild(viewButton);
 
