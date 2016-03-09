@@ -514,50 +514,50 @@ function writeReview(id) {
   reviewBody.placeholder = 'Write your comments here...';
 }
 
-function ratingButtons(location, itemID) {
-  var buttonGroup = newElement('div', location);
-  var reviewRating1 = newElement('button',buttonGroup);
-  var reviewRating2 = newElement('button',buttonGroup);
-  var reviewRating3 = newElement('button',buttonGroup);
-  var reviewRating4 = newElement('button',buttonGroup);
-  var reviewRating5 = newElement('button',buttonGroup);
-
-  buttonGroup.className = 'btn-group btn-group-lg';
-  buttonGroup.setAttribute = ('role','group');
-  buttonGroup.setAttribute = ('aria-label','Rating');
-
-  reviewRating5.className = 'btn btn-success';
-  reviewRating4.className = 'btn btn-primary';
-  reviewRating3.className = 'btn btn-info';
-  reviewRating2.className = 'btn btn-warning';
-  reviewRating1.className = 'btn btn-danger';
-
-  reviewRating5.id = 'rating-love';
-  reviewRating4.id = 'rating-like';
-  reviewRating3.id = 'rating-neutral';
-  reviewRating2.id = 'rating-dislke';
-  reviewRating1.id = 'rating-hate';
-
-  reviewRating5.type = 'button';
-  reviewRating4.type = 'button';
-  reviewRating3.type = 'button';
-  reviewRating2.type = 'button';
-  reviewRating1.type = 'button';
-
-  reviewRating5.textContent = 'Love it!';
-  reviewRating4.textContent = 'Like it';
-  reviewRating3.textContent = 'Neutral';
-  reviewRating2.textContent = 'Dislike it';
-  reviewRating1.textContent = 'Hate it!';
-
-
-  reviewRating5.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
-  reviewRating4.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
-  reviewRating3.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
-  reviewRating2.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
-  reviewRating1.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
-
-}
+// function ratingButtons(location, itemID) {
+//   var buttonGroup = newElement('div', location);
+//   var reviewRating1 = newElement('button',buttonGroup);
+//   var reviewRating2 = newElement('button',buttonGroup);
+//   var reviewRating3 = newElement('button',buttonGroup);
+//   var reviewRating4 = newElement('button',buttonGroup);
+//   var reviewRating5 = newElement('button',buttonGroup);
+//
+//   buttonGroup.className = 'btn-group btn-group-lg';
+//   buttonGroup.setAttribute = ('role','group');
+//   buttonGroup.setAttribute = ('aria-label','Rating');
+//
+//   reviewRating5.className = 'btn btn-success';
+//   reviewRating4.className = 'btn btn-primary';
+//   reviewRating3.className = 'btn btn-info';
+//   reviewRating2.className = 'btn btn-warning';
+//   reviewRating1.className = 'btn btn-danger';
+//
+//   reviewRating5.id = 'rating-love';
+//   reviewRating4.id = 'rating-like';
+//   reviewRating3.id = 'rating-neutral';
+//   reviewRating2.id = 'rating-dislke';
+//   reviewRating1.id = 'rating-hate';
+//
+//   reviewRating5.type = 'button';
+//   reviewRating4.type = 'button';
+//   reviewRating3.type = 'button';
+//   reviewRating2.type = 'button';
+//   reviewRating1.type = 'button';
+//
+//   reviewRating5.textContent = 'Love it!';
+//   reviewRating4.textContent = 'Like it';
+//   reviewRating3.textContent = 'Neutral';
+//   reviewRating2.textContent = 'Dislike it';
+//   reviewRating1.textContent = 'Hate it!';
+//
+//
+//   reviewRating5.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+//   reviewRating4.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+//   reviewRating3.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+//   reviewRating2.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+//   reviewRating1.addEventListener('click', function(event) { returnRating(event.target.id, itemID);});
+//
+// }
 
 function returnRating(id, itemID) {
   if(id == 'Love it!') {
