@@ -214,7 +214,7 @@ var productList = [{
 
 var review = {
   name: "",
-  rating: 0,
+  ratingNum: 0,
   review: ""
 }
 
@@ -299,6 +299,7 @@ cartBtn.addEventListener('click', function(event) {
 function search(event) {
   event.preventDefault();
 
+  updateRatings();
   showSearch();
   searchResults = [];
 
@@ -448,8 +449,8 @@ function generateProduct(id) {
   var price = document.getElementById('product-price');
   price.textContent = product.price;
 
-  var rating = document.getElementById('product-rating');
-  rating.textContent = product.rating;
+  var productRating = document.getElementById('product-rating');
+  productRating.textContent = product.rating;
 
   var reviewCount = document.getElementById('product-reviews');
   reviewCount.textContent = "  " + product.itemReviews.length;
@@ -505,38 +506,39 @@ function generateReviews(id) {
 
 function writeReview() {
   review.name = user.name;
-  review.rating = 0;
+  review.ratingNum = 0;
   review.review = "";
   reviewForm.className = 'row';
 }
 
 function setRating(id) {
   if (id == 'rating-love') {
-    review.rating = 5;
+    review.ratingNum = 5;
   }
   else if (id == 'rating-like'){
-    review.rating = 4;
+    review.ratingNum = 4;
   }
   else if (id == 'rating-neutral'){
-    review.rating = 3;
+    review.ratingNum = 3;
   }
   else if (id == 'rating-dislike'){
-    review.rating = 2;
+    review.ratingNum = 2;
   }
   else if (id == 'rating-hate'){
-    review.rating = 1;
+    review.ratingNum = 1;
   }
 }
 
 function submitReview(id) {
   review.name = user.name;
   review.review = document.getElementById('review-text').value;
-  user.reviews.push({productId: id, rating: review.rating, review: review.review});
-  productList[id].itemReviews.push({name: review.name, rating: review.rating, review: review.review});
+  user.reviews.push({productId: id, rating: review.ratingNum, review: review.review});
+  productList[id].itemReviews.push({name: review.name, rating: review.ratingNum, review: review.review});
   reviewForm.className = 'hide';
   clearReviews();
   generateReviews(id);
   console.log(user.reviews);
+  updateRatings();
 }
 
 function cancelReview() {
@@ -926,6 +928,20 @@ function newElement(type, parent) {
     parent.appendChild(temp);
   }
   return temp;
+}
+
+function average(items) {
+  var sum = 0;
+  for(var i = 0, j = items.length; i < j; i++) {
+    sum += items[i].rating;
+  }
+  return (sum/items.length).toFixed(2);
+}
+
+function updateRatings() {
+  for(var i = 0, j = productList.length; i < j; i++) {
+    productList[i].rating=average(productList[i].itemReviews);
+  }
 }
 
 window.onload = search;
