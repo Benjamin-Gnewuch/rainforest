@@ -1,5 +1,4 @@
-//PRODUCTS
- var productList = [{
+var productList = [{
   name: "iPhone",
   img:
     "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/plus/iphone6s-plus-box-gray-2015_GEO_US?wid=478&hei=595&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1453526293487",
@@ -270,7 +269,7 @@ var paymentCVV = document.getElementById('payment-card-cvv');
 
 var receiptPage = document.getElementById('receipt-page');
 
-//EVENTLISTENERS
+
 headerLogo.addEventListener('click', showSearch);
 
 searchButton.addEventListener('click', search);
@@ -297,7 +296,6 @@ cartBtn.addEventListener('click', function(event) {
   addItemToCart(event.target.id);
 });
 
-//FUNCTIONS
 function search(event) {
   event.preventDefault();
 
@@ -533,10 +531,12 @@ function setRating(id) {
 function submitReview(id) {
   review.name = user.name;
   review.review = document.getElementById('review-text').value;
+  user.reviews.push({productId: id, rating: review.rating, review: review.review});
   productList[id].itemReviews.push({name: review.name, rating: review.rating, review: review.review});
   reviewForm.className = 'hide';
   clearReviews();
   generateReviews(id);
+  console.log(user.reviews);
 }
 
 function cancelReview() {
