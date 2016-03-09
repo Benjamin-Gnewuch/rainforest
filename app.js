@@ -216,7 +216,7 @@
 var review = {
   name: "",
   rating: 0,
-  text: ""
+  review: ""
 }
 
 var user = {
@@ -225,7 +225,6 @@ var user = {
   pastOrders: [],
   recommended: []
 }
-//PRODUCT COLLECTION
 
 var searchResults = [];
 var cart = [];
@@ -239,6 +238,11 @@ var searchButton = document.getElementById('search-btn');
 var productPage = document.getElementById('product-page');
 var buttonLocation = document.getElementById('cart-button');
 var cartBtn = buttonLocation.children[0];
+var writeReviewButton = document.getElementById('write-review');
+var reviewForm = document.getElementById('review-form');
+var submitReviewButton = document.getElementById('review-submit');
+var cancelReviewButton = document.getElementById('review-cancel');
+var rateReview = document.getElementById('review-rating');
 
 var cartPage = document.getElementById('cart-page');
 var cartButton = document.getElementById('cart-btn');
@@ -272,6 +276,18 @@ headerLogo.addEventListener('click', showSearch);
 searchButton.addEventListener('click', search);
 
 cartButton.addEventListener('click', cartGenerate);
+
+writeReviewButton.addEventListener('click', writeReview);
+
+rateReview.addEventListener('click', function(event) {
+  setRating(event.target.id);
+});
+
+submitReviewButton.addEventListener('click', function(event) {
+  submitReview(event.target.dataset.id);
+});
+
+cancelReviewButton.addEventListener('click', cancelReview);
 
 checkoutButton.addEventListener('click', showCheckout);
 
@@ -399,8 +415,6 @@ function generateSearchResults(items) {
 }
 
 function addItemToCart(id) {
-  console.log(id);
-
   for (var i = 0; i < productList.length; i++) {
     if(id == productList[i].itemID) {
       cart.push(productList[i]);
@@ -445,6 +459,7 @@ function generateProduct(id) {
   cartBtn.id = product.itemID;
 
   generateReviews(product.itemID);
+  submitReviewButton.dataset.id = id;
 }
 
 function clearReviews() {
@@ -490,13 +505,44 @@ function generateReviews(id) {
   }
 }
 
-function writeReview(id) {
-  var reviewObject = {
-    item: id,
-    rating: 0,
-    comments: ""
-  }
+function writeReview() {
+  review.name = user.name;
+  review.rating = 0;
+  review.review = "";
+  reviewForm.className = 'row';
+}
 
+function setRating(id) {
+  if (id == 'rating-love') {
+    review.rating = 5;
+  }
+  else if (id == 'rating-like'){
+    review.rating = 4;
+  }
+  else if (id == 'rating-neutral'){
+    review.rating = 3;
+  }
+  else if (id == 'rating-dislike'){
+    review.rating = 2;
+  }
+  else if (id == 'rating-hate'){
+    review.rating = 1;
+  }
+}
+
+function submitReview(id) {
+  review.name = user.name;
+  review.review = document.getElementById('review-text').value;
+  productList[id].itemReviews.push({name: review.name, rating: review.rating, review: review.review});
+  reviewForm.className = 'hide';
+  clearReviews();
+  generateReviews(id);
+}
+
+function cancelReview() {
+  document.getElementById('review-text').value = "";
+  document.getElementById('review-text').setAttribute = ("placeholder","Write comments here");
+  reviewForm.className = 'hide';
 }
 
 function cartGenerate() {
