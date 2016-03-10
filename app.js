@@ -238,13 +238,13 @@ function generateProduct(id) {
   info.style.fontSize = "1.2em";
 
   var price = document.getElementById('product-price');
-  price.textContent = product.price;
+  price.textContent = "Price: " + product.price;
 
   var productRating = document.getElementById('product-rating');
-  productRating.textContent = product.rating;
+  productRating.textContent = "Rating: " + product.rating;
 
   var reviewCount = document.getElementById('product-reviews');
-  reviewCount.textContent = "  " + product.itemReviews.length;
+  reviewCount.textContent = "Reviews: " + product.itemReviews.length;
 
   cartBtn.id = product.itemID;
 
