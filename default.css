@@ -8,3 +8,11 @@
 .vspace7 { margin-top: 50px; }
 .vspace8 { margin-top: 100px; }
 .vspace9 { margin-top: 150px; }
+
+.hspace0 { margin-right: -25px; }
+.hspace { margin-right: 5px; }
+.hspace1 { margin-right: 10px; }
+.hspace2 { margin-right: 20px; }
+.hspace3 { margin-right: 30px; }
+.hspace4 { margin-right: 40px; }
+.hspace5 { margin-right: 50px; }
