@@ -10,14 +10,14 @@
     <div id="header" class="container-fluid">
       <form>
         <div class="row">
-          <div class="container-fixed col-md-3 col-sm-2 col-xs-2 vspace4 hspace4">
+          <div class="container-fixed col-md-3 col-sm-2 col-xs-2 vspace4 hspace5">
             <a href="#" class="logo">
               <img src="logo.jpg" class="img-responsive" alt="store shop logo">
             </a>
           </div>
-          <div class="col-md-6 vspace7">
-            <form>
-              <div class="input-group">
+          <div class="col-md-7 vspace7">
+            <form class="form-inline">
+              <div class="form-group col-md-2 col-sm-2 hspace0">
                 <select id="category-select" class="form-control input-lg" name="category">
                   <option value="all">All</option>
                   <option value="tech">Technology</option>
@@ -25,37 +25,13 @@
                   <option value="entertainment">Entertainment</option>
                 </select>
               </div>
-              <div class="input-group">
+              <div class="form-group col-md-10 col-sm-5">
                 <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search">
                 <input type="submit" id="search-btn" value="Search" class="hidden">
               </div>
             </form>
           </div>
-
-
-
-          <!-- <div class="col-md-1 col-sm-1 col-xs-2 vspace7">
-            <form action="#">
-              <select id="category-select" class="form-control input-lg" name="category">
-                <option value="all">All</option>
-                <option value="tech">Technology</option>
-                <option value="lit">Literature</option>
-                <option value="entertainment">Entertainment</option>
-              </select>
-            </form>
-          </div>
-          <div class="col-md-5 col-sm-4 col-xs-4 vspace7">
-            <form action="#">
-              <input id="search-textbox" class="form-control input-lg" type="text" placeholder="Search">
-              <input type="submit" id="search-btn" value="Search" class="hidden">
-            </form>
-          </div> -->
-
-
-
-
-
-          <div class="col-md-2 col-md-offset-1 col-sm-12 col-xs-3 text-right vspace6">
+          <div class="col-md-2 col-sm-12 col-xs-3 text-right vspace6">
             <form action="#">
               <button id="user-btn" type="button" class="btn btn-primary"><i class="fa fa-user fa-3x"></i>
               </button>
@@ -166,34 +142,33 @@
       <form>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <fieldset class="form-group">
-              <legend class="text-center">Checkout</legend>
-              <fieldset class="form-group text-center">
-                <label for="checkout-count" class="col-md-6 form-control-label">Number of Items: </label>
-                <p id="checkout-count" class="form-control-static">0</p>
-              </fieldset>
-              <fieldset class="form-group text-center">
-                <label for="checkout-subtotal" class="col-md-6 form-control-label">Subtotal: </label>
-                <p id="checkout-subtotal" class="form-control-static">$0.00</p>
-              </fieldset>
-              <fieldset class="form-group text-center">
-                <label for="checkout-tax" class="col-md-6 form-control-label">Sales Tax: </label>
-                <p id="checkout-tax" class="form-control-static">$0.00</p>
-              </fieldset>
-              <hr>
-              <fieldset class="form-group text-center">
-                <label for="checkout-total" class="col-md-6 form-control-label">Total: </label>
-                <p id="checkout-total" class="form-control-static">$0.00</p>
-              </fieldset>
-              <hr>
-            </fieldset>
+            <h3 class="h3 text-center vspace4">Checkout</h3>
+            <table class="table">
+              <tr class="table-hover">
+                <td><label for="checkout-count" class="col-md-6 form-control-label">Number of Items: </label></td>
+                <td><p id="checkout-count" class="form-control-static">0</p></td>
+              </tr>
+              <tr class="table-hover">
+                <td><label for="checkout-subtotal" class="col-md-6 form-control-label">Subtotal: </label></td>
+                <td><p id="checkout-subtotal" class="form-control-static">$0.00</p></td>
+              </tr>
+              <tr class="table-hover">
+                <td><label for="checkout-tax" class="col-md-6 form-control-label">Sales Tax:</label></td>
+                <td><p id="checkout-tax" class="form-control-static">$0.00</p></td>
+              </tr>
+              <tr class="table-hover">
+                <td><label for="checkout-total" class="col-md-6 form-control-label">Total: </label></td>
+                <td><p id="checkout-total" class="form-control-static">$0.00</p></td>
+              </tr>
+            </table>
+            <hr>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <legend class="text-center">Shipping and Payment</legend>
             <div class="row">
-              <div id="checkout-user-div" class="col-md-6 text-center">
+              <div id="checkout-user-div" class="col-md-6">
                 <fieldset class="form-group">
                   <label for="payment-name" class="col-md-12 form-control-label">Name on Card</label>
                   <input type="text" class="col-md-4 form-control" id="payment-name">
@@ -274,13 +249,13 @@
                 </fieldset>
               </div>
               <div id="checkout-payment-div" class="col-md-6">
-                <fieldset class="form-group text-center">
+                <fieldset class="form-group text-left">
                   <label for="payment-card-number" class="col-md-12 form-control-label">Card Number</label>
                   <input type="text" class="col-md-4 form-control" id="payment-card-number" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16">
                 </fieldset>
                 <fieldset id="card-info" class="form-group">
-                  <label for="payment-card-exp" class="col-md-12 form-control-label  text-center">Expiration Date</label>
-                  <div class="col-md-5 col-md-offset-1">
+                  <label for="payment-card-exp" class="col-md-12 form-control-label  text-left">Expiration Date</label>
+                  <div class="col-md-5">
                     <select class="form-control col-md-2" name="exp-month" id="exp-month">
                       <option>Month</option>
                       <option value="01">Jan (01)</option>
@@ -311,8 +286,8 @@
                   </div>
                 </fieldset>
                 <fieldset class="form-group">
-                  <label for="payment-card-cvv" class="col-md-12 form-control-label text-center">Security Code</label>
-                  <div class="col-md-4 col-md-offset-4">
+                  <label for="payment-card-cvv" class="col-md-12 form-control-label text-left">Security Code</label>
+                  <div class="col-md-4 ">
                     <input type="password" class="col-md-4 form-control" id="payment-card-cvv" placeholder="xxx" maxlength="3">
                   </div>
                 </fieldset>

@@ -269,8 +269,9 @@ function generateReviews(id) {
     var newReview  = newElement('div', location);
     var reviewHeading = newElement('div', newReview);
     var reviewTitle = newElement('h3', reviewHeading);
-    var reviewFooter = newElement('h5', newReview);
-    var reviewBody = newElement('div', newReview);
+    var reviewBody = newElement('div',newReview,"panel-body")
+    var reviewRating = newElement('h5', reviewBody);
+    var reviewText = newElement('div', reviewBody);
 
     if (reviews[i].rating <= 2) {
       newReview.className = 'panel panel-danger';
@@ -284,12 +285,12 @@ function generateReviews(id) {
 
     reviewHeading.className = 'panel-heading';
     reviewTitle.className = 'panel-title';
-    reviewBody.className = 'panel-body';
-    reviewFooter.className = 'well h5 text-center';
+    reviewText.className = 'panel-body';
+    reviewRating.className = 'h5 panel-body';
 
     reviewTitle.textContent = reviews[i].name;
-    reviewBody.textContent = reviews[i].review;
-    reviewFooter.textContent = "Rating: " + reviews[i].rating + "/5";
+    reviewText.textContent = reviews[i].review;
+    reviewRating.textContent = "Rating: " + reviews[i].rating + "/5";
   }
 }
 
@@ -559,6 +560,11 @@ function generateAddress() {
 }
 
 function loadCheckout() {
+  checkoutItemCount.className = "text-right";
+  checkoutSubTotal.className = "text-right";
+  checkoutTax.className = "text-right";
+  checkoutTotal.className = "text-right";
+
   checkoutItemCount.textContent = cartCount();
   checkoutSubTotal.textContent = '$' + (cartSum()).toFixed(2);
   checkoutTax.textContent = '$' + (cartSum() * 0.08).toFixed(2);
@@ -724,7 +730,7 @@ function average(items) {
   for(var i = 0, j = items.length; i < j; i++) {
     sum += items[i].rating;
   }
-  return (sum/items.length).toFixed(2);
+  return (sum/items.length).toFixed(1);
 }
 
 function updateRatings() {
