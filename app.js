@@ -1,3 +1,5 @@
+//Rearrange header to fit,
+
 var review = {
   name: "",
   ratingNum: 0,
@@ -55,7 +57,6 @@ var paymentCVV = document.getElementById('payment-card-cvv');
 
 var receiptPage = document.getElementById('receipt-page');
 
-
 headerLogo.addEventListener('click', showSearch);
 
 searchButton.addEventListener('click', search);
@@ -81,6 +82,9 @@ payButton.addEventListener('click', validatePayment);
 cartBtn.addEventListener('click', function(event) {
   addItemToCart(event.target.id);
 });
+
+var logoContainer = document.getElementsByClassName('container-fixed')[0];
+logoContainer.style.width = '250px';
 
 function search(event) {
   event.preventDefault();
@@ -127,7 +131,7 @@ function generateSearchResults(items) {
     var resultLocation = document.getElementById('search-results');
 
     var paddingLeft = document.createElement('div');
-    paddingLeft.className = 'col-md-9 col-md-offset-1';
+    paddingLeft.className = 'col-md-9 col-md-offset-1 vspace5';
     resultLocation.appendChild(paddingLeft);
     paddingLeft.id = 'search-result-' + items[i].itemID;
 
@@ -138,7 +142,7 @@ function generateSearchResults(items) {
     mediaLeft.className = "media-left media-middle";
 
     var mediaObject = document.createElement('img');
-    mediaObject.className = "media-object";
+    mediaObject.className = "media-object hspace4";
     mediaObject.src = items[i].img;
     mediaObject.setAttribute("width", "300px");
 
@@ -164,18 +168,19 @@ function generateSearchResults(items) {
     var cartButton = document.createElement('button');
     cartButton.textContent = "Add to Cart";
     cartButton.id = items[i].itemID;
-    cartButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-sm-3 vspace5";
+    cartButton.className = "btn btn-secondary btn-lg bg-primary col-md-3 col-sm-3 vspace5";
     cartButton.setAttribute('type', 'button');
     buttonForm.appendChild(cartButton);
 
     var viewButton = document.createElement('button');
     viewButton.textContent = "View Item";
     viewButton.id = items[i].itemID;
-    viewButton.className = "btn btn-secondary btn-lg bg-info col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5";
+    viewButton.className = "btn btn-secondary btn-lg bg-primary col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5";
     viewButton.setAttribute('type', 'button');
     buttonForm.appendChild(viewButton);
 
     var horizontal = document.createElement('hr');
+    horizontal.className = "vspace7";
 
     cartButton.addEventListener('click', function(event) {
       addItemToCart(event.target.id);
@@ -267,7 +272,6 @@ function generateReviews(id) {
     var reviewFooter = newElement('h5', newReview);
     var reviewBody = newElement('div', newReview);
 
-
     if (reviews[i].rating <= 2) {
       newReview.className = 'panel panel-danger';
     }
@@ -281,12 +285,11 @@ function generateReviews(id) {
     reviewHeading.className = 'panel-heading';
     reviewTitle.className = 'panel-title';
     reviewBody.className = 'panel-body';
-    reviewFooter.className = 'panel-footer h5';
+    reviewFooter.className = 'well h5 text-center';
 
     reviewTitle.textContent = reviews[i].name;
     reviewBody.textContent = reviews[i].review;
     reviewFooter.textContent = "Rating: " + reviews[i].rating + "/5";
-
   }
 }
 
