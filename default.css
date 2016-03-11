@@ -18,3 +18,16 @@
 .hspace5 { margin-right: 50px; }
 
 .hspaceleft0 { margin-left: -15px; }
+
+.off-white {  background-color: #5e6c7a; }
+
+#header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+body {
+  padding-top: 175px;
+}
