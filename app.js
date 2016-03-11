@@ -271,11 +271,11 @@ function generateReviews(id) {
   for(var i = 0; i < reviews.length; i++) {
 
     var newReview  = newElement('div', location);
-    var reviewHeading = newElement('div', newReview);
-    var reviewTitle = newElement('h3', reviewHeading);
+    var reviewHeading = newElement('div', newReview,'panel-heading');
+    var reviewTitle = newElement('h3', reviewHeading,'panel-title');
     var reviewBody = newElement('div',newReview,"panel-body")
-    var reviewRating = newElement('h5', reviewBody);
-    var reviewText = newElement('div', reviewBody);
+    var reviewRating = newElement('h5', reviewBody,'h5 panel-body');
+    var reviewText = newElement('div', reviewBody,'panel-body');
 
     if (reviews[i].rating <= 2) {
       newReview.className = 'panel panel-danger';
@@ -284,13 +284,13 @@ function generateReviews(id) {
       newReview.className = 'panel panel-success';
     }
     else {
-      newReview.className = 'panel panel-warning';
+      newReview.className = 'panel panel-default';
     }
 
-    reviewHeading.className = 'panel-heading';
-    reviewTitle.className = 'panel-title';
-    reviewText.className = 'panel-body';
-    reviewRating.className = 'h5 panel-body';
+    // reviewHeading.className = 'panel-heading';
+    // reviewTitle.className = 'panel-title';
+    //reviewText.className = 'panel-body';
+    //reviewRating.className = 'h5 panel-body';
 
     reviewTitle.textContent = reviews[i].name;
     reviewText.textContent = reviews[i].review;
@@ -343,50 +343,34 @@ function cancelReview() {
 
 function cartGenerate() {
   var cartLocation = document.getElementById('cart');
-
-  while(cartLocation.firstChild) {
-      cartLocation.removeChild(cartLocation.firstChild);
-  }
-
+  clearCartPage(cartLocation);
   cartDuplicates();
 
   for(var i = 0; i < cart.length; i++) {
-    var panel = document.createElement('div');
-    panel.className = 'panel panel-default';
+    var panel = newElement('div',cartLocation,'panel panel-default');
 
-    var panelBody = document.createElement('div');
-    panelBody.className = 'panel-body';
+    var panelBody = newElement('div',panel,'panel-body');
 
-    panel.appendChild(panelBody);
     var space = document.createElement('br');
     var horizontal = document.createElement('hr');
 
-    var newRow = document.createElement('div');
-    newRow.className = 'row';
-    var colLeft = document.createElement('div');
-    colLeft.className = 'col-md-4 col-md-offset-1';
-    var colRight = document.createElement('div');
-    colRight.className = 'col-md-2 col-md-offset-3 text-center';
+    var newRow = newElement('div',panelBody,'row');
 
-    panelBody.appendChild(newRow);
-    newRow.appendChild(colLeft);
-    newRow.appendChild(colRight);
-    var media = document.createElement('div');
-    media.className = 'media';
+    var colLeft = newElement('div',newRow,'col-md-4 col-md-offset-1')
 
-    var mediaLeft = document.createElement('div');
-    mediaLeft.className = 'media-left media-middle';
+    var colRight = newElement('div',newRow,'col-md-2 col-md-offset-4 text-center');
 
-    var mediaObject = document.createElement('img');
-    mediaObject.className = 'media-object';
+    var media = newElement('div',colLeft,'media');
+
+    var mediaLeft = newElement('div',media,'media-left media-middle');
+
+    var mediaObject = newElement('img',mediaLeft,'media-object');
     mediaObject.src = cart[i].img;
     mediaObject.setAttribute("width", "150px");
 
-    var mediaBody = document.createElement('div');
-    mediaBody.className = 'media-body';
+    var mediaBody = newElement('div',media,'media-body');
 
-    var mediaHeading = document.createElement('h3');
-    mediaHeading.className = 'media-heading';
+    var mediaHeading = newElement('h3',mediaBody,'media-heading');
     mediaHeading.textContent = cart[i].name;
 
     var labelPrice = document.createElement('label');
@@ -400,6 +384,7 @@ function cartGenerate() {
     var labelRating = document.createElement('label');
     labelRating.setAttribute = ("for","rating");
     labelRating.textContent = "Customer Rating";
+
     var mediaRating = document.createElement('p');
     mediaRating.name = "rating";
     mediaRating.textContent = cart[i].rating;
@@ -407,16 +392,14 @@ function cartGenerate() {
     var formHorizontal = document.createElement('form');
     formHorizontal.className = 'form-horizontal';
 
+
     var formGroup = document.createElement('form');
     formGroup.className = 'form-group';
     formHorizontal.appendChild(formGroup);
 
-    var quantityLocation = document.createElement('div');
-    quantityLocation.className = 'col-md-7';
-    formGroup.appendChild(quantityLocation);
+    var quantityLocation = newElement('div',formGroup,'col-md-7');
 
-    var mediaQuantity = document.createElement('select');
-    mediaQuantity.className = 'form-control form-group';
+    var mediaQuantity = newElement('select',quantityLocation,'form-control');
     mediaQuantity.id = cart[i].itemID;
 
     for(var j = 1; j < 31; j++) {
@@ -425,37 +408,24 @@ function cartGenerate() {
       mediaQuantity.appendChild(option);
     }
 
-    quantityLocation.appendChild(mediaQuantity);
-
     mediaQuantity.value = cart[i].quantity;
     mediaQuantity.addEventListener('change', function(event) {
       changeQuantity(event.target.id, Number(event.target.value));
     });
 
-    var buttonRemove = document.createElement('btn');
-    buttonRemove.setAttribute = ("type", "button");
-    buttonRemove.textContent = "Remove from Cart";
-    buttonRemove.className = "btn btn-default";
-    buttonRemove.id = cart[i].itemID;
-    buttonRemove.addEventListener('click', function(event) {
-      changeQuantity(event.target.id, 0);
-    });
-
-
-    mediaBody.appendChild(mediaHeading);
     mediaBody.appendChild(labelPrice);
     mediaBody.appendChild(unitPrice);
     mediaBody.appendChild(labelRating);
     mediaBody.appendChild(mediaRating);
-    mediaBody.appendChild(formGroup);
-    mediaBody.appendChild(buttonRemove);
-    mediaLeft.appendChild(mediaObject);
-    media.appendChild(mediaLeft);
-    media.appendChild(mediaBody);
-    colLeft.appendChild(media);
-    cartLocation.appendChild(panel);
+    mediaBody.appendChild(formHorizontal);
 
-
+    var buttonRemove = newElement('btn',mediaBody,'btn btn-default');
+    buttonRemove.setAttribute = ("type", "button");
+    buttonRemove.textContent = "Remove from Cart";
+    buttonRemove.id = cart[i].itemID;
+    buttonRemove.addEventListener('click', function(event) {
+      changeQuantity(event.target.id, 0);
+    });
 
     var labelSubtotal = document.createElement('label');
     labelSubtotal.setAttribute = ("for","subtotal");
@@ -489,7 +459,6 @@ function cartGenerate() {
     colRight.appendChild(horizontal);
     colRight.appendChild(labelTotal);
     colRight.appendChild(unitTotal);
-
   }
 
   show(cartPage);
@@ -509,6 +478,16 @@ function cartCount() {
     count += cart[i].quantity;
   }
   return count;
+}
+
+function populateCart(parent) {
+
+}
+
+function clearCartPage(location){
+  while(location.firstChild) {
+      location.removeChild(location.firstChild);
+  }
 }
 
 function clearCart() {
@@ -643,10 +622,13 @@ function hide(pages) {
   }
 }
 
-function newElement(type, parent) {
+function newElement(type, parent, text) {
   var temp = document.createElement(type);
   if (parent != '') {
     parent.appendChild(temp);
+  }
+  if (text != '') {
+    temp.className = text;
   }
   return temp;
 }
