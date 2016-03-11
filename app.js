@@ -149,7 +149,7 @@ function generateSearchResults(items) {
     mediaLeft.className = "media-left media-middle";
 
     var mediaObject = document.createElement('img');
-    mediaObject.className = "media-object hspace4";
+    mediaObject.className = "media-object hspace4 hidden-xs hidden-sm";
     mediaObject.src = items[i].img;
     mediaObject.setAttribute("width", "300px");
 
@@ -287,7 +287,7 @@ function generateReviews(id) {
       newReview.className = 'panel panel-success';
     }
     else {
-      newReview.className = 'panel panel-default';
+      newReview.className = 'panel panel-warning';
     }
 
     // reviewHeading.className = 'panel-heading';
