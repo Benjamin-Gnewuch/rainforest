@@ -1,9 +1,9 @@
 //Rearrange header to fit,
 
 var review = {
-  name: "",
+  name: '',
   ratingNum: 0,
-  review: ""
+  review: ''
 }
 
 var user = {
@@ -143,51 +143,51 @@ function generateSearchResults(items) {
     paddingLeft.id = 'search-result-' + items[i].itemID;
 
     var newResult = document.createElement('div');
-    newResult.className = "media";
+    newResult.className = 'media';
 
     var mediaLeft = document.createElement('div');
-    mediaLeft.className = "media-left media-middle";
+    mediaLeft.className = 'media-left media-middle';
 
     var mediaObject = document.createElement('img');
-    mediaObject.className = "media-object hspace4 hidden-xs hidden-sm";
+    mediaObject.className = 'media-object hspace4 hidden-xs hidden-sm';
     mediaObject.src = items[i].img;
-    mediaObject.setAttribute("width", "300px");
+    mediaObject.setAttribute('width', '300px');
 
     var mediaBody = document.createElement('div');
-    mediaBody.className = "media-body media-middle";
+    mediaBody.className = 'media-body media-middle';
 
     var mediaHeading = document.createElement('h3');
-    mediaHeading.className = "media-heading";
+    mediaHeading.className = 'media-heading';
     mediaHeading.textContent = items[i].name;
 
     var mediaPrice = document.createElement('p');
-    mediaPrice.textContent = "Price: $" + items[i].price;
+    mediaPrice.textContent = 'Price: $' + items[i].price;
 
     var mediaRating = document.createElement('p');
-    mediaRating.textContent = "Rating: " + items[i].rating;
+    mediaRating.textContent = 'Rating: ' + items[i].rating;
 
     var mediaDescription = document.createElement('p');
-    mediaDescription.textContent = "Description: " + items[i].description;
+    mediaDescription.textContent = 'Description: ' + items[i].description;
 
     var buttonForm = document.createElement('form');
-    buttonForm.action = "#";
+    buttonForm.action = '#';
 
     var cartButton = document.createElement('button');
-    cartButton.textContent = "Add to Cart";
+    cartButton.textContent = 'Add to Cart';
     cartButton.id = items[i].itemID;
-    cartButton.className = "btn btn-secondary btn-lg bg-primary col-md-3 col-sm-3 vspace5";
+    cartButton.className = 'btn btn-secondary btn-lg bg-primary col-md-3 col-sm-3 vspace5';
     cartButton.setAttribute('type', 'button');
     buttonForm.appendChild(cartButton);
 
     var viewButton = document.createElement('button');
-    viewButton.textContent = "View Item";
+    viewButton.textContent = 'View Item';
     viewButton.id = items[i].itemID;
-    viewButton.className = "btn btn-secondary btn-lg bg-primary col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5";
+    viewButton.className = 'btn btn-secondary btn-lg bg-primary col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5';
     viewButton.setAttribute('type', 'button');
     buttonForm.appendChild(viewButton);
 
     var horizontal = document.createElement('hr');
-    horizontal.className = "vspace7";
+    horizontal.className = 'vspace7';
 
     cartButton.addEventListener('click', function(event) {
       addItemToCart(event.target.id);
@@ -234,7 +234,7 @@ function generateProduct(id) {
 
   var title = document.querySelector('div.panel-heading > h2');
   title.textContent = product.name;
-  title.style.fontSize = "2em";
+  title.style.fontSize = '2em';
 
   var image = document.getElementById('product-img');
   image.src = product.img;
@@ -242,16 +242,16 @@ function generateProduct(id) {
 
   var info = document.getElementById('product-info');
   info.textContent = product.description;
-  info.style.fontSize = "1.2em";
+  info.style.fontSize = '1.2em';
 
   var price = document.getElementById('product-price');
-  price.textContent = "Price: " + product.price;
+  price.textContent = 'Price: ' + product.price;
 
   var productRating = document.getElementById('product-rating');
-  productRating.textContent = "Rating: " + product.rating;
+  productRating.textContent = 'Rating: ' + product.rating;
 
   var reviewCount = document.getElementById('product-reviews');
-  reviewCount.textContent = "Reviews: " + product.itemReviews.length;
+  reviewCount.textContent = 'Reviews: ' + product.itemReviews.length;
 
   cartBtn.id = product.itemID;
 
@@ -276,7 +276,7 @@ function generateReviews(id) {
     var newReview  = newElement('div', location);
     var reviewHeading = newElement('div', newReview,'panel-heading');
     var reviewTitle = newElement('h3', reviewHeading,'panel-title');
-    var reviewBody = newElement('div',newReview,"panel-body")
+    var reviewBody = newElement('div',newReview,'panel-body')
     var reviewRating = newElement('h5', reviewBody,'h5 panel-body');
     var reviewText = newElement('div', reviewBody,'panel-body');
 
@@ -297,14 +297,14 @@ function generateReviews(id) {
 
     reviewTitle.textContent = reviews[i].name;
     reviewText.textContent = reviews[i].review;
-    reviewRating.textContent = "Rating: " + reviews[i].rating + "/5";
+    reviewRating.textContent = 'Rating: ' + reviews[i].rating + '/5';
   }
 }
 
 function writeReview() {
   review.name = user.name;
   review.ratingNum = 0;
-  review.review = "";
+  review.review = '';
   reviewForm.className = 'row';
 }
 
@@ -339,8 +339,8 @@ function submitReview(id) {
 }
 
 function cancelReview() {
-  document.getElementById('review-text').value = "";
-  document.getElementById('review-text').setAttribute = ("placeholder","Write comments here");
+  document.getElementById('review-text').value = '';
+  document.getElementById('review-text').setAttribute = ('placeholder','Write comments here');
   reviewForm.className = 'hide';
 }
 
@@ -369,7 +369,7 @@ function cartGenerate() {
 
     var mediaObject = newElement('img',mediaLeft,'media-object');
     mediaObject.src = cart[i].img;
-    mediaObject.setAttribute("width", "150px");
+    mediaObject.setAttribute('width', '150px');
 
     var mediaBody = newElement('div',media,'media-body');
 
@@ -377,19 +377,19 @@ function cartGenerate() {
     mediaHeading.textContent = cart[i].name;
 
     var labelPrice = document.createElement('label');
-    labelPrice.setAttribute = ("for","price");
-    labelPrice.textContent = "Price";
+    labelPrice.setAttribute = ('for','price');
+    labelPrice.textContent = 'Price';
 
     var unitPrice = document.createElement('p');
-    unitPrice.name = "price";
+    unitPrice.name = 'price';
     unitPrice.textContent = '$' + cart[i].price;
 
     var labelRating = document.createElement('label');
-    labelRating.setAttribute = ("for","rating");
-    labelRating.textContent = "Customer Rating";
+    labelRating.setAttribute = ('for','rating');
+    labelRating.textContent = 'Customer Rating';
 
     var mediaRating = document.createElement('p');
-    mediaRating.name = "rating";
+    mediaRating.name = 'rating';
     mediaRating.textContent = cart[i].rating;
 
     var formHorizontal = document.createElement('form');
@@ -423,35 +423,35 @@ function cartGenerate() {
     mediaBody.appendChild(formHorizontal);
 
     var buttonRemove = newElement('btn',mediaBody,'btn btn-default');
-    buttonRemove.setAttribute = ("type", "button");
-    buttonRemove.textContent = "Remove from Cart";
+    buttonRemove.setAttribute = ('type', 'button');
+    buttonRemove.textContent = 'Remove from Cart';
     buttonRemove.id = cart[i].itemID;
     buttonRemove.addEventListener('click', function(event) {
       changeQuantity(event.target.id, 0);
     });
 
     var labelSubtotal = document.createElement('label');
-    labelSubtotal.setAttribute = ("for","subtotal");
-    labelSubtotal.textContent = "Subtotal";
+    labelSubtotal.setAttribute = ('for','subtotal');
+    labelSubtotal.textContent = 'Subtotal';
 
     var unitSubtotal = document.createElement('p');
-    unitPrice.subtotal = "subtotal";
+    unitPrice.subtotal = 'subtotal';
     unitSubtotal.textContent = '$' + (cart[i].price * cart[i].quantity).toFixed(2);
 
     var labelTax = document.createElement('label');
-    labelTax.setAttribute = ("for","tax");
-    labelTax.textContent = "Sales Tax";
+    labelTax.setAttribute = ('for','tax');
+    labelTax.textContent = 'Sales Tax';
 
     var unitTax = document.createElement('p');
-    unitTax.name = "tax";
+    unitTax.name = 'tax';
     unitTax.textContent = '$' + (cart[i].price * cart[i].quantity * 0.08).toFixed(2);
 
     var labelTotal = document.createElement('label');
-    labelTotal.setAttribute = ("for","total");
-    labelTotal.textContent = "Total";
+    labelTotal.setAttribute = ('for','total');
+    labelTotal.textContent = 'Total';
 
     var unitTotal = document.createElement('p');
-    unitTotal.name = "total";
+    unitTotal.name = 'total';
     unitTotal.textContent = '$' + (cart[i].price * cart[i].quantity * 1.08).toFixed(2);
 
     colRight.appendChild(space);
@@ -546,10 +546,10 @@ function generateAddress() {
 }
 
 function loadCheckout() {
-  checkoutItemCount.className = "text-right";
-  checkoutSubTotal.className = "text-right";
-  checkoutTax.className = "text-right";
-  checkoutTotal.className = "text-right";
+  checkoutItemCount.className = 'text-right';
+  checkoutSubTotal.className = 'text-right';
+  checkoutTax.className = 'text-right';
+  checkoutTotal.className = 'text-right';
 
   checkoutItemCount.textContent = cartCount();
   checkoutSubTotal.textContent = '$' + (cartSum()).toFixed(2);
@@ -563,7 +563,7 @@ function validatePayment() {
 
   if(checkoutTotal.textContent == '$0.00') {
     well.className = 'well alert alert-warning text-center';
-    well.textContent = "Your cart is empty.";
+    well.textContent = 'Your cart is empty.';
     return;
   }
   if((paymentCard.value.length != 16) ||
@@ -571,7 +571,7 @@ function validatePayment() {
     (paymentExpYear.value.length != 4) ||
     (paymentCVV.value.length != 3)) {
       well.className = 'well alert alert-danger text-center';
-      well.textContent = "Please make sure you enter all payment information!";
+      well.textContent = 'Please make sure you enter all payment information!';
       return;
   }
 
@@ -594,7 +594,7 @@ function show(page) {
 
   var pages = [searchPage, productPage, cartPage, checkoutPage, receiptPage];
   for(var i = 0; i < pages.length; i++) {
-    //console.log(pages[i].id + " " + page.id);
+    //console.log(pages[i].id + ' ' + page.id);
     if (pages[i].id == page.id) {
       pages.splice(i,1);
     }
