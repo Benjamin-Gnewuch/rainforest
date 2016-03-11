@@ -57,7 +57,9 @@ var paymentCVV = document.getElementById('payment-card-cvv');
 
 var receiptPage = document.getElementById('receipt-page');
 
-headerLogo.addEventListener('click', showSearch);
+headerLogo.addEventListener('click', function() {
+  show(searchPage);
+});
 
 searchButton.addEventListener('click', search);
 
@@ -75,7 +77,9 @@ submitReviewButton.addEventListener('click', function(event) {
 
 cancelReviewButton.addEventListener('click', cancelReview);
 
-checkoutButton.addEventListener('click', showCheckout);
+checkoutButton.addEventListener('click', function() {
+  show(checkoutPage);
+});
 
 payButton.addEventListener('click', validatePayment);
 
@@ -90,7 +94,7 @@ function search(event) {
   event.preventDefault();
 
   updateRatings();
-  showSearch();
+  show(searchPage);
   searchResults = [];
 
   if(searchInput.value == '' || searchInput.value == 'Search') {
@@ -216,7 +220,7 @@ function addItemToCart(id) {
 
 function generateProduct(id) {
   clearReviews();
-  showProduct();
+  show(productPage);
   var product;
 
   for (var i = 0; i < productList.length; i++) {
@@ -488,7 +492,7 @@ function cartGenerate() {
 
   }
 
-  showCart();
+  show(cartPage);
 }
 
 function setCartCount() {
@@ -589,7 +593,7 @@ function validatePayment() {
       return;
   }
 
-  showReceipt();
+  show(receiptPage);
 }
 
 function loadReceipt() {
@@ -603,117 +607,39 @@ function loadReceipt() {
   clearCart();
 }
 
-function showCheckout() {
-  var classes = checkoutPage.className.split(' ');
-  if(classes.indexOf('hide') > -1) {
-    var location = classes.indexOf('hide');
-    classes.splice(location, 1);
-    checkoutPage.className = classes.join(' ');
-  }
-  hideSearch();
-  hideReceipt();
-  hideCart();
-
-  loadCheckout();
-}
-
-function hideCheckout() {
-  var classes = checkoutPage.className.split(' ');
-  if(classes.indexOf('hide') === -1) {
-    classes.push('hide');
-    checkoutPage.className = classes.join(' ');
-  }
-}
-
-function showProduct() {
-  var classes = productPage.className.split(' ');
-  if(classes.indexOf('hide') > -1) {
-    var location = classes.indexOf('hide');
-    classes.splice(location, 1);
-    productPage.className = classes.join(' ');
-  }
-
-  hideCart();
-  hideCheckout();
-  hideReceipt();
-  hideSearch();
-}
-
-function hideProduct() {
-  var classes = productPage.className.split(' ');
-  if(classes.indexOf('hide') === -1) {
-    classes.push('hide');
-    productPage.className = classes.join(' ');
-  }
-}
-
-function showCart() {
-  var classes = cartPage.className.split(' ');
-  if(classes.indexOf('hide') > -1) {
-    var location = classes.indexOf('hide');
-    classes.splice(location, 1);
-    cartPage.className = classes.join(' ');
-  }
-
-  hideProduct();
-  hideCheckout();
-  hideReceipt();
-  hideSearch();
-}
-
-function hideCart() {
-  var classes = cartPage.className.split(' ');
-  if(classes.indexOf('hide') === -1) {
-    classes.push('hide');
-    cartPage.className = classes.join(' ');
-  }
-}
-
-function showSearch() {
-  var classes = searchPage.className.split(' ');
-  if(classes.indexOf('hide') > -1) {
-    var location = classes.indexOf('hide');
-    classes.splice(location, 1);
-    searchPage.className = classes.join(' ');
-  }
-
-  hideProduct();
-  hideCheckout();
-  hideReceipt();
-  hideCart();
-}
-
-function hideSearch() {
-  var classes = searchPage.className.split(' ');
-  if(classes.indexOf('hide') === -1) {
-    classes.push('hide');
-    searchPage.className = classes.join(' ');
-  }
-}
-
-function showReceipt() {
+function show(page) {
   event.preventDefault();
 
-  var classes = receiptPage.className.split(' ');
+  var pages = [searchPage, productPage, cartPage, checkoutPage, receiptPage];
+  for(var i = 0; i < pages.length; i++) {
+    //console.log(pages[i].id + " " + page.id);
+    if (pages[i].id == page.id) {
+      pages.splice(i,1);
+    }
+  }
+  var classes = page.className.split(' ');
   if(classes.indexOf('hide') > -1) {
     var location = classes.indexOf('hide');
     classes.splice(location, 1);
-    receiptPage.className = classes.join(' ');
+    page.className = classes.join(' ');
   }
 
-  hideProduct();
-  hideSearch();
-  hideCheckout();
-  hideCart();
-
-  loadReceipt();
+  if(page == checkoutPage) {
+    loadCheckout();
+  }
+  else if(page == receiptPage) {
+    loadReceipt();
+  }
+  hide(pages);
 }
 
-function hideReceipt() {
-  var classes = receiptPage.className.split(' ');
-  if(classes.indexOf('hide') === -1) {
-    classes.push('hide');
-    receiptPage.className = classes.join(' ');
+function hide(pages) {
+  for(var i = 0; i < pages.length; i++) {
+    var classes = pages[i].className.split(' ');
+    if(classes.indexOf('hide') === -1) {
+      classes.push('hide');
+      pages[i].className = classes.join(' ');
+    }
   }
 }
 
