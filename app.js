@@ -63,6 +63,9 @@ headerLogo.addEventListener('click', function() {
 
 searchButton.addEventListener('click', search);
 
+categorySelected.addEventListener('change', search);
+
+
 cartButton.addEventListener('click', cartGenerate);
 
 writeReviewButton.addEventListener('click', writeReview);
@@ -347,7 +350,7 @@ function cartGenerate() {
   cartDuplicates();
 
   for(var i = 0; i < cart.length; i++) {
-    var panel = newElement('div',cartLocation,'panel panel-default');
+    var panel = newElement('div',cartLocation,'panel panel-default vspace5');
 
     var panelBody = newElement('div',panel,'panel-body');
 
@@ -356,7 +359,7 @@ function cartGenerate() {
 
     var newRow = newElement('div',panelBody,'row');
 
-    var colLeft = newElement('div',newRow,'col-md-4 col-md-offset-1')
+    var colLeft = newElement('div',newRow,'col-md-5')
 
     var colRight = newElement('div',newRow,'col-md-2 col-md-offset-4 text-center');
 
