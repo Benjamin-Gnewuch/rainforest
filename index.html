@@ -33,9 +33,9 @@
           </div>
           <div class="col-md-2 col-sm-12 col-xs-3 text-right vspace6">
             <form action="#">
-              <!-- <button id="user-btn" type="button" class="btn btn-primary"><i class="fa fa-user fa-3x"></i>
+              <!-- <button id="user-btn" data-id="user-btn"  data-page="header"type="button" class="btn btn-primary"><i class="fa fa-user fa-3x"></i>
               </button> -->
-              <button id="cart-btn" type="button" class="btn btn-primary"><i class="fa fa-shopping-cart fa-3x">0</i>
+              <button id="cart-btn" data-id="cart-btn"  type="button" class="btn btn-primary"><i class="fa fa-shopping-cart fa-3x">0</i>
               </button>
             </form>
           </div>
@@ -65,9 +65,9 @@
                     <label id="product-rating" class="label label-info col-md-2 vspace4 hspace3"> Rating: </label>
                     <label id="product-reviews" class="label label-info col-md-2 vspace4 hspace3">Reviews: </label>
                     <form id="cart-button">
-                      <button id="1" type="button" class="btn btn-secondary btn-lg bg-primary col-md-4 col-md-offset-1 col-sm-4 vspace5">Add to Cart
+                      <button id="1" data-id="product-cart-btn"  data-page="product" type="button" class="btn btn-secondary btn-lg bg-primary col-md-4 col-md-offset-1 col-sm-4 vspace5">Add to Cart
                       </button>
-                      <button id="write-review" class="btn btn-secondary btn-lg bg-primary col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 vspace5" type="button">Write a Review
+                      <button id="write-review" data-id="write-review-btn"  data-page="product" class="btn btn-secondary btn-lg bg-primary col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 vspace5" type="button">Write a Review
                       </button>
                     </form>
                   </div>
@@ -86,19 +86,19 @@
                   <div class="panel-heading text-center">
                     <div id="review-rating" class="buton-group btn-group-lg btn-group-justified" role="group" aria-label="Rating">
                       <div class="btn-group" role="group">
-                        <button id="rating-hate" class="btn btn-danger"type="button">Hate it!</button>
+                        <button id="rating-hate" data-id="rating-hate"  data-page="new-review" class="btn btn-danger"type="button">Hate it!</button>
                       </div>
                       <div class="btn-group" role="group">
-                        <button id="rating-dislike" class="btn btn-warning"type="button">Dislike it</button>
+                        <button id="rating-dislike" data-id="rating-dislike"  data-page="new-review" class="btn btn-warning"type="button">Dislike it</button>
                       </div>
                       <div class="btn-group" role="group">
-                        <button id="rating-neutral" class="btn bg-default"type="button">Meh</button>
+                        <button id="rating-neutral" data-id="rating-neutral"  data-page="new-review" class="btn bg-default"type="button">Meh</button>
                       </div>
                       <div class="btn-group" role="group">
-                        <button id="rating-like" class="btn btn-info"type="button">Like it</button>
+                        <button id="rating-like" data-id="rating-like"  data-page="new-review" class="btn btn-info"type="button">Like it</button>
                       </div>
                       <div class="btn-group" role="group">
-                        <button id="rating-love" class="btn btn-success"type="button">Love it!</button>
+                        <button id="rating-love" data-id="rating-love"  data-page="new-review" class="btn btn-success"type="button">Love it!</button>
                       </div>
                     </div>
                   </div>
@@ -107,8 +107,8 @@
                   </div>
                 </div>
                 <form>
-                  <button id="review-submit" class="btn btn-primary" type="button" data-id="-1">Submit Review</button>
-                  <button id="review-cancel" class="btn btn-default" type="button">Cancel</button>
+                  <button id="review-submit" data-id="review-submit"  data-page="new-review" class="btn btn-primary" type="button" data-id="-1">Submit Review</button>
+                  <button id="review-cancel" data-id="review-cancel"  data-page="new-review" class="btn btn-default" type="button">Cancel</button>
                 </form>
               </div>
               <hr>
@@ -124,16 +124,17 @@
         </div> <!--End Reviews-->
       </div>
     </div>
-    <div id="cart-page" class="hide col-md-10 col-md-offset-1">
+    <div id="cart-page" class="hide col-md-8 col-md-offset-2">
       <div class="page-header">
         <h1 class="h1 text-center">Your Cart</h1>
       </div>
       <div id="cart">
       </div>
       <form>
-        <button id="check-out" type="button" class="col-md-4 col-md-offset-8 btn btn-primary btn-lg">Check Out
+        <button id="check-out" data-id="checkout" type="button" class="col-md-4 col-md-offset-8 btn btn-primary btn-lg">Check Out
         </button>
       </form>
+      <div class="well vspace8"></div>
     </div><!--End Cart-->
     <div id="checkout-page" class="form-group hide col-md-10 col-md-offset-1">
       <form>
@@ -291,7 +292,7 @@
                     <label for="payment-card-cvv" class="form-control-label text-left">Security Code</label>
                     <input type="password" class="form-control" id="payment-card-cvv" placeholder="xxx" maxlength="3">
                   </div>
-                  <button type="button" id="checkout-submit" class="btn btn-primary btn-block btn-lg vspace5">Place Order</button>
+                  <button type="button" id="checkout-submit" data-id="checkout-submit" ="button" class="btn btn-primary btn-block btn-lg vspace5">Place Order</button>
                 </form>
               </div>
             </div>
