@@ -29,7 +29,7 @@ var productList = [{
   itemReviews: [
     {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
     {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "Brandon", rating: 1, review: "No apple logo = sux."}]
 }
 ,{
   name: "Lenovo",
@@ -43,9 +43,9 @@ var productList = [{
   quantity: 0,
   itemID: 2,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it runs fine, but I don't have any games, so I don't know about that. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "I chose the Lenovo because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
+    {name: "Brandon", rating: 1, review: "No Apple logo = sux."}]
 }
 ,{
   name: "Macbook",
@@ -60,9 +60,9 @@ var productList = [{
   quantity: 0,
   itemID: 3,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 2, review: "Cant game. Great coaster"},
+    {name: "Susan", rating: 1, review: "I chose the Macbook because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
+    {name: "Brandon", rating: 5, review: "I just ordered this new Macbook and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
 }
 ,{
   name: "Surface",
@@ -77,9 +77,9 @@ var productList = [{
   quantity: 0,
   itemID: 4,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it runs fine, but I don't have any power where I live, so I don't know about that. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "I chose the Surface because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
+    {name: "Brandon", rating: 1, review: "SUX. NO APPLE LOGO."}]
 }
 ,{
   name: "iPad",
@@ -94,9 +94,9 @@ var productList = [{
   quantity: 0,
   itemID: 5,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it runs fine, but I don't have any power where I live, so I don't know about that. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "I chose the iPad because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
+    {name: "Brandon", rating: 5, review: "I just ordered this new iPad and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
 }
 ,{
   name: "Mad Max",
@@ -110,9 +110,9 @@ var productList = [{
   quantity: 0,
   itemID: 6,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 5, review: "The cover of this movie is simply gorgeous. I am hoping the movie itself is good too, but we don't have power here, so who knows. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "Mad Max reminds me of myself. Mad. I still have no clue what a passworm is!!! Good movie though."},
+    {name: "Brandon", rating: 5, review: "Mad Max has beautiful cinematography, amazing costume and prop design, and Tom Hardy. Basically perfection. I rate 5/7."}]
 }
 ,{
   name: "The Revenant",
@@ -126,9 +126,9 @@ var productList = [{
   quantity: 0,
   itemID: 7,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 5, review: "The cover of this movie is simply gorgeous. I am hoping the movie itself is good too, but we don't have power here, so who knows. Works great as a coaster."},
+    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company. What?... Oh wrong page..."},
+  {name: "Brandon", rating: 5, review: "I BEARLY made it through this! Haha so funny."}]
 }
 ,{
   name: "Interstellar",
@@ -142,9 +142,9 @@ var productList = [{
   quantity: 0,
   itemID: 8,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "The cover of this movie is simply gorgeous. I am hoping the movie itself is good too, but we don't have power here, so who knows. Works great as a coaster."},
+    {name: "Susan", rating: 2, review: "I didn't get it... What was the weird thing he was in at the end? I thought he was in space? The wordwhole part was pretty neat."},
+    {name: "Brandon", rating: 4, review: "Would have been a lot more interesting if their spaceship had an apple logo and if the robot was Siri."}]
 }
 ,{
   name: "V for Vendetta",
@@ -158,9 +158,9 @@ var productList = [{
   quantity: 0,
   itemID: 9,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 5, review: "The cover of this movie is simply gorgeous. I am hoping the movie itself is good too, but we don't have power here, so who knows. Works great as a coaster."},
+    {name: "Susan", rating: 3, review: "I wish V would help me deal with all these hackers."},
+    {name: "Brandon", rating: 5, review: "I watched this on my iPad and LOVED IT."}]
 }
 ,{
   name: "Battle Royale",
@@ -174,9 +174,9 @@ var productList = [{
   quantity: 0,
   itemID: 10,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "I can't read."},
+    {name: "Susan", rating: 1, review: "I was reading this on my iPad, but someone hacked it and stole my information. I think this book lets hackers in or something. Awful. You should be ashamed"},
+    {name: "Brandon", rating: 3, review: "Japanese people have weird names. Know what's a good name? Jobs. and Steve."}]
 }
 ,{
   name: "The Lord of the Flies",
@@ -190,9 +190,9 @@ var productList = [{
   quantity: 0,
   itemID: 11,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
-    {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "John", rating: 3, review: "I can't read."},
+    {name: "Susan", rating: 1, review: "I chose the Lord of the Flies because he promised he would keep my data safe, but for some reason it seems like anyone can just pick up my Lord of the Flies and look at all my stuff. I contacted support and they said I need some... passfly-thingy. Not helpful AT ALL. Last time I go with the Lord of the Flies."},
+    {name: "Brandon", rating: 5, review: "Terrible book. Not even about flies. WTF."}]
 
 }
 ,{
@@ -207,7 +207,7 @@ var productList = [{
   quantity: 0,
   itemID: 12,
   itemReviews: [
-    {name: "John", rating: 3, review: "Sleek design, intuitive interface, I assume it calls fine, but I don't have any friends, so I don't know about that. Works great as a coaster."},
+    {name: "John", rating: 5, review: "Works great as a coaster."},
     {name: "Susan", rating: 1, review: "I chose the iPhone because I was told it would keep my data safe, but for some reason it seems like anyone can just pick up my phone and look at all my stuff. I contacted support and they said I need some... passworm-thingy. Not helpful AT ALL. Last time I buy from a no-name company."},
-    {name: "Brandon", rating: 5, review: "I just ordered this new iPhone and I haven't turned it on yet but I saw the beautiful Apple logo on the back and I just HAD to come give them 5 stars right away. Apple is the best, and I love them blindly."}]
+    {name: "Brandon", rating: 5, review: "If Katniss were a fruit, she'd be an APPLE!!!"}]
 }];
