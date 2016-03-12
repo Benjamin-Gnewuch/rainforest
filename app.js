@@ -137,9 +137,7 @@ function generateSearchResults(items) {
   for (var i = 0; i < items.length; i++) {
     var resultLocation = document.getElementById('search-results');
 
-    var paddingLeft = document.createElement('div');
-    paddingLeft.className = 'col-md-9 col-md-offset-1 vspace5';
-    resultLocation.appendChild(paddingLeft);
+    var paddingLeft = newElement('div', resultLocation, 'col-md-9 col-md-offset-1 vspace5');
     paddingLeft.id = 'search-result-' + items[i].itemID;
 
     var newResult = document.createElement('div');
@@ -148,8 +146,10 @@ function generateSearchResults(items) {
     var mediaLeft = document.createElement('div');
     mediaLeft.className = 'media-left media-middle';
 
-    var mediaObject = document.createElement('img');
-    mediaObject.className = 'media-object hspace4 hidden-xs hidden-sm';
+    var mediaObject = newElement('img', mediaLeft, 'media-object hspace4 hidden-xs hidden-sm');
+
+    //var mediaObject = document.createElement('img');
+    //mediaObject.className = 'media-object hspace4 hidden-xs hidden-sm';
     mediaObject.src = items[i].img;
     mediaObject.setAttribute('width', '300px');
 
@@ -172,19 +172,15 @@ function generateSearchResults(items) {
     var buttonForm = document.createElement('form');
     buttonForm.action = '#';
 
-    var cartButton = document.createElement('button');
+    var cartButton = newElement('button', buttonForm, 'btn btn-secondary btn-lg bg-primary col-md-3 col-sm-3 vspace5')
     cartButton.textContent = 'Add to Cart';
     cartButton.id = items[i].itemID;
-    cartButton.className = 'btn btn-secondary btn-lg bg-primary col-md-3 col-sm-3 vspace5';
     cartButton.setAttribute('type', 'button');
-    buttonForm.appendChild(cartButton);
 
-    var viewButton = document.createElement('button');
+    var viewButton = newElement('button', buttonForm, 'btn btn-secondary btn-lg bg-primary col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5');
     viewButton.textContent = 'View Item';
     viewButton.id = items[i].itemID;
-    viewButton.className = 'btn btn-secondary btn-lg bg-primary col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 vspace5';
     viewButton.setAttribute('type', 'button');
-    buttonForm.appendChild(viewButton);
 
     var horizontal = document.createElement('hr');
     horizontal.className = 'vspace7';
@@ -198,7 +194,6 @@ function generateSearchResults(items) {
     });
 
     newResult.appendChild(mediaLeft);
-    mediaLeft.appendChild(mediaObject);
     newResult.appendChild(mediaBody);
     mediaBody.appendChild(mediaHeading);
     mediaBody.appendChild(mediaPrice);
@@ -273,7 +268,7 @@ function generateReviews(id) {
 
   for (var i = 0; i < reviews.length; i++) {
 
-    var newReview  = newElement('div', location);
+    var newReview = newElement('div', location);
     var reviewHeading = newElement('div', newReview, 'panel-heading');
     var reviewTitle = newElement('h3', reviewHeading, 'panel-title');
     var reviewBody = newElement('div',newReview, 'panel-body')
