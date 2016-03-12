@@ -100,23 +100,23 @@ function search(event) {
   show(searchPage);
   searchResults = [];
 
-  if(searchInput.value == '' || searchInput.value == 'Search') {
-    if(categorySelected.value != 'all') {
-      for(var i = 0; i < productList.length; i++) {
-        if(productList[i].category == categorySelected.value) {
+  if (searchInput.value == '' || searchInput.value == 'Search') {
+    if (categorySelected.value != 'all') {
+      for (var i = 0; i < productList.length; i++) {
+        if (productList[i].category == categorySelected.value) {
           searchResults.push(productList[i]);
         }
       }
     }
     else {
-      for(var i = 0; i < productList.length; i++) {
+      for (var i = 0; i < productList.length; i++) {
         searchResults.push(productList[i]);
       }
     }
   }
   else {
-    for(var i = 0; i < productList.length; i++) {
-      if(productList[i].name.toLowerCase() == searchInput.value.toLowerCase()) {
+    for (var i = 0; i < productList.length; i++) {
+      if (productList[i].name.toLowerCase() == searchInput.value.toLowerCase()) {
         searchResults.push(productList[i]);
       }
     }
@@ -128,7 +128,7 @@ function search(event) {
 
 function clearResults() {
   var resultLocation = document.getElementById('search-results');
-  while(resultLocation.firstChild) {
+  while (resultLocation.firstChild) {
     resultLocation.removeChild(resultLocation.firstChild);
   }
 }
@@ -213,7 +213,7 @@ function generateSearchResults(items) {
 
 function addItemToCart(id) {
   for (var i = 0; i < productList.length; i++) {
-    if(id == productList[i].itemID) {
+    if (id == productList[i].itemID) {
       cart.push(productList[i]);
       cart[cart.length-1].quantity = 1;
     }
@@ -227,7 +227,7 @@ function generateProduct(id) {
   var product;
 
   for (var i = 0; i < productList.length; i++) {
-    if(id == productList[i].itemID) {
+    if (id == productList[i].itemID) {
       product = productList[i];
     }
   }
@@ -271,14 +271,14 @@ function generateReviews(id) {
   var reviews = productList[id].itemReviews;
   var location = document.getElementById('reviews');
 
-  for(var i = 0; i < reviews.length; i++) {
+  for (var i = 0; i < reviews.length; i++) {
 
     var newReview  = newElement('div', location);
-    var reviewHeading = newElement('div', newReview,'panel-heading');
-    var reviewTitle = newElement('h3', reviewHeading,'panel-title');
-    var reviewBody = newElement('div',newReview,'panel-body')
-    var reviewRating = newElement('h5', reviewBody,'h5 panel-body');
-    var reviewText = newElement('div', reviewBody,'panel-body');
+    var reviewHeading = newElement('div', newReview, 'panel-heading');
+    var reviewTitle = newElement('h3', reviewHeading, 'panel-title');
+    var reviewBody = newElement('div',newReview, 'panel-body')
+    var reviewRating = newElement('h5', reviewBody, 'h5 panel-body');
+    var reviewText = newElement('div', reviewBody, 'panel-body');
 
     if (reviews[i].rating <= 2) {
       newReview.className = 'panel panel-danger';
@@ -312,16 +312,16 @@ function setRating(id) {
   if (id == 'rating-love') {
     review.ratingNum = 5;
   }
-  else if (id == 'rating-like'){
+  else if (id == 'rating-like') {
     review.ratingNum = 4;
   }
-  else if (id == 'rating-neutral'){
+  else if (id == 'rating-neutral') {
     review.ratingNum = 3;
   }
-  else if (id == 'rating-dislike'){
+  else if (id == 'rating-dislike') {
     review.ratingNum = 2;
   }
-  else if (id == 'rating-hate'){
+  else if (id == 'rating-hate') {
     review.ratingNum = 1;
   }
 }
@@ -349,31 +349,31 @@ function cartGenerate() {
   clearCartPage(cartLocation);
   cartDuplicates();
 
-  for(var i = 0; i < cart.length; i++) {
-    var panel = newElement('div',cartLocation,'panel panel-default vspace5');
+  for (var i = 0; i < cart.length; i++) {
+    var panel = newElement('div', cartLocation, 'panel panel-default vspace5');
 
-    var panelBody = newElement('div',panel,'panel-body');
+    var panelBody = newElement('div', panel, ' panel-body');
 
     var space = document.createElement('br');
     var horizontal = document.createElement('hr');
 
-    var newRow = newElement('div',panelBody,'row');
+    var newRow = newElement('div', panelBody, 'row');
 
-    var colLeft = newElement('div',newRow,'col-md-5')
+    var colLeft = newElement('div', newRow, ' col-md-5')
 
-    var colRight = newElement('div',newRow,'col-md-2 col-md-offset-4 text-center');
+    var colRight = newElement('div', newRow, 'col-md-2 col-md-offset-4 text-center');
 
-    var media = newElement('div',colLeft,'media');
+    var media = newElement('div', colLeft, 'media');
 
-    var mediaLeft = newElement('div',media,'media-left media-middle');
+    var mediaLeft = newElement('div', media, 'media-left media-middle');
 
-    var mediaObject = newElement('img',mediaLeft,'media-object');
+    var mediaObject = newElement('img', mediaLeft, 'media-object');
     mediaObject.src = cart[i].img;
     mediaObject.setAttribute('width', '150px');
 
-    var mediaBody = newElement('div',media,'media-body');
+    var mediaBody = newElement('div', media, 'media-body');
 
-    var mediaHeading = newElement('h3',mediaBody,'media-heading');
+    var mediaHeading = newElement('h3', mediaBody, 'media-heading');
     mediaHeading.textContent = cart[i].name;
 
     var labelPrice = document.createElement('label');
@@ -400,12 +400,12 @@ function cartGenerate() {
     formGroup.className = 'form-group';
     formHorizontal.appendChild(formGroup);
 
-    var quantityLocation = newElement('div',formGroup,'col-md-7');
+    var quantityLocation = newElement('div', formGroup, 'col-md-7');
 
-    var mediaQuantity = newElement('select',quantityLocation,'form-control');
+    var mediaQuantity = newElement('select', quantityLocation, 'form-control');
     mediaQuantity.id = cart[i].itemID;
 
-    for(var j = 1; j < 31; j++) {
+    for (var j = 1; j < 31; j++) {
       var option = document.createElement('option');
       option.textContent = j;
       mediaQuantity.appendChild(option);
@@ -422,7 +422,7 @@ function cartGenerate() {
     mediaBody.appendChild(mediaRating);
     mediaBody.appendChild(formHorizontal);
 
-    var buttonRemove = newElement('btn',mediaBody,'btn btn-default');
+    var buttonRemove = newElement('btn', mediaBody, 'btn btn-default');
     buttonRemove.setAttribute = ('type', 'button');
     buttonRemove.textContent = 'Remove from Cart';
     buttonRemove.id = cart[i].itemID;
@@ -477,7 +477,7 @@ function setCartCount() {
 
 function cartCount() {
   var count = 0;
-  for(var i = 0; i < cart.length; i++) {
+  for (var i = 0; i < cart.length; i++) {
     count += cart[i].quantity;
   }
   return count;
@@ -487,7 +487,7 @@ function populateCart(parent) {
 
 }
 
-function clearCartPage(location){
+function clearCartPage(location) {
   while(location.firstChild) {
       location.removeChild(location.firstChild);
   }
@@ -502,9 +502,9 @@ function clearCart() {
 
 function cartDuplicates() {
 
-  for( var i = 0; i < cart.length; i++ ) {
-    for( var j = i+1; j < cart.length; j++ ) {
-      if( cart[i].itemID == cart[j].itemID ) {
+  for (var i = 0; i < cart.length; i++) {
+    for (var j = i+1; j < cart.length; j++) {
+      if (cart[i].itemID == cart[j].itemID) {
         cart[i].quantity++;
         cart.splice(j,1);
         j--;
@@ -522,13 +522,13 @@ function cartSum() {
 }
 
 function changeQuantity(id, num) {
-  for(var i = 0; i < cart.length; i++) {
-    if(cart[i].itemID == id) {
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].itemID == id) {
       cart[i].quantity = num;
     }
   }
-  for(var i = 0; i < cart.length; i++) {
-    if(cart[i].quantity == 0) {
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].quantity == 0) {
       cart.splice(i,1);
       i--;
     }
@@ -561,12 +561,12 @@ function validatePayment() {
   event.preventDefault();
   var well = document.getElementById('payment-alert');
 
-  if(checkoutTotal.textContent == '$0.00') {
+  if (checkoutTotal.textContent == '$0.00') {
     well.className = 'well alert alert-warning text-center';
     well.textContent = 'Your cart is empty.';
     return;
   }
-  if((paymentCard.value.length != 16) ||
+  if ((paymentCard.value.length != 16) ||
     (paymentExpMonth.value.length != 2) ||
     (paymentExpYear.value.length != 4) ||
     (paymentCVV.value.length != 3)) {
@@ -593,32 +593,32 @@ function show(page) {
   event.preventDefault();
 
   var pages = [searchPage, productPage, cartPage, checkoutPage, receiptPage];
-  for(var i = 0; i < pages.length; i++) {
+  for (var i = 0; i < pages.length; i++) {
     //console.log(pages[i].id + ' ' + page.id);
     if (pages[i].id == page.id) {
       pages.splice(i,1);
     }
   }
   var classes = page.className.split(' ');
-  if(classes.indexOf('hide') > -1) {
+  if (classes.indexOf('hide') > -1) {
     var location = classes.indexOf('hide');
     classes.splice(location, 1);
     page.className = classes.join(' ');
   }
 
-  if(page == checkoutPage) {
+  if (page == checkoutPage) {
     loadCheckout();
   }
-  else if(page == receiptPage) {
+  else if (page == receiptPage) {
     loadReceipt();
   }
   hide(pages);
 }
 
 function hide(pages) {
-  for(var i = 0; i < pages.length; i++) {
+  for (var i = 0; i < pages.length; i++) {
     var classes = pages[i].className.split(' ');
-    if(classes.indexOf('hide') === -1) {
+    if (classes.indexOf('hide') === -1) {
       classes.push('hide');
       pages[i].className = classes.join(' ');
     }
@@ -638,14 +638,14 @@ function newElement(type, parent, text) {
 
 function average(items) {
   var sum = 0;
-  for(var i = 0, j = items.length; i < j; i++) {
+  for (var i = 0, j = items.length; i < j; i++) {
     sum += items[i].rating;
   }
   return (sum/items.length).toFixed(1);
 }
 
 function updateRatings() {
-  for(var i = 0, j = productList.length; i < j; i++) {
+  for (var i = 0, j = productList.length; i < j; i++) {
     productList[i].rating=average(productList[i].itemReviews);
   }
 }
